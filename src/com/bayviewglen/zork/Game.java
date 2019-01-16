@@ -142,6 +142,8 @@ class Game {
 			printHelp();
 		else if (commandWord.equals("go"))
 			goRoom(command);
+		else if (commandWord.equals("jump"))
+			System.out.println("Good Job!");
 		else if (commandWord.equals("quit")) {
 			if (command.hasSecondWord())
 				System.out.println("Quit what?");
