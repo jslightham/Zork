@@ -19,7 +19,9 @@ package com.bayviewglen.zork;
  */
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.StringTokenizer;
+import com.bayviewglen.zork.CommandWords;
 
 class Parser {
 	private CommandWords commands; // holds all valid command words
@@ -30,9 +32,12 @@ class Parser {
 
 	public Command getCommand() {
 		String inputLine = ""; // will hold the full input line
-		String word1;
-		String word2;
-		System.out.print("> "); // print prompt
+		String verb = "";
+		String direction = "";
+		//String word2;
+		ArrayList<String> words = new ArrayList<String>();
+		ArrayList<String> otherWords = new ArrayList<String>();
+ 		System.out.print("> "); // print prompt
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		try {
 			inputLine = reader.readLine();
@@ -40,6 +45,20 @@ class Parser {
 			System.out.println("There was an error during reading: " + exc.getMessage());
 		}
 		StringTokenizer tokenizer = new StringTokenizer(inputLine);
+		while(tokenizer.hasMoreTokens()) {
+			words.add(tokenizer.nextToken());
+		}
+		for(int i=0; i<words.size(); i++) {
+			if(CommandWords.isCommand(words.get(i))) {
+				verb = words.get(i);
+				if(CommandWords.isDirection(words.get(i))) {
+					direction = words.get(i);
+				}
+			}else {
+				otherWords.add(words.get(i));
+			}
+		}
+		/*
 		if (tokenizer.hasMoreTokens())
 			word1 = tokenizer.nextToken(); // get first word
 		else
@@ -51,10 +70,12 @@ class Parser {
 		// note: we just ignore the rest of the input line.
 		// Now check whether this word is known. If so, create a command
 		// with it. If not, create a "nil" command (for unknown command).
-		if (commands.isCommand(word1))
-			return new Command(word1, word2);
+		 */
+		//System.out.println(verb);
+		if (CommandWords.isCommand(verb))
+			return new Command(verb, otherWords, direction);
 		else
-			return new Command(null, word2);
+			return new Command(null, otherWords, direction);
 	}
 
 	/**

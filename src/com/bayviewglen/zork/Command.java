@@ -1,5 +1,7 @@
 package com.bayviewglen.zork;
 
+import java.util.ArrayList;
+
 /**
  * Class Command - Part of the "Zork" game.
  * 
@@ -22,16 +24,18 @@ package com.bayviewglen.zork;
  */
 class Command {
 	private String commandWord;
-	private String secondWord;
+	private String direction;
+	private ArrayList<String> otherWords;
 
 	/**
 	 * Create a command object. First and second word must be supplied, but
 	 * either one (or both) can be null. The command word should be null to
 	 * indicate that this was a command that is not recognised by this game.
 	 */
-	public Command(String firstWord, String secondWord) {
+	public Command(String firstWord, ArrayList<String> otherWords, String direction) {
 		commandWord = firstWord;
-		this.secondWord = secondWord;
+		this.otherWords = otherWords;
+		this.direction = direction;
 	}
 
 	/**
@@ -46,9 +50,14 @@ class Command {
 	 * Return the second word of this command. Returns null if there was no
 	 * second word.
 	 */
-	public String getSecondWord() {
-		return secondWord;
+	public ArrayList<String> getOtherWords() {
+		return otherWords;
 	}
+	/*
+	public String getSecondWord() {
+		return otherWords.get(0);
+	}
+	*/
 
 	/**
 	 * Return true if this command was not understood.
@@ -61,6 +70,13 @@ class Command {
 	 * Return true if the command has a second word.
 	 */
 	public boolean hasSecondWord() {
-		return (secondWord != null);
+		return otherWords.size() > 0;
+	}
+	
+	public boolean hasDirection() {
+		return CommandWords.isDirection(commandWord);
+	}
+	public String getDirection() {
+		return direction;
 	}
 }

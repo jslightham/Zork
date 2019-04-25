@@ -133,11 +133,18 @@ class Game {
 	 * ends the game, true is returned, otherwise false is returned.
 	 */
 	private boolean processCommand(Command command) {
+		
 		if (command.isUnknown()) {
 			System.out.println("I don't know what you mean...");
 			return false;
 		}
 		String commandWord = command.getCommandWord();
+		switch(commandWord) {
+			case "n": case "s": case "e": case "w": case "north": case "south": case "west": case "east": case "up": case "down":
+				goRoom(command);
+				break;
+		
+		}
 		if (commandWord.equals("help"))
 			printHelp();
 		else if (commandWord.equals("go"))
@@ -173,12 +180,12 @@ class Game {
 	 * otherwise print an error message.
 	 */
 	private void goRoom(Command command) {
-		if (!command.hasSecondWord()) {
+		if (!command.hasDirection()) {
 			// if there is no second word, we don't know where to go...
 			System.out.println("Go where?");
 			return;
 		}
-		String direction = command.getSecondWord();
+		String direction = command.getDirection();
 		// Try to leave current room.
 		Room nextRoom = currentRoom.nextRoom(direction);
 		if (nextRoom == null)
