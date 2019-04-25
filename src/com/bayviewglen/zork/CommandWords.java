@@ -1,6 +1,8 @@
 package com.bayviewglen.zork;
 
+import java.io.File;
 import java.util.HashMap;
+import java.util.Scanner;
 
 /*
  * Author:  Michael Kolling.
@@ -19,41 +21,33 @@ class CommandWords {
 	 * Constructor - initialise the command words.
 	 */
 	public CommandWords() {
-		m_words.put("go", "verb");
-		m_words.put("quit", "verb");
-		m_words.put("help", "verb");
-		m_words.put("jump", "verb");
-		m_words.put("north", "direction");
-		m_words.put("south", "direction");
-		m_words.put("west", "direction");
-		m_words.put("east", "direction");
-		m_words.put("n", "direction");
-		m_words.put("w", "direction");
-		m_words.put("s", "direction");
-		m_words.put("e", "direction");
-		m_words.put("up", "direction");
-		m_words.put("down", "direction");
+		// Import words from words.dat into HashMap
+		try {
+			Scanner in = new Scanner(new File("data/words.dat"));
+			while(in.hasNext()){
+				String text = in.nextLine();
+				String[] textarr = text.split(",");
+				m_words.put(textarr[0], textarr[1].substring(1));
+			}
+            in.close();
+		}catch (Exception e) {
+                  e.printStackTrace();
+		}	
 	}
 
 	/**
 	 * Check whether a given String is a valid command word. Return true if it
 	 * is, false if it isn't.
 	 **/
+	// Check if given string is verb or direction
 	public static boolean isCommand(String aString) {
 		try {
 			return (m_words.get(aString).equals("verb") || m_words.get(aString).equals("direction"));
 		}catch(Exception e) {
 			return false;
 		}
-		/*
-		for (int i = 0; i < validCommands.length; i++) {
-			if (validCommands[i].equals(aString))
-				return true;
-		}
-		// if we get here, the string was not found in the commands
-		return false;
-		*/
 	}
+	// Check if given string is direction
 	public static boolean isDirection(String aString) {
 		return m_words.get(aString).equals("direction");
 	}
@@ -68,24 +62,5 @@ class CommandWords {
 			}
 		}
 		System.out.println();
-		
-		/*
-		for (int i = 0; i < validCommands.length; i++) {
-			System.out.print(validCommands[i] + "  ");
-		}
-		System.out.println();
-		*/
 	}
-
-	/*
-	public boolean isVerb(String string) {
-		try {
-		if(m_words.get(string).equals("verb")) 
-			return true;
-		} catch(Exception e) {
-		return false;
-		}
-		return false;
-	}
-	*/
 }

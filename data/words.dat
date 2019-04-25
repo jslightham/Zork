@@ -1,0 +1,14 @@
+go, verb
+quit, verb
+help, verb
+jump, verb
+north, direction
+south, direction
+west, direction
+east, direction
+n, direction
+w, direction
+s, direction
+e, direction
+up, direction
+down, direction
