@@ -34,6 +34,7 @@ class Parser {
 		String inputLine = ""; // will hold the full input line
 		String verb = "";
 		String direction = "";
+		String item = "";
 		//String word2;
 		ArrayList<String> words = new ArrayList<String>();
 		ArrayList<String> otherWords = new ArrayList<String>();
@@ -54,28 +55,18 @@ class Parser {
 				if(CommandWords.isDirection(words.get(i))) {
 					direction = words.get(i);
 				}
-			}else {
+			}else if(CommandWords.isItem(words.get(i))){
+				item = words.get(i);
+			}
+			else {
 				otherWords.add(words.get(i));
 			}
 		}
-		/*
-		if (tokenizer.hasMoreTokens())
-			word1 = tokenizer.nextToken(); // get first word
-		else
-			word1 = null;
-		if (tokenizer.hasMoreTokens())
-			word2 = tokenizer.nextToken(); // get second word
-		else
-			word2 = null;
-		// note: we just ignore the rest of the input line.
-		// Now check whether this word is known. If so, create a command
-		// with it. If not, create a "nil" command (for unknown command).
-		 */
 		//System.out.println(verb);
 		if (CommandWords.isCommand(verb))
-			return new Command(verb, otherWords, direction);
+			return new Command(verb, otherWords, direction, item);
 		else
-			return new Command(null, otherWords, direction);
+			return new Command(null, otherWords, direction, item);
 	}
 
 	/**

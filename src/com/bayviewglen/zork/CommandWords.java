@@ -52,6 +52,14 @@ class CommandWords {
 		return m_words.get(aString).equals("direction");
 	}
 
+	public static boolean isItem(String aString){
+		try {
+		return m_words.get(aString).equals("item");
+		} catch(Exception e) {
+			return false;
+		}
+	}
+
 	/*
 	 * Print all valid commands to System.out.
 	 */

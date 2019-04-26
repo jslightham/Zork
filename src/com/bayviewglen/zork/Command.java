@@ -26,16 +26,18 @@ class Command {
 	private String commandWord;
 	private String direction;
 	private ArrayList<String> otherWords;
+	private String item;
 
 	/**
 	 * Create a command object. First and second word must be supplied, but
 	 * either one (or both) can be null. The command word should be null to
 	 * indicate that this was a command that is not recognised by this game.
 	 */
-	public Command(String firstWord, ArrayList<String> otherWords, String direction) {
+	public Command(String firstWord, ArrayList<String> otherWords, String direction, String item) {
 		commandWord = firstWord;
 		this.otherWords = otherWords;
 		this.direction = direction;
+		this.item = item;
 	}
 
 	/**
@@ -73,6 +75,9 @@ class Command {
 		return otherWords.size() > 0;
 	}
 	
+	public boolean hasItem(){
+		return item.equals("");
+	}
 	public boolean hasDirection() {
 		return CommandWords.isDirection(commandWord);
 	}

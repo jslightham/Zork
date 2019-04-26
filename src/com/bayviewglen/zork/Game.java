@@ -5,6 +5,8 @@ import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.Scanner;
 
+import com.bayviewglen.zork.Items.*;
+
 /**
  * Class Game - the main class of the "Zork" game.
  *
@@ -32,8 +34,10 @@ class Game {
 	// masterRoomMap.get("GREAT_ROOM") will return the Room Object that is the
 	// Great Room (assuming you have one).
 	private HashMap<String, Room> masterRoomMap;
+	private HashMap<Item, String> itemsInRooms = new HashMap<Item, String>();
 
 	private void initRooms(String fileName) throws Exception {
+		itemsInRooms.put(new Candlestick(), "Candlestick");
 		masterRoomMap = new HashMap<String, Room>();
 		Scanner roomScanner;
 		try {
@@ -153,6 +157,12 @@ class Game {
 				return true;
 			case "eat":
 				System.out.println("Do you really think you should be eating at a time like this?");
+				break;
+			case "look":
+				for (Item i : itemsInRooms.keySet()) {
+					System.out.print(i.getName() + "  ");
+				}
+				System.out.println();
 				break;
 			default:
 				return false;

@@ -12,3 +12,6 @@ s, direction
 e, direction
 up, direction
 down, direction
+eat, verb
+candlestick, item
+look, verb
