@@ -130,7 +130,7 @@ class Room {
 			exits.put("west", west);
 		if (up != null)
 			exits.put("up", up);
-		if (up != null)
+		if (down != null)
 			exits.put("down", down);
 
 	}
