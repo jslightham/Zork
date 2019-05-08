@@ -1,18 +1,22 @@
 Room Name: Circle Room
-Room Description:  You are in the circular room. The windows to the west are bolted shut and curtains cover them. To the east, a hallway.   
+Room Description: You are in the circular room. The windows to the west are bolted shut and curtains cover them. To the east, a hallway.   
 Exit Rooms: E-Apple Hallway
+Items: Candlestick, Candlestick
 
 Room Name: Apple Hallway
-Room Description:  You are in an empty hallway. Many closed doors surround you. To the west is the round room and north is the stairs. You cannot see what they lead to. 
+Room Description: You are in an empty hallway. Many closed doors surround you. To the west is the round room and north is the stairs. You cannot see what they lead to. 
 Exit Rooms: Circle Room, N-Porcupine Stairs
+Items: 
 
 Room Name: Porcupine Stairs
-Room Description:  You are in the Porcupine Stairs. Below you is the second floor and above you is the third floor. 
+Room Description: You are in the Porcupine Stairs. The stone, cold walls are trapped in darkness. Below you is the second floor and above you is the third floor. 
 Exit Rooms: up-third floor, down-second floor
+Items: 
 
-Room Name: Hallway 3
-Room Description:  You are in an empty hallway. Many closed doors surround you. To the west is the round room and north is the stairs. You cannot see what they lead to. 
+Room Name: Bulb Room
+Room Description: You are in the Bulb Room. There is a ragged red rug with a noticeable lump in the middle. One window facing north is bolted shut. 
 Exit Rooms: W-Round Room (third floor), N-Stairs to second floor
+Items: 
 
 Room Name: Hallway 3
 Room Description:  You are in an empty hallway. Many closed doors surround you. To the west is the round room and north is the stairs. You cannot see what they lead to. 

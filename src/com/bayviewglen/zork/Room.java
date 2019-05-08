@@ -16,13 +16,16 @@ package com.bayviewglen.zork;
  * to the neighbouring room, or null if there is no exit in that direction.
  */
 import java.util.Set;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import com.bayviewglen.zork.Items.*;
 
 class Room {
 	private String roomName;
 	private String description;
 	private HashMap<String, Room> exits; // stores exits of this room.
+	private ArrayList<Item> items;
 
 	/**
 	 * Create a room described "description". Initially, it has no exits.
@@ -31,6 +34,7 @@ class Room {
 	public Room(String description) {
 		this.description = description;
 		exits = new HashMap<String, Room>();
+		items = new ArrayList<Item>();
 	}
 
 	public Room() {
@@ -38,6 +42,7 @@ class Room {
 		roomName = "DEFAULT ROOM";
 		description = "DEFAULT DESCRIPTION";
 		exits = new HashMap<String, Room>();
+		items = new ArrayList<Item>();
 	}
 
 	public void setExit(char direction, Room r) throws Exception {
@@ -67,6 +72,47 @@ class Room {
 		}
 
 		exits.put(dir, r);
+	}
+	
+	/*
+	 * Add passed in item to item array list
+	 */
+	public void addItem(Item item) {
+		items.add(item);
+	}
+	
+	/*
+	 * Remove first instance of item passed in
+	 * Return item if removed, otherwise return null
+	 */
+	public Item removeItem(Item item) {
+		for(int i=0; i<items.size(); i++) {
+			if(item.equals(items.get(i))) {
+				items.remove(i);
+				return item;
+			}
+		}
+		return null;
+	}
+	
+	/*
+	 * Remove item at index
+	 * Return item if removed, otherwise return null
+	 */
+	public Item removeItem(int i) {
+		if(i >= items.size())
+			return null;
+		Item temp = items.get(i);
+		items.remove(i);
+		return temp;
+	}
+	
+	public ArrayList<Item> getItems() {
+		return items;
+	}
+	
+	public Item getItem(int i) {
+		return items.get(i);
 	}
 
 	/**

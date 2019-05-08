@@ -21,6 +21,7 @@ import java.util.ArrayList;
  * The second word is not checked at the moment. It can be anything. If this
  * game is extended to deal with items, then the second part of the command
  * should probably be changed to be an item rather than a String.
+ * test
  */
 class Command {
 	private String commandWord;
@@ -37,6 +38,18 @@ class Command {
 		commandWord = firstWord;
 		this.otherWords = otherWords;
 		this.direction = direction;
+		if(direction.equals("e"))
+			this.direction = "east";
+		if(direction.equals("w"))
+			this.direction = "west";
+		if(direction.equals("s"))
+			this.direction = "south";
+		if(direction.equals("n"))
+			this.direction = "north";
+		if(direction.equals("u"))
+			this.direction = "up";
+		if(direction.equals("d"))
+			this.direction = "down";
 		this.item = item;
 	}
 
@@ -79,7 +92,7 @@ class Command {
 		return item.equals("");
 	}
 	public boolean hasDirection() {
-		return CommandWords.isDirection(commandWord);
+		return CommandWords.isDirection(direction);
 	}
 	public String getDirection() {
 		return direction;
