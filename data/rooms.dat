@@ -1,9 +1,12 @@
 Room Name: Room 1
 Room Description:  You are in a stone-walled room, surrounded by 
+Items:Candlestick,Candlestick
 Exit Rooms: E-Room 2
 Room Name: Room 2
 Room Description:  This is Room 2
+Items:
 Exit Rooms: W-Room 1, U-Room 3
 Room Name: Room 3
 Room Description:  You are upstairs. You are likely to be eaten by a giant worm! 
+Items:
 Exit Rooms: D-Room 2

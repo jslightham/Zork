@@ -45,7 +45,7 @@ class Parser {
 		} catch (java.io.IOException exc) {
 			System.out.println("There was an error during reading: " + exc.getMessage());
 		}
-		StringTokenizer tokenizer = new StringTokenizer(inputLine);
+		StringTokenizer tokenizer = new StringTokenizer(inputLine.toLowerCase());
 		while(tokenizer.hasMoreTokens()) {
 			words.add(tokenizer.nextToken());
 		}

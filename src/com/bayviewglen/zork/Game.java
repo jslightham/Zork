@@ -2,6 +2,7 @@ package com.bayviewglen.zork;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.lang.reflect.Constructor;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -34,10 +35,10 @@ class Game {
 	// masterRoomMap.get("GREAT_ROOM") will return the Room Object that is the
 	// Great Room (assuming you have one).
 	private HashMap<String, Room> masterRoomMap;
-	private HashMap<Item, String> itemsInRooms = new HashMap<Item, String>();
+	//private HashMap<Item, String> itemsInRooms = new HashMap<Item, String>();
 
 	private void initRooms(String fileName) throws Exception {
-		itemsInRooms.put(new Candlestick(), "Candlestick");
+		//itemsInRooms.put(new Candlestick(), "Candlestick");
 		masterRoomMap = new HashMap<String, Room>();
 		Scanner roomScanner;
 		try {
@@ -51,6 +52,19 @@ class Game {
 				// Read the Description
 				String roomDescription = roomScanner.nextLine();
 				room.setDescription(roomDescription.split(":")[1].replaceAll("<br>", "\n").trim());
+				// Read the Items
+				String items = roomScanner.nextLine();
+				try {
+				String[] itemArr = items.split(":")[1].split(",");
+				for(String s : itemArr) {
+					Class<?> clazz = Class.forName("com.bayviewglen.zork.Items." + s.trim());
+					Constructor<?> ctor = clazz.getConstructor();
+					Item object = (Item) ctor.newInstance();
+					room.addItem(object);
+				}
+				}catch(Exception e) {
+				}
+				
 				// Read the Exits
 				String roomExits = roomScanner.nextLine();
 				// An array of strings in the format E-RoomName
@@ -98,7 +112,6 @@ class Game {
 			initRooms("data/Rooms.dat");
 			currentRoom = masterRoomMap.get("ROOM_1");
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		parser = new Parser();
@@ -159,10 +172,17 @@ class Game {
 				System.out.println("Do you really think you should be eating at a time like this?");
 				break;
 			case "look":
+				System.out.print("Items: ");
+				for(Item i : currentRoom.getItems()) {
+					System.out.print(i.getName() + "   ");
+				}
+				System.out.println();
+				/*
 				for (Item i : itemsInRooms.keySet()) {
 					System.out.print(i.getName() + "  ");
 				}
 				System.out.println();
+				*/
 				break;
 			default:
 				return false;

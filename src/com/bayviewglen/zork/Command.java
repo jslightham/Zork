@@ -37,6 +37,18 @@ class Command {
 		commandWord = firstWord;
 		this.otherWords = otherWords;
 		this.direction = direction;
+		if(direction.equals("e"))
+			this.direction = "east";
+		if(direction.equals("w"))
+			this.direction = "west";
+		if(direction.equals("s"))
+			this.direction = "south";
+		if(direction.equals("n"))
+			this.direction = "north";
+		if(direction.equals("u"))
+			this.direction = "up";
+		if(direction.equals("d"))
+			this.direction = "down";
 		this.item = item;
 	}
 
@@ -79,7 +91,7 @@ class Command {
 		return item.equals("");
 	}
 	public boolean hasDirection() {
-		return CommandWords.isDirection(commandWord);
+		return CommandWords.isDirection(direction);
 	}
 	public String getDirection() {
 		return direction;

@@ -12,7 +12,7 @@ public class Player extends Entity{
 		super();
 	}
 
-	private boolean addToInventory(Item item){
+	public boolean addToInventory(Item item){
 		if(currentInventoryWeight + item.getWeight() < INVENTORY_CAPACITY){
 			inventory.add(item);
 			System.out.println(item.getName() + " add");
@@ -21,7 +21,7 @@ public class Player extends Entity{
 		return false;
 	}
 
-	private void removeFromInventory(Item item){
+	public void removeFromInventory(Item item){
 		inventory.remove(item);
 
 	}
