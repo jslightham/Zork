@@ -12,6 +12,9 @@ s, direction
 e, direction
 up, direction
 down, direction
+d, direction
+u, direction
 eat, verb
 candlestick, item
 look, verb
+take, verb

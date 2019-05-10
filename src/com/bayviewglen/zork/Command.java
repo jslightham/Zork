@@ -89,12 +89,15 @@ class Command {
 	}
 	
 	public boolean hasItem(){
-		return item.equals("");
+		return !item.equals("");
 	}
 	public boolean hasDirection() {
 		return CommandWords.isDirection(direction);
 	}
 	public String getDirection() {
 		return direction;
+	}
+	public String getItem() {
+		return item;
 	}
 }
