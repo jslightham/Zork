@@ -1,169 +1,30 @@
 Room Name: Circle Room
-Room Description: You are in the circular room. The windows to the west are bolted shut and curtains cover them. To the east, a hallway.   
-Items:Candlestick,Candlestick
-Exit Rooms: W-Apple Hallway
+Room Description: You are in the circular room. The windows to the west are bolted shut and curtains cover them. To the east, a hallway. A scroll hangs on the north wall. Writing is visible.   
+Items: Scroll,Lockpick
+Exit Rooms: w-Apple Hallway
+
 Room Name: Apple Hallway
-Room Description: You are in an empty hallway. Many closed doors surround you. To the west is the round room and north is the stairs. You cannot see what they lead to. 
-Items:
-Exit Rooms: E-Circle Room, N-Porcupine Stairs
-Room Name: Porcupine Stairs
+Room Description: You are in an empty hallway. Many closed doors surround you. To the west is the Circle Room and north is the Porcupine Stairs. The door to the stairs is locked. There is no key to the door. 
+Items: 
+Exit Rooms: e-Circle Room, n-Porcupine Stairs
+
+Room Name: Porcupine Stairs (3rd floor)
 Room Description: You are in the Porcupine Stairs. The stone, cold walls are trapped in darkness. Below you is the second floor and above you is the third floor. 
 Items:
-Exit Rooms: U-Third floor, D-Second floor
-Room Name: Second Floor
-Room Description: You are now on the second floor. The hallways are empty, but some doors are slightly ajar. 
+Exit Rooms: down-Second floor, s-Apple Hallway
+
+Room Name: Porcupine Stairs (2nd floor)
+Room Description: You are now on the second floor. The hallway is completely deserted. A few doors are left slightly ajar. 
 Items:
-Exit Rooms: N-Porcupine Stairs, S-Sir Harry Mill Pallat's Bedroom, W-Bulb Room, E-Pipe Room
+Exit Rooms: s-Sir Henry Mill Pellat's Bedroom, w-Bulb Room, 
+
 Room Name: Bulb Room
 Room Description: You are in the Bulb Room. There is a ragged red rug with a noticeable lump in the middle. One window facing north is bolted shut. 
-Items:Garlic
-Exit Rooms: S-linen closet, E-Second Floor, W-Lady Pellat's Bedroom
+Items: Garlic
+Exit Rooms: s-linen closet, e-Second Floor, w-Lady Pellat's Bedroom
+
 Room Name: Lady Pellat's Bedroom
 Room Description: You are now in Lady Pellat's Bedroom. A four-post bed with elegant pink bedsheets lies in the middle of the room. A golden wardrobe sits along the east wall with a few robes hanging out.
 Items: Robes
-Exit Rooms: N-Sitting Area, S-Guest Bedroom, E-Bulb Room
-Room Name: Hallway 3
-Room Description:  You are in an empty hallway. Many closed doors surround you. To the west is the round room and north is the stairs. You cannot see what they lead to. 
-Items:
-Exit Rooms: W-Round Room (third floor), N-Stairs to second floor
-Room Name: Hallway 3
-Room Description:  You are in an empty hallway. Many closed doors surround you. To the west is the round room and north is the stairs. You cannot see what they lead to. 
-Items:
-Exit Rooms: W-Round Room (third floor), N-Stairs to second floor
-Room Name: Hallway 3
-Room Description:  You are in an empty hallway. Many closed doors surround you. To the west is the round room and north is the stairs. You cannot see what they lead to. 
-Items:
-Exit Rooms: W-Round Room (third floor), N-Stairs to second floor
-Room Name: Hallway 3
-Room Description:  You are in an empty hallway. Many closed doors surround you. To the west is the round room and north is the stairs. You cannot see what they lead to. 
-Items:
-Exit Rooms: W-Round Room (third floor), N-Stairs to second floor
-Room Name: Hallway 3
-Room Description:  You are in an empty hallway. Many closed doors surround you. To the west is the round room and north is the stairs. You cannot see what they lead to. 
-Items:
-Exit Rooms: W-Round Room (third floor), N-Stairs to second floor
-Room Name: Hallway 3
-Room Description:  You are in an empty hallway. Many closed doors surround you. To the west is the round room and north is the stairs. You cannot see what they lead to. 
-Items:
-Exit Rooms: W-Round Room (third floor), N-Stairs to second floor
-Room Name: Hallway 3
-Room Description:  You are in an empty hallway. Many closed doors surround you. To the west is the round room and north is the stairs. You cannot see what they lead to. 
-Items:
-Exit Rooms: W-Round Room (third floor), N-Stairs to second floor
-Room Name: Hallway 3
-Room Description:  You are in an empty hallway. Many closed doors surround you. To the west is the round room and north is the stairs. You cannot see what they lead to. 
-Items:
-Exit Rooms: W-Round Room (third floor), N-Stairs to second floor
-Room Name: Hallway 3
-Room Description:  You are in an empty hallway. Many closed doors surround you. To the west is the round room and north is the stairs. You cannot see what they lead to. 
-Items:
-Exit Rooms: W-Round Room (third floor), N-Stairs to second floor
-Room Name: Hallway 3
-Room Description:  You are in an empty hallway. Many closed doors surround you. To the west is the round room and north is the stairs. You cannot see what they lead to. 
-Items:
-Exit Rooms: W-Round Room (third floor), N-Stairs to second floor
-Room Name: Hallway 3
-Room Description:  You are in an empty hallway. Many closed doors surround you. To the west is the round room and north is the stairs. You cannot see what they lead to. 
-Items:
-Exit Rooms: W-Round Room (third floor), N-Stairs to second floor
-Room Name: Hallway 3
-Room Description:  You are in an empty hallway. Many closed doors surround you. To the west is the round room and north is the stairs. You cannot see what they lead to. 
-Items:
-Exit Rooms: W-Round Room (third floor), N-Stairs to second floor
-Room Name: Hallway 3
-Room Description:  You are in an empty hallway. Many closed doors surround you. To the west is the round room and north is the stairs. You cannot see what they lead to. 
-Items:
-Exit Rooms: W-Round Room (third floor), N-Stairs to second floor
-Room Name: Hallway 3
-Room Description:  You are in an empty hallway. Many closed doors surround you. To the west is the round room and north is the stairs. You cannot see what they lead to. 
-Items:
-Exit Rooms: W-Round Room (third floor), N-Stairs to second floor
-Room Name: Hallway 3
-Room Description:  You are in an empty hallway. Many closed doors surround you. To the west is the round room and north is the stairs. You cannot see what they lead to. 
-Items:
-Exit Rooms: W-Round Room (third floor), N-Stairs to second floor
-Room Name: Round Room (third floor)
-Room Description:  You are in the round room. The windows to the west are bolted shut and curtains cover them. To the east, a hallway.   
-Items:
-Exit Rooms: E-Hallway 3
-Room Name: Hallway 3
-Room Description:  You are in an empty hallway. Many closed doors surround you. To the west is the round room and north is the stairs. You cannot see what they lead to. 
-Items:
-Exit Rooms: W-Round Room (third floor), N-Stairs to second floor
-Room Name: Hallway 3
-Room Description:  You are in an empty hallway. Many closed doors surround you. To the west is the round room and north is the stairs. You cannot see what they lead to. 
-Items:
-Exit Rooms: W-Round Room (third floor), N-Stairs to second floor
-Room Name: Hallway 3
-Room Description:  You are in an empty hallway. Many closed doors surround you. To the west is the round room and north is the stairs. You cannot see what they lead to. 
-Items:
-Exit Rooms: W-Round Room (third floor), N-Stairs to second floor
-Room Name: Hallway 3
-Room Description:  You are in an empty hallway. Many closed doors surround you. To the west is the round room and north is the stairs. You cannot see what they lead to. 
-Items:
-Exit Rooms: W-Round Room (third floor), N-Stairs to second floor
-Room Name: Hallway 3
-Room Description:  You are in an empty hallway. Many closed doors surround you. To the west is the round room and north is the stairs. You cannot see what they lead to. 
-Items:
-Exit Rooms: W-Round Room (third floor), N-Stairs to second floor
-Room Name: Hallway 3
-Room Description:  You are in an empty hallway. Many closed doors surround you. To the west is the round room and north is the stairs. You cannot see what they lead to. 
-Items:
-Exit Rooms: W-Round Room (third floor), N-Stairs to second floor
-Room Name: Hallway 3
-Room Description:  You are in an empty hallway. Many closed doors surround you. To the west is the round room and north is the stairs. You cannot see what they lead to. 
-Items:
-Exit Rooms: W-Round Room (third floor), N-Stairs to second floor
-Room Name: Hallway 3
-Room Description:  You are in an empty hallway. Many closed doors surround you. To the west is the round room and north is the stairs. You cannot see what they lead to. 
-Items:
-Exit Rooms: W-Round Room (third floor), N-Stairs to second floor
-Room Name: Hallway 3
-Room Description:  You are in an empty hallway. Many closed doors surround you. To the west is the round room and north is the stairs. You cannot see what they lead to. 
-Items:
-Exit Rooms: W-Round Room (third floor), N-Stairs to second floor
-Room Name: Hallway 3
-Room Description:  You are in an empty hallway. Many closed doors surround you. To the west is the round room and north is the stairs. You cannot see what they lead to. 
-Items:
-Exit Rooms: W-Round Room (third floor), N-Stairs to second floor
-Room Name: Hallway 3
-Room Description:  You are in an empty hallway. Many closed doors surround you. To the west is the round room and north is the stairs. You cannot see what they lead to. 
-Items:
-Exit Rooms: W-Round Room (third floor), N-Stairs to second floor
-Room Name: Hallway 3
-Room Description:  You are in an empty hallway. Many closed doors surround you. To the west is the round room and north is the stairs. You cannot see what they lead to. 
-Items:
-Exit Rooms: W-Round Room (third floor), N-Stairs to second floor
-Room Name: Hallway 3
-Room Description:  You are in an empty hallway. Many closed doors surround you. To the west is the round room and north is the stairs. You cannot see what they lead to. 
-Items:
-Exit Rooms: W-Round Room (third floor), N-Stairs to second floor
-Room Name: Hallway 3
-Room Description:  You are in an empty hallway. Many closed doors surround you. To the west is the round room and north is the stairs. You cannot see what they lead to. 
-Items:
-Exit Rooms: W-Round Room (third floor), N-Stairs to second floor
-Room Name: Hallway 3
-Room Description:  You are in an empty hallway. Many closed doors surround you. To the west is the round room and north is the stairs. You cannot see what they lead to. 
-Items:
-Exit Rooms: W-Round Room (third floor), N-Stairs to second floor
-Room Name: Hallway 3
-Room Description:  You are in an empty hallway. Many closed doors surround you. To the west is the round room and north is the stairs. You cannot see what they lead to. 
-Items:
-Exit Rooms: W-Round Room (third floor), N-Stairs to second floor
-Room Name: Hallway 3
-Room Description:  You are in an empty hallway. Many closed doors surround you. To the west is the round room and north is the stairs. You cannot see what they lead to. 
-Items:
-Exit Rooms: W-Round Room (third floor), N-Stairs to second floor
-Room Name: Hallway 3
-Room Description:  You are in an empty hallway. Many closed doors surround you. To the west is the round room and north is the stairs. You cannot see what they lead to. 
-Items:
-Exit Rooms: W-Round Room (third floor), N-Stairs to second floor
-Room Name: Hallway 3
-Room Description:  You are in an empty hallway. Many closed doors surround you. To the west is the round room and north is the stairs. You cannot see what they lead to. 
-Items:
-Exit Rooms: W-Round Room (third floor), N-Stairs to second floor
-Room Name: Hallway 3
-Room Description:  You are in an empty hallway. Many closed doors surround you. To the west is the round room and north is the stairs. You cannot see what they lead to. 
-Items:
-Exit Rooms: W-Round Room (third floor), N-Stairs to second floor
+Exit Rooms: n-Sitting Area, s-Guest Bedroom, e-Bulb Room
 
