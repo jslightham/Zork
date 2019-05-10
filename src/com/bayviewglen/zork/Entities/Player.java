@@ -1,6 +1,8 @@
 package com.bayviewglen.zork.Entities;
 
-import com.bayviewglen.zork.Items.Item;
+import com.bayviewglen.zork.Items.*;
+
+import java.lang.reflect.Constructor;
 import java.util.ArrayList; 
 
 public class Player extends Entity{
@@ -12,11 +14,20 @@ public class Player extends Entity{
 		super();
 	}
 
-	public boolean addToInventory(Item item){
-		if(currentInventoryWeight + item.getWeight() < INVENTORY_CAPACITY){
-			inventory.add(item);
-			System.out.println(item.getName() + " add");
-			return true;
+	public boolean addToInventory(String item){
+		Class<?> clazz;
+		Item object;
+		try {
+			clazz = Class.forName("com.bayviewglen.zork.Items." + item.trim());
+			Constructor<?> ctor = clazz.getConstructor();
+			object = (Item) ctor.newInstance();
+			if(currentInventoryWeight + object.getWeight() < INVENTORY_CAPACITY){
+				inventory.add(object);
+				
+				return true;
+			}
+		} catch (Exception e) {
+			return false;
 		}
 		return false;
 	}

@@ -6,6 +6,7 @@ import java.lang.reflect.Constructor;
 import java.util.HashMap;
 import java.util.Scanner;
 
+import com.bayviewglen.zork.Entities.Player;
 import com.bayviewglen.zork.Items.*;
 
 /**
@@ -26,6 +27,7 @@ import com.bayviewglen.zork.Items.*;
  */
 class Game {
 	private Parser parser;
+	private Player player;
 	private Room currentRoom;
 	// This is a MASTER object that contains all of the rooms and is easily
 	// accessible.
@@ -110,11 +112,12 @@ class Game {
 	public Game() {
 		try {
 			initRooms("data/Rooms.dat");
-			currentRoom = masterRoomMap.get("ROOM_1");
+			currentRoom = masterRoomMap.get("CIRCLE_ROOM");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		parser = new Parser();
+		player = new Player();
 	}
 
 	/**
@@ -171,6 +174,20 @@ class Game {
 			case "eat":
 				System.out.println("Do you really think you should be eating at a time like this?");
 				break;
+			case "take":
+				if(command.hasItem()) {
+					if(player.addToInventory(command.getItem())) {
+						System.out.println("Taken");
+					}else {
+						System.out.println("You cannot carry any more!");
+					}
+					
+				}else {
+					System.out.println("Take what?");
+				}
+					
+				break;
+					
 			case "look":
 				System.out.print("Items: ");
 				for(Item i : currentRoom.getItems()) {
