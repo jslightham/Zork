@@ -2,29 +2,24 @@ Room Name: Circle Room
 Room Description: You are in the circular room. The windows to the west are bolted shut and curtains cover them. To the east, a hallway. A scroll hangs on the north wall. Writing is visible.   
 Items: Scroll,Lockpick
 Exit Rooms: w-Apple Hallway
-
 Room Name: Apple Hallway
 Room Description: You are in an empty hallway. Many closed doors surround you. To the west is the Circle Room and north is the Porcupine Stairs. The door to the stairs is locked. There is no key to the door. 
 Items: 
 Exit Rooms: e-Circle Room, n-Porcupine Stairs
-
 Room Name: Porcupine Stairs (3rd floor)
 Room Description: You are in the Porcupine Stairs. The stone, cold walls are trapped in darkness. Below you is the second floor and above you is the third floor. 
 Items:
 Exit Rooms: down-Second floor, s-Apple Hallway
-
 Room Name: Porcupine Stairs (2nd floor)
 Room Description: You are now on the second floor. The hallway is completely deserted. A few doors are left slightly ajar. 
 Items:
-Exit Rooms: s-Sir Henry Mill Pellat's Bedroom, w-Bulb Room, 
-
+Exit Rooms: s-Sir Henry Mill Pellatt's Bedroom, w-Bulb Room, e-Pipe Room
 Room Name: Bulb Room
 Room Description: You are in the Bulb Room. There is a ragged red rug with a noticeable lump in the middle. One window facing north is bolted shut. 
 Items: Garlic
-Exit Rooms: s-linen closet, e-Second Floor, w-Lady Pellat's Bedroom
-
-Room Name: Lady Pellat's Bedroom
-Room Description: You are now in Lady Pellat's Bedroom. A four-post bed with elegant pink bedsheets lies in the middle of the room. A golden wardrobe sits along the east wall with a few robes hanging out.
+Exit Rooms: s-linen closet, e-Porcupine Stairs (2nd floor), w-Lady Pellat's Bedroom
+Room Name: Lady Pellatt's Bedroom
+Room Description: You are now in Lady Pellatt's Bedroom. A four-post bed with elegant pink bedsheets lies in the middle of the room. A golden wardrobe sits along the east wall with a few robes hanging out.
 Items: Robes
 Exit Rooms: n-Sitting Area, s-Guest Bedroom, e-Bulb Room
 
