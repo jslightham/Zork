@@ -1,32 +1,32 @@
-Room Name: Circle Room
-Room Description: You are in the circular room. The windows to the west are bolted shut and curtains cover them. To the east, a hallway. A scroll hangs on the north wall. Writing is visible.   
+Room name: Circle Room
+Room Description: You are in the circular room. The windows to the west are bolted shut and curtains cover them.<br>To the east, a hallway. A scroll hangs on the north wall. Writing is visible.   
 Items: Scroll,Lockpick
-Exit Rooms: w-Apple Hallway
-Room Name: Apple Hallway
+Exit Rooms: W-Apple Hallway
+Room name: Apple Hallway
 Room Description: You are in an empty hallway. Many closed doors surround you. To the west is the Circle Room and north is the Porcupine Stairs. The door to the stairs is locked. There is no key to the door. 
 Items: 
-Exit Rooms: e-Circle Room, n-Porcupine Stairs
-Room Name: Porcupine Stairs (3rd floor)
+Exit Rooms: E-Circle Room, N-Porcupine Stairs
+Room name: Porcupine Stairs (3rd Floor)
 Room Description: You are in the Porcupine Stairs. The stone, cold walls are trapped in darkness. Below you is the second floor and above you is the third floor. 
 Items:
-Exit Rooms: down-Second floor, s-Apple Hallway
-Room Name: Porcupine Stairs (2nd floor)
+Exit Rooms: S-Apple Hallway
+Room name: Porcupine Stairs (2nd Floor)
 Room Description: You are now on the second floor. The hallway is completely deserted. A few doors are left slightly ajar. 
 Items:
-Exit Rooms: s-Sir Henry Mill Pellatt's Bedroom, w-Bulb Room, e-Pipe Room
-Room Name: Bulb Room
+Exit Rooms: S-Sir Henry Mill Pellatt's Bedroom, W-Bulb Room, E-Pipe Room
+Room name: Bulb Room
 Room Description: You are in the Bulb Room. There is a ragged red rug with a noticeable lump in the middle. One window facing north is bolted shut. 
 Items: Garlic
-Exit Rooms: s-linen closet, e-Porcupine Stairs (2nd floor), w-Lady Pellat's Bedroom
-Room Name: Lady Pellatt's Bedroom
+Exit Rooms: E-Porcupine Stairs , W-Lady Pellat's Bedroom
+Room name: Lady Pellatt's Bedroom
 Room Description: You are now in Lady Pellatt's Bedroom. A four-post bed with elegant pink bedsheets lies in the middle of the room. A golden wardrobe sits along the east wall with a few robes hanging out.
 Items: Robes
-Exit Rooms: n-Sitting Area, s-Guest Bedroom, e-Bulb Room
-Room Name: Sitting Area
+Exit Rooms: N-Sitting Area, S-Guest Bedroom, E-Bulb Room
+Room name: Sitting Area
 Room Description: You are in a room with multiple chairs and fake plants. There are several windows, all of which are shut. A few scratches can be noted on the chairs.
 Items:
-Exit Rooms: s-Lady Pellatt's Bedroom
-Room Name: Pipe Room
+Exit Rooms: S-Lady Pellatt's Bedroom
+Room name: Pipe Room
 Room Description: Welcome to the Pipe Room. A misty smell fills the room. Strange items lay in a pile near the north wall. I suggest you take a look...
 Items:
-Exit Rooms: w-Porcupine Stairs (2nd floor), s-Landing, n-East Sitting Room, e-Round Room
+Exit Rooms: W-Porcupine Stairs , S-Landing, N-East Sitting Room, E-Round Room
