@@ -1,6 +1,6 @@
 Room Name: Circle Room
 Room Description: You are in the circular room. The windows to the west are bolted shut and curtains cover them. To the east, a hallway. A scroll hangs on the north wall. Writing is visible.   
-Items: Scroll,Lockpick
+Items: Scroll 1,Lockpick
 Exit Rooms: w-Apple Hallway
 Room Name: Apple Hallway
 Room Description: You are in an empty hallway. Many closed doors surround you. To the west is the Circle Room and north is the Porcupine Stairs. The door to the stairs is locked. There is no key to the door. 
@@ -30,3 +30,14 @@ Room Name: Pipe Room
 Room Description: Welcome to the Pipe Room. A misty smell fills the room. Strange items lay in a pile near the north wall. I suggest you take a look...
 Items:
 Exit Rooms: w-Porcupine Stairs (2nd floor), s-Landing, n-East Sitting Room, e-Round Room
+Room Name: Round Room
+Room Description: You are now into the Round Room. Nothing is out of the ordinary in here...
+Items: hula hoop 
+Exit Rooms: w-Pipe Room, n-Elm Bedroom, s-Oak Bedroom
+Room Name: Elm Bedroom
+Room Description: You are in the Elm Bedroom. The walls are all wooden and a few windows face north. A bed sits in the middle of the room. A few pillows are on the ground. It looks like someone was in here...
+Items: water bottle,pen,book
+Exit Rooms: s-Round Room, w-East Sitting Room
+
+
+
