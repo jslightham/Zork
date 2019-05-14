@@ -111,7 +111,7 @@ class Game {
 	 */
 	public Game() {
 		try {
-			initRooms("data/Rooms.dat");
+			initRooms("data/rooms.dat");
 			currentRoom = masterRoomMap.get("CIRCLE_ROOM");
 		} catch (Exception e) {
 			e.printStackTrace();
