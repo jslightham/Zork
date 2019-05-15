@@ -141,8 +141,8 @@ class Game {
 	 */
 	private void printWelcome() {
 		System.out.println("Welcome to ESCAPE CASA LOMA!\n-----");
-		System.out.println("A new, fresh take on the escape-room franchise,\nby Johnathon, Luca, Victoria and Evan ");
-		System.out.println("Type 'help' if you need help, and enjoy the game!");
+		System.out.println("A new, fresh take on the escape-room,\nby Johnathon, Luca, Victoria and Evan ");
+		System.out.println("\nType 'help' if you need help, consult the wiki \non GitHub if you are confused and enjoy the game!");
 		System.out.println("\n---------------------\n");
 		System.out.println(currentRoom.longDescription());
 	}
