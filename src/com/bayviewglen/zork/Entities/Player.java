@@ -14,20 +14,10 @@ public class Player extends Entity{
 		super();
 	}
 
-	public boolean addToInventory(String item){
-		Class<?> clazz;
-		Item object;
-		try {
-			clazz = Class.forName("com.bayviewglen.zork.Items." + item.trim());
-			Constructor<?> ctor = clazz.getConstructor();
-			object = (Item) ctor.newInstance();
-			if(currentInventoryWeight + object.getWeight() < INVENTORY_CAPACITY){
-				inventory.add(object);
-				
-				return true;
-			}
-		} catch (Exception e) {
-			return false;
+	public boolean addToInventory(Item item){
+		if(currentInventoryWeight + item.getWeight() < INVENTORY_CAPACITY){
+			inventory.add(item);
+			return true;
 		}
 		return false;
 	}
@@ -35,6 +25,10 @@ public class Player extends Entity{
 	public void removeFromInventory(Item item){
 		inventory.remove(item);
 
+	}
+	
+	public ArrayList<Item> getInventory() {
+		return inventory;
 	}
 
 }

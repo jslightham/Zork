@@ -31,3 +31,5 @@ pen, item
 book, item
 socks, item
 painting, item
+inventory, verb
+i, verb
