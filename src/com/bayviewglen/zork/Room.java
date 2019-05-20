@@ -187,4 +187,12 @@ class Room {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	public boolean hasItem(Item item) {
+		boolean hasItem = false;
+		for(Item i : items) {
+			if(i.equals(item))
+				hasItem = true;
+		}
+		return hasItem;
+	}
 }

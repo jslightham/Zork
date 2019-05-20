@@ -175,12 +175,24 @@ class Game {
 				break;
 			case "take":
 				if(command.hasItem()) {
-					if(player.addToInventory(command.getItem())) {
-						System.out.println("Taken");
-					}else {
-						System.out.println("You cannot carry any more!");
+					Class<?> clazz;
+					Item object;
+					try {
+						clazz = Class.forName("com.bayviewglen.zork.Items." + command.getItem().substring(0, 1).toUpperCase().trim() + command.getItem().substring(1).trim());
+						Constructor<?> ctor = clazz.getConstructor();
+						object = (Item) ctor.newInstance();
+						if(!currentRoom.hasItem(object)) {
+							System.out.println("This room has no " + command.getItem() + "!");
+						}
+						else if(player.addToInventory(object)) {
+							currentRoom.removeItem(object);
+							System.out.println("Taken");
+						}else {
+							System.out.println("You cannot carry any more!");
+						}
+					} catch(Exception e) {
+						
 					}
-					
 				}else {
 					System.out.println("Take what?");
 				}
@@ -188,18 +200,39 @@ class Game {
 				break;
 					
 			case "look":
-				System.out.print("Items: ");
+				boolean hasItems = false;
+				String items = "";
 				for(Item i : currentRoom.getItems()) {
-					System.out.print(i.getName() + "   ");
+					hasItems = true;
+					items += i.getName() + "   ";
 				}
-				System.out.println();
-				/*
-				for (Item i : itemsInRooms.keySet()) {
-					System.out.print(i.getName() + "  ");
+				if(hasItems) {
+					System.out.println(currentRoom.longDescription());
+					System.out.print("Items: ");
+					System.out.print(items);
+					System.out.println();
+				}else {
+					System.out.println(currentRoom.longDescription());
+					System.out.println("There are no items.");
 				}
-				System.out.println();
-				*/
 				break;
+				
+			case "inventory": case "i":
+				boolean hasPlayerItems = false;
+				String itemsP = "";
+				for(Item i : player.getInventory()) {
+					hasPlayerItems = true;
+					itemsP += i.getName() + "   ";
+				}
+				if(hasPlayerItems) {
+					System.out.print("Inventory: ");
+					System.out.print(itemsP);
+					System.out.println();
+				}else {
+					System.out.println("You are empty handed.");
+				}
+				break;
+				
 			default:
 				return false;
 		}
