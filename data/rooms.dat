@@ -5,19 +5,19 @@ Exit Rooms: W-Apple Hallway
 Room name: Apple Hallway
 Room Description: You are in an empty hallway. Many closed doors surround you. To the west is the Circle Room and north is the Porcupine Stairs. The door to the stairs is locked. There is no key to the door. 
 Items: 
-Exit Rooms: E-Circle Room, N-Porcupine Stairs
+Exit Rooms: E-Circle Room, N-Porcupine Stairs (3rd Floor)
 Room name: Porcupine Stairs (3rd Floor)
 Room Description: You are in the Porcupine Stairs. The stone, cold walls are trapped in darkness. Below you is the second floor and above you is the third floor. 
 Items:
-Exit Rooms: S-Apple Hallway
+Exit Rooms: S-Apple Hallway, Down-Porcupine Stairs (2nd Floor)
 Room name: Porcupine Stairs (2nd Floor)
 Room Description: You are now on the second floor. The hallway is completely deserted. A few doors are left slightly ajar. 
 Items:
-Exit Rooms: S-Sir Henry Mill Pellatt's Bedroom, W-Bulb Room, E-Pipe Room
+Exit Rooms: S-Sir Henry Mill Pellatt's Bedroom, W-Bulb Room, E-Pipe Room, Up-Porcupine Stairs (3rd Floor)
 Room name: Bulb Room
 Room Description: You are in the Bulb Room. There is a ragged red rug with a noticeable lump in the middle. One window facing north is bolted shut. 
 Items: Garlic
-Exit Rooms: E-Porcupine Stairs, W-Lady Pellat's Bedroom
+Exit Rooms: E-Porcupine Stairs (2nd Floor), W-Lady Pellat's Bedroom
 Room name: Lady Pellatt's Bedroom
 Room Description: You are now in Lady Pellatt's Bedroom. A four-post bed with elegant pink bedsheets lies in the middle of the room. A golden wardrobe sits along the east wall with a few robes hanging out.
 Items: Robes
@@ -29,7 +29,7 @@ Exit Rooms: S-Lady Pellatt's Bedroom
 Room name: Pipe Room
 Room Description: Welcome to the Pipe Room. A misty smell fills the room. Strange items lay in a pile near the north wall. I suggest you take a look...
 Items:
-Exit Rooms: W-Porcupine Stairs, S-Landing, N-East Sitting Room, E-Round Room
+Exit Rooms: W-Porcupine Stairs (2nd Floor), S-Landing, N-East Sitting Room, E-Round Room
 Room name: Round Room
 Room Description: You are now into the Round Room. Nothing is out of the ordinary in here...
 Items: 
@@ -47,6 +47,42 @@ Room Description: You are now in the Oak Bedroom. The walls are covered with pin
 Items: Socks
 Exit Rooms: N-Round Room, W-Landing
 Room name: Landing
-Room Description: You are now outside on the Landing. A cold gust of wind sweeps by. It is too high to jump, and you don't have a ladder. 
+Room Description: You are now outside on the Landing. A cold gust of wind sweeps by. There doesn't seem to be anywhere to go. It is too high to jump, and you don't have a ladder. 
 Items:
 Exit Rooms: W-Sir Henry Mill Pellatt's Bedroom, E-Oak Bedroom
+Room name: Sir Henry Mill Pellatt's Bedroom
+Room Description: Welcome to Sir Henry Mill Pellatt's Bedroom. As the master of this castle, Sir Pellatt isn't in this room very often. Only some clothes, a bed, and a desk reside here. Oh, and don't touch his notebook.
+Items: Notebook
+Exit Rooms: N-Porcupine Stairs (2nd Floor), E-Landing, S-Sir Henry Mill Pellatt's Bathroom, W-Linen Closet
+Room name: Sir Henry Mill Pellatt's Bathroom
+Room Description: You are now in Sir Henry Mill Pellatt's Bathroom. The floor mat is still quite wet. Perhaps someone just took a shower. A half-empty shaving cream bottle lies on the counter, along with a toothbrush and some toothpaste.
+Items: Shaving Cream,Toothbrush,Toothpaste
+Exit Rooms: N-Sir Henry Mill Pellatt's Bathroom
+Room name: Linen Closet
+Room Description: A whiff of lavender-scented laundry detergent enters your nostrils as you step into a dark room. Ah, you must be in the Linen Closet. No one really comes in here other than the servants. I'm pretty sure Sir Pellatt and Lady Pellat don't even know this room exists.
+Items: Clothes
+Exit Rooms: E-Sir Henry Mill Pellatt's Bedroom, W-Guest Bedroom, S-Willow Bedroom
+Room name: Willow Bedroom
+Room Description: This is the Willow Bedroom. Pretty ordinary, if you ask me. Say, doesn't this look like the Oak Bedroom?
+Items: 
+Exit Rooms: N-Linen Closet, S-Silver Stairs (2nd Floor), W-Another Sitting Area
+Room name: Silver Stairs (2nd Floor)
+Room Description: You are now in the Silver Stairs on the second floor. The bottom of the stairs is blocked by a door. Looks like you need to have something in order to open it. Better find it quick!
+Items:
+Exit Rooms: Down-Silver Stairs (1st Floor), N-Willow Bedroom, S-Evergreen Bedroom
+Room name: Evergreen Bedroom
+Room Description: Oh look! Another bedroom! How exciting! This one's walls are even green this time. Cool!
+Items:
+Exit Rooms: N-Silver Stairs (2nd Floor), W-Aspen Bedroom
+Room name: Aspen Bedroom
+Room Description: Jeez, how many bedrooms are there? It doesn't even look like anybody's slept here before. The curtains are blowing though. Could be a draft...
+Items:
+Exit Rooms: E-Evergreen Bedroom, N-Another Sitting Area
+Room name: Another Sitting Area
+Room Description: You are now in Another Sitting Area. Yes, that is really its name. Sir Pellatt lacks creativity. This is quite a spectactular room, however. Sitting down for a bit, get comfortable. But not too comfortable, you need to escape.
+Items:
+Exit Rooms: S-Apsen Bedroom, E-Willow Bedroom
+Room name: Guest Bedroom
+Room Description: Welcome to the guest bedroom, where guests like yourself stay for the night. Although Sir Pellatt has other plans for you... It looks like there's something on the bed. Might be for you.
+Items: Scroll 2 
+Exit Rooms: E-Linen Closet, S-Another Sitting Area
