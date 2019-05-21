@@ -122,3 +122,23 @@ Room name: Great Hall
 Room Description: You are in the Great Hall. This empty room gives off an eerie feeling. On the north wall, there is a fire place that looks like it is about to burn out. I don't think someone is going to light it again. 
 Items:
 Exit Rooms: S-Entry, W-Library, E-Oak Drawing Room
+Room name: Oak Drawing Room
+Room Description: Welcome to the Oak Drawing Room. A large red carpet covers the floor. Giant floor-to-ceiling windows face north, letting in lots of sunlight. A sword is perched on a small table in the center of the room. Interesting choice of decor...
+Items: Sword
+Exit Rooms: W-Great hall, S-Smoking Room
+Room name: Smoking Room
+Room Description: You are now in the Smoking Room. This room is too fancy for its purpose if you ask me. I don't see why the fireplace or deer heads are necessary. A leather couch faces the fireplace, and a fur blanket hangs over it.
+Items: Blanket
+Exit Rooms: N-Oak Drawing Room, S-Billiard Room, W-Entry
+Room name: Billards Room
+Room Description: You are in the Billiard Room. The only thing in this room would be the pool table in the center. There aren't any balls or poles around though, so I guess no game today!
+Items: 
+Exit Rooms: N-Smoking Room
+Room name: Entry
+Room Description: Welcome to the entrance of Casa Loma. This is where you escape! Oh wait, that door is bolted shut. Plus, it doesn't even have a lock! Shucks, how will you get out now???
+Items:
+Exit Rooms: E-Smoking Room, N-Great Hall, W-Study
+Room name: Study
+Room Description: You are now in the Study. The south wall has a floor-to-ceiling book shelf, towering over you. A big wooden desk, along with a cushioned chair, face the entrance. 2 lit candles illuminate the desk, and a key is visible.
+Items: Key
+Exit Rooms: N-Library, E-Entry, W-Serving and Breakfast Room 
