@@ -26,6 +26,7 @@ class Room {
 	private String description;
 	private HashMap<String, Room> exits; // stores exits of this room.
 	private ArrayList<Item> items;
+	private boolean locked;
 
 	/**
 	 * Create a room described "description". Initially, it has no exits.
@@ -45,6 +46,14 @@ class Room {
 		items = new ArrayList<Item>();
 	}
 
+	public void setLocked(boolean b) {
+		locked = b;
+	}
+	
+	public boolean getLocked() {
+		return locked;
+	}
+	
 	public void setExit(char direction, Room r) throws Exception {
 		String dir = "";
 		switch (direction) {

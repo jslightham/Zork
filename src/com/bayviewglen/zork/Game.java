@@ -54,6 +54,9 @@ class Game {
 				// Read the Description
 				String roomDescription = roomScanner.nextLine();
 				room.setDescription(roomDescription.split(":")[1].replaceAll("<br>", "\n").trim());
+				// Read the Description
+				boolean locked = Boolean.parseBoolean(roomScanner.nextLine());
+				room.setLocked(locked);
 				// Read the Items
 				String items = roomScanner.nextLine();
 				try {
@@ -232,7 +235,20 @@ class Game {
 					System.out.println("You are empty handed.");
 				}
 				break;
-				
+			case "open": 
+				boolean hasLockpick = false;
+				for(int i =0; i<player.getInventory().size(); i++) {
+					if(player.getInventory().get(i).equals(new Lockpick())) {
+						hasLockpick = true;
+						player.removeFromInventory(new Lockpick());
+						break;
+					}
+				}
+				if(command.hasDirection()) {
+					Room nextRoom = currentRoom.nextRoom(command.getDirection());
+					nextRoom.setLocked(false);
+				}
+				break;
 			default:
 				return false;
 		}
@@ -267,6 +283,9 @@ class Game {
 		Room nextRoom = currentRoom.nextRoom(direction);
 		if (nextRoom == null)
 			System.out.println("There is no door!");
+		else if(nextRoom.getLocked()) {
+			System.out.println("The door is locked!");
+		}
 		else {
 			currentRoom = nextRoom;
 			System.out.println(currentRoom.longDescription());
