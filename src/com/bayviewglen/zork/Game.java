@@ -159,7 +159,7 @@ class Game {
 		}
 		String commandWord = command.getCommandWord();
 		switch(commandWord) {
-			case "go": case "n": case "s": case "e": case "w": case "north": case "south": case "west": case "east": case "up": case "down":
+			case "go": case "n": case "s": case "e": case "w": case "north": case "south": case "west": case "east": case "up": case "down": case "d": case "u":
 				goRoom(command);
 				break;
 			case "help":
