@@ -46,4 +46,12 @@ warm bread, item
 clothes, item
 sword, item
 blanket, item
+<<<<<<< HEAD
 die, verb
+=======
+butter, item
+novel, item
+mop, item
+bucket, item
+towels, item
+>>>>>>> branch 'master' of https://github.com/jslightham/Zork

@@ -144,9 +144,9 @@ Locked: false
 Items:Scroll 3
 Exit Rooms: E-Dining Room
 Room name: Library
-Room Description: You are in the Library. Intricate designs are carved into the tall arced ceiling. Thousands and thousands of books stretch from the floor to the ceiling. A few blue couches with a lantern on a small side table sit in the far northwest corner of the room. An open book with a dusty leather cover rests on the table.
+Room Description: You are in the Library. Intricate designs are carved into the tall arced ceiling. Thousands and thousands of books stretch from the floor to the ceiling. A few blue couches with a lantern on a small side table sit in the far northwest corner of the room. An open novel with a dusty leather cover rests on the table.
 Locked: false
-Items:Book
+Items:Novel
 Exit Rooms: W-Dining Room, S-Study, E-Great Hall
 Room name: Great Hall
 Room Description: You are in the Great Hall. This empty room gives off an eerie feeling. On the north wall, there is a fire place that looks like it is about to burn out. I don't think someone is going to light it again. 
