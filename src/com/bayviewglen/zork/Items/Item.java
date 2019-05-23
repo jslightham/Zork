@@ -7,6 +7,7 @@ public class Item {
 	private boolean isConsumable;
 	private int health;
 	private int weight;
+	private int damage;
 	
 	public Item(int id, String name, String description, boolean isConsumable, int health, int weight) {
 		this.id = id;
@@ -15,6 +16,14 @@ public class Item {
 		this.isConsumable = isConsumable;
 		this.health = health;
 		this.weight = weight;
+	}
+	
+	public Item(int id, String name, String description, int weight, int damage) {
+		this.id = id;
+		this.name = name;
+		this.description = description;
+		this.weight = weight;
+		this.damage = damage;
 	}
 
 	public String getDescription() {
