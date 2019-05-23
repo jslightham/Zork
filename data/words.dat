@@ -32,7 +32,6 @@ book, item
 socks, item
 painting, item
 inventory, verb
-i, verb
 notebook, item
 shaving cream, item
 toothbrush, item
@@ -47,3 +46,4 @@ warm bread, item
 clothes, item
 sword, item
 blanket, item
+die, verb

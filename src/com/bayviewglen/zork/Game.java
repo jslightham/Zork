@@ -130,12 +130,19 @@ class Game {
 		printWelcome();
 		// Enter the main command loop. Here we repeatedly read commands and
 		// execute them until the game is over.
-
-		boolean finished = false;
-		while (!finished) {
-			Command command = parser.getCommand();
-			finished = processCommand(command);
+		Scanner in = new Scanner(System.in); 
+		if(in.nextLine().equals("play")){
+			System.out.println("\nType 'help' if you need help, consult the wiki \non GitHub if you are confused and enjoy the game!\n");
+			System.out.println("\n\nEscape Casa Loma: A text-based escape game");
+			System.out.println("---------------------\n");
+			System.out.println(currentRoom.longDescription()); 
+			boolean finished = false;
+			while (!finished) {
+				Command command = parser.getCommand();
+				finished = processCommand(command);
+			}
 		}
+			
 		System.out.println("Thank you for playing.  Good bye.");
 	}
 
@@ -145,9 +152,8 @@ class Game {
 	private void printWelcome() {
 		System.out.println("Welcome to ESCAPE CASA LOMA!\n-----");
 		System.out.println("A new, fresh take on the escape-room,\nby Johnathon, Luca, Victoria and Evan ");
-		System.out.println("\nType 'help' if you need help, consult the wiki \non GitHub if you are confused and enjoy the game!");
-		System.out.println("\n---------------------\n");
-		System.out.println(currentRoom.longDescription());
+		System.out.println("Type \"play\" to play the game. If you want to close the game at any time, type \"quit\".");
+		System.out.print(">");
 	}
 
 	/**
@@ -173,6 +179,9 @@ class Game {
 				break;
 			case "quit":
 				return true;
+			case "die":
+				System.out.println("If you insist... \n Poof! You're gone. You're out of the castle now, but now a new, grand new adventure begins...");
+				return true; 
 			case "eat":
 				System.out.println("Do you really think you should be eating at a time like this?");
 				break;
@@ -232,7 +241,7 @@ class Game {
 					System.out.print(itemsP);
 					System.out.println();
 				}else {
-					System.out.println("You are empty handed.");
+					System.out.println("You have nothing on you. Try and find some items.");
 				}
 				break;
 			case "open": 
@@ -261,10 +270,7 @@ class Game {
 	 * message and a list of the command words.
 	 */
 	private void printHelp() {
-		System.out.println("You are lost. You are alone. You wander");
-		System.out.println("around at Monash Uni, Peninsula Campus.");
-		System.out.println();
-		System.out.println("Your command words are:");
+		System.out.println("Here's what you can do:");
 		parser.showCommands();
 	}
 
@@ -284,7 +290,7 @@ class Game {
 		if (nextRoom == null)
 			System.out.println("There is no door!");
 		else if(nextRoom.getLocked()) {
-			System.out.println("The door is locked!");
+			System.out.println("The door is locked. You need to find a key to open it.");
 		}
 		else {
 			currentRoom = nextRoom;
