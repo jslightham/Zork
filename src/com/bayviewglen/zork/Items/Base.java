@@ -1,4 +1,5 @@
 package com.bayviewglen.zork.Items;
+
 public class Base extends Item{
 	
 	public Base(){
