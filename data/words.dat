@@ -57,4 +57,5 @@ open, verb
 i, verb
 unlock, verb
 drop, verb
-HenryPelatt, enemy
+henrypelatt, enemy
+attack, verb

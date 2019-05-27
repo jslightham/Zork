@@ -16,6 +16,7 @@ public class Item {
 		this.isConsumable = isConsumable;
 		this.health = health;
 		this.weight = weight;
+		this.damage = 1;
 	}
 	
 	public Item(int id, String name, String description, int weight, int damage) {
@@ -62,6 +63,9 @@ public class Item {
 	}
 	public boolean equals(Item item){
 		return this.id == item.id && this.name.equals(item.name) && this.description.equals(item.description) && this.isConsumable == item.isConsumable && this.health == item.health && this.weight == item.weight;
+	}
+	public int getDamage() {
+		return this.damage;
 	}
 	
 }
