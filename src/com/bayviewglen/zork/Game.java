@@ -154,18 +154,40 @@ class Game {
 		parser = new Parser();
 		player = new Player();
 	}
+	
+	/**
+	 * Print out the opening message for the player.
+	 */
+	private boolean printWelcome() {
+		Scanner in = new Scanner(System.in); 
+		boolean isNotValid = true; 
+		System.out.println("Welcome to ESCAPE CASA LOMA!\n-----");
+		System.out.println("A new, fresh take on the escape-room,\nby Johnathon, Luca, Victoria and Evan ");
+		System.out.println("Type \"play\" to play the game. If you wish to close the game at any time, type \"quit\".");
+		while(isNotValid) {
+			System.out.print("> ");
+			String i = in.nextLine();
+			if(i.toLowerCase().equals("play")) {
+				return true; 
+			}else if(i.toLowerCase().equals("quit")) { 
+				return false; 
+			}
+			System.out.println("That is not a valid response. Type \"play\" to play the game. If you wish to close the game, type \"quit\".");
+		}
+		return false; 
+		
+
+	}
 
 	/**
 	 * Main play routine. Loops until end of play.
 	 */
 	public void play() {
-		printWelcome();
+			if(printWelcome()) {
 		// Enter the main command loop. Here we repeatedly read commands and
 		// execute them until the game is over.
-		Scanner in = new Scanner(System.in); 
-		if(in.nextLine().equals("play")){
-			System.out.println("\nType 'help' if you need help, consult the wiki \non GitHub if you are confused and enjoy the game!\n");
-			System.out.println("\n\nEscape Casa Loma: A text-based escape game");
+		System.out.println("\nType 'help' if you need help, consult the wiki \non GitHub if you are confused and enjoy the game!\n");
+			System.out.println("\n\nEscape Casa Loma: A text-based adventure game");
 			System.out.println("---------------------\n");
 			System.out.print(currentRoom.longDescription()); 
 			System.out.println(currentRoom.exitString());
@@ -175,19 +197,9 @@ class Game {
 				finished = processCommand(command);
 			}
 		}
-			
-		System.out.println("Thank you for playing.  Good bye.");
+		System.out.println("Thank you for playing. Goodbye!");
 	}
 
-	/**
-	 * Print out the opening message for the player.
-	 */
-	private void printWelcome() {
-		System.out.println("Welcome to ESCAPE CASA LOMA!\n-----");
-		System.out.println("A new, fresh take on the escape-room,\nby Johnathon, Luca, Victoria and Evan ");
-		System.out.println("Type \"play\" to play the game. If you want to close the game at any time, type \"quit\".");
-		System.out.print("> ");
-	}
 
 	/**
 	 * Given a command, process (that is: execute) the command. If this command
