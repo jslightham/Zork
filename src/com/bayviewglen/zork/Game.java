@@ -54,8 +54,8 @@ class Game {
 				// Read the Description
 				String roomDescription = roomScanner.nextLine();
 				room.setDescription(roomDescription.split(":")[1].replaceAll("<br>", "\n").trim());
-				// Read the Description
-				boolean locked = Boolean.parseBoolean(roomScanner.nextLine());
+				// Read the locked state
+				boolean locked = Boolean.parseBoolean(roomScanner.nextLine().split(":")[1].replaceAll("<br>", "\n").trim());
 				room.setLocked(locked);
 				// Read the Items
 				String items = roomScanner.nextLine();
@@ -168,7 +168,31 @@ class Game {
 		}
 		String commandWord = command.getCommandWord();
 		switch(commandWord) {
-			case "go": case "n": case "s": case "e": case "w": case "north": case "south": case "west": case "east": case "up": case "down": case "d": case "u":
+		case "open": case "unlock":
+			boolean hasLockPick = false;
+			for(int i =0; i<player.getInventory().size(); i++) {
+				if(player.getInventory().get(i).equals(new Lockpick())) {
+					hasLockPick = true;
+					break;
+				}
+			}
+			
+			if(command.hasDirection() && hasLockPick) {
+				Room nextRoom = currentRoom.nextRoom(command.getDirection());
+				if(nextRoom.getLocked()) {
+					nextRoom.setLocked(false);
+					player.removeFromInventory(new Lockpick());
+					System.out.println("With great effort, you unlocked the door!");
+				}else{
+					System.out.println("That door is already unlocked!");
+				}
+			}else if(!command.hasDirection()){
+				System.out.println("You must specify a direction!");
+			}else {
+				System.out.println("You need a lockpick!");
+			}
+			break;	
+		case "go": case "n": case "s": case "e": case "w": case "north": case "south": case "west": case "east": case "up": case "down": case "d": case "u":
 				goRoom(command);
 				break;
 			case "help":
@@ -242,20 +266,6 @@ class Game {
 					System.out.println();
 				}else {
 					System.out.println("You have nothing on you. Try and find some items.");
-				}
-				break;
-			case "open": 
-				boolean hasLockpick = false;
-				for(int i =0; i<player.getInventory().size(); i++) {
-					if(player.getInventory().get(i).equals(new Lockpick())) {
-						hasLockpick = true;
-						player.removeFromInventory(new Lockpick());
-						break;
-					}
-				}
-				if(command.hasDirection()) {
-					Room nextRoom = currentRoom.nextRoom(command.getDirection());
-					nextRoom.setLocked(false);
 				}
 				break;
 			default:

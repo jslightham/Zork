@@ -35,6 +35,7 @@ class Parser {
 		String verb = "";
 		String direction = "";
 		String item = "";
+		boolean open = false;
 		//String word2;
 		ArrayList<String> words = new ArrayList<String>();
 		ArrayList<String> otherWords = new ArrayList<String>();
@@ -50,6 +51,9 @@ class Parser {
 			words.add(tokenizer.nextToken());
 		}
 		for(int i=0; i<words.size(); i++) {
+			if(words.get(i).equals("open") || words.get(i).equals("unlock")) {
+				open = true;
+			}
 			if(CommandWords.isCommand(words.get(i))) {
 				verb = words.get(i);
 				if(CommandWords.isDirection(words.get(i))) {
@@ -57,14 +61,16 @@ class Parser {
 				}
 			}else if(CommandWords.isItem(words.get(i))){
 				item = words.get(i);
-			}
-			else {
+			}else{
 				otherWords.add(words.get(i));
 			}
 		}
 		//System.out.println(verb);
 		if (CommandWords.isCommand(verb))
-			return new Command(verb, otherWords, direction, item);
+			if(!open)
+				return new Command(verb, otherWords, direction, item);
+			else
+				return new Command("open", otherWords, direction, item);
 		else
 			return new Command(null, otherWords, direction, item);
 	}

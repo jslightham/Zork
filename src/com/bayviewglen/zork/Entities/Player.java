@@ -23,7 +23,13 @@ public class Player extends Entity{
 	}
 
 	public void removeFromInventory(Item item){
-		inventory.remove(item);
+		for(int i =0; i<inventory.size(); i++) {
+			if(item.equals(inventory.get(i))) {
+				inventory.remove(i);
+				return;
+			}
+		}
+		
 
 	}
 	
