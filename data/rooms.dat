@@ -1,7 +1,7 @@
 Room name: Circle Room
 Room Description: You are in the circular room. The windows to the west are bolted shut and curtains cover them.<br>To the east, a hallway. A scroll hangs on the north wall. Writing is visible.   
 Locked: false
-Items:Lockpick, Scroll
+Items:Lockpick,Milk,Scroll
 Exit Rooms: W-Apple Hallway
 Room name: Apple Hallway
 Room Description: You are in an empty hallway. Many closed doors surround you. To the west is the Circle Room and north is the Porcupine Stairs. The door to the stairs is locked. There is no key to the door. 

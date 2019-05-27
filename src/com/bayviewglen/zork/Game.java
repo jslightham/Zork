@@ -194,10 +194,28 @@ class Game {
 			boolean finished = false;
 			while (!finished) {
 				if(currentCombat != null) {
-					if(currentCombat.getTurn() == 1) {
+					if(currentCombat.getEnemy().getHealth() <= 0.0) {
+						System.out.println("You destroyed " + currentCombat.getEnemy().getName());
+						masterEnemyMap.values().remove(currentRoom.getRoomName());
+						currentCombat = null;
+					}
+					else if(currentCombat.getTurn() == 1) {
 						currentCombat.enemyAttack();
+						if(currentCombat.getPlayer().getHealth() <=0.0) {
+							System.out.println("You were destroyed by " + currentCombat.getEnemy().getName());
+							for(int i =0; i<player.getInventory().size(); i++) {
+								currentRoom.addItem(player.getInventory().get(i));
+								player.removeFromInventory(player.getInventory().get(i));
+							}
+							currentRoom = masterRoomMap.get("CIRCLE_ROOM");
+							System.out.println("You are now back in the circle room. Your items remain where you died.");
+							player.setHealth(100.0);
+							currentCombat.getEnemy().setHealth(100.0);
+							currentCombat = null;
+						}
 					}
 				}
+				
 				Command command = parser.getCommand();
 				finished = processCommand(command);
 			}
@@ -229,12 +247,16 @@ class Game {
 			
 			if(command.hasDirection() && hasLockPick) {
 				Room nextRoom = currentRoom.nextRoom(command.getDirection());
+				try {
 				if(nextRoom.getLocked()) {
 					nextRoom.setLocked(false);
 					player.removeFromInventory(new Lockpick());
 					System.out.println("With great effort, you unlocked the door!");
 				}else{
 					System.out.println("That door is already unlocked!");
+				}
+				}catch(Exception e) {
+					System.out.println("There is no door there!");
 				}
 			}else if(!command.hasDirection()){
 				System.out.println("You must specify a direction!");
@@ -243,7 +265,10 @@ class Game {
 			}
 			break;	
 		case "go": case "n": case "s": case "e": case "w": case "north": case "south": case "west": case "east": case "up": case "down": case "d": case "u":
+			if(currentCombat == null)
 				goRoom(command);
+			else
+				System.out.println("You can't leave the room during combat!");
 				break;
 			case "help":
 				printHelp();
@@ -257,7 +282,7 @@ class Game {
 				System.out.println("If you insist... \n Poof! You're gone. You're out of the castle now, but now a new, grand new adventure begins...");
 				return true; 
 			case "eat":
-				//System.out.println("Do you really think you should be eating at a time like this?");
+				
 				if(command.hasItem()) {
 					Class<?> clazz;
 					Item object;
@@ -273,9 +298,11 @@ class Game {
 						}
 						if(object.isConsumable() && hasItem) {
 							System.out.println("Yum!");
-							System.out.println("Your health is now " + player.getHealth() + "%");
 							player.eat();
+							System.out.println("Your health is now " + player.getHealth() + "%");
 							player.removeFromInventory(object);
+							if(currentCombat != null)
+								currentCombat.setEnemyTurn();
 						}else if(object.isConsumable()) {
 							System.out.println("You do not have a " + command.getItem());
 						}else {
@@ -386,8 +413,18 @@ class Game {
 						}
 						if(enemy != null) {
 							if(command.hasItem()) {
-								currentCombat = new Combat(player, enemy);
-								currentCombat.playerAttack(command.getItem());
+								boolean has = false;
+								for(Item i : player.getInventory()) {
+									if(i.getName().toLowerCase().equals(command.getItem())) {
+										has = true;
+									}
+								}
+								if(has) {
+									currentCombat = new Combat(player, enemy);
+									currentCombat.playerAttack(command.getItem());
+								}else {
+									System.out.println("You do not have that weapon!");
+								}
 							}else {
 								System.out.println("Attack with what?");
 							}
@@ -401,7 +438,17 @@ class Game {
 					
 				} else {
 					if(command.hasItem()) {
-						currentCombat.playerAttack(command.getItem());
+						boolean has = false;
+						for(Item i : player.getInventory()) {
+							if(i.getName().toLowerCase().equals(command.getItem())) {
+								has = true;
+							}
+						}
+						if(has) {
+							currentCombat.playerAttack(command.getItem());
+						}else {
+							System.out.println("You do not have that weapon!");
+						}
 					}
 				}
 				break;
@@ -465,4 +512,7 @@ class Game {
 		}
 	}
 	
+	public void removeEnemy(String r) {
+		masterEnemyMap.values().remove(r);
+	}
 }

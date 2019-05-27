@@ -25,11 +25,21 @@ public class Combat {
 			object = (Item) ctor.newInstance();
 			
 			double rand = Math.random();
-			if(rand>0.1) {
-				enemy.setHealth(enemy.getHealth()-object.getDamage());
-				System.out.println("You did " + object.getDamage() + " damage! " + enemy.getName() + " is now at " + enemy.getHealth() + "% health.");
-			}else {
+			if(rand<0.1) {
 				System.out.println("You missed!");
+				
+				
+			}else if(rand<0.15) {
+				enemy.setHealth(enemy.getHealth()-object.getDamage()*1.5);
+				if(enemy.getHealth() < 0)
+					enemy.setHealth(0);
+				System.out.println("You hit " + enemy.getName() + " with a critical hit, doing " + object.getDamage()*1.5 + " damage! His health is now " + enemy.getHealth() + "%");
+			}
+			else {
+				enemy.setHealth(enemy.getHealth()-object.getDamage());
+				if(enemy.getHealth() < 0)
+					enemy.setHealth(0);
+				System.out.println("You did " + object.getDamage() + " damage! " + enemy.getName() + " is now at " + enemy.getHealth() + "% health.");
 			}
 			
 		}catch(Exception e) {
@@ -41,12 +51,19 @@ public class Combat {
 	
 	public double enemyAttack() {
 		double rand = Math.random();
-		if(rand>0.1) {
-			player.setHealth(player.getHealth()-enemy.getDamage());
-			System.out.println(enemy.getName() + " did " + enemy.getDamage() + " damage to you! Your health is now " + player.getHealth() + "%");
-			
-		}else {
+		if(rand<0.1) {
 			System.out.println(enemy.getName() + " missed!");
+		}else if(rand < 0.15) {
+			player.setHealth(player.getHealth()-enemy.getDamage()*1.5);
+			if(player.getHealth() < 0)
+				player.setHealth(0);
+			System.out.println(enemy.getName() + " hit you with a critical hit, doing " + enemy.getDamage()*1.5 + " damage! Your health is now " + player.getHealth() + "%");
+		}
+		else {
+			player.setHealth(player.getHealth()-enemy.getDamage());
+			if(player.getHealth() < 0)
+				player.setHealth(0);
+			System.out.println(enemy.getName() + " did " + enemy.getDamage() + " damage to you! Your health is now " + player.getHealth() + "%");
 		}
 		turn = 0;
 		return player.getHealth();
@@ -55,4 +72,17 @@ public class Combat {
 	public int getTurn() {
 		return this.turn;
 	}
+	
+	public void setEnemyTurn() {
+		turn = 1;
+	}
+	
+	public Enemy getEnemy() {
+		return enemy;
+	}
+	
+	public Entity getPlayer() {
+		return player;
+	}
+	
 }
