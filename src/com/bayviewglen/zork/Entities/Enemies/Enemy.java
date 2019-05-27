@@ -42,4 +42,7 @@ public class Enemy extends Entity{
 	public void setDamageGiven(int damageGiven) {
 		this.damageGiven = damageGiven;
 	}
+	public int getDamage() {
+		return this.damageGiven;
+	}
 }

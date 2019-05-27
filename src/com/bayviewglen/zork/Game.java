@@ -171,6 +171,11 @@ class Game {
 			System.out.println(currentRoom.exitString());
 			boolean finished = false;
 			while (!finished) {
+				if(currentCombat != null) {
+					if(currentCombat.getTurn() == 1) {
+						currentCombat.enemyAttack();
+					}
+				}
 				Command command = parser.getCommand();
 				finished = processCommand(command);
 			}
@@ -361,18 +366,31 @@ class Game {
 			case "attack":
 				if(currentCombat == null) {
 					if(command.hasEnemy()) {
-						Class<?> clazz;
-						Enemy object;
-						try {
-							clazz = Class.forName("com.bayviewglen.zork.Enemies." + command.getEnemy().substring(0, 1).toUpperCase().trim() + command.getEnemy().substring(1).trim());
-							Constructor<?> ctor = clazz.getConstructor();
-							object = (Enemy) ctor.newInstance();
-						currentCombat = new Combat(player, object);
-					}catch(Exception e) {
-						
-					}
+						Enemy enemy = null;
+						for (Enemy i : masterEnemyMap.keySet()) {
+							  if(masterEnemyMap.get(i).equals(currentRoom.getRoomName())) {
+								  enemy = i;
+							  }
+						}
+						if(enemy != null) {
+							if(command.hasItem()) {
+								currentCombat = new Combat(player, enemy);
+								currentCombat.playerAttack(command.getItem());
+							}else {
+								System.out.println("Attack with what?");
+							}
+							}else {
+								System.out.println("That enemy is not in this room!");
+							}
+					
+				}else {
+					System.out.println("Attack what?");
 				}
 					
+				} else {
+					if(command.hasItem()) {
+						currentCombat.playerAttack(command.getItem());
+					}
 				}
 				break;
 			default:

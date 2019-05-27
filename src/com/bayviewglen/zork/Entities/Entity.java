@@ -12,4 +12,7 @@ public class Entity {
 	public double getHealth() {
 		return this.health;
 	}
+	public void setHealth(double health) {
+		this.health = health;
+	}
 }
