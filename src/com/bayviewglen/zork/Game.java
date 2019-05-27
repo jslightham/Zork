@@ -153,7 +153,7 @@ class Game {
 		System.out.println("Welcome to ESCAPE CASA LOMA!\n-----");
 		System.out.println("A new, fresh take on the escape-room,\nby Johnathon, Luca, Victoria and Evan ");
 		System.out.println("Type \"play\" to play the game. If you want to close the game at any time, type \"quit\".");
-		System.out.print(">");
+		System.out.print("> ");
 	}
 
 	/**
@@ -189,7 +189,7 @@ class Game {
 			}else if(!command.hasDirection()){
 				System.out.println("You must specify a direction!");
 			}else {
-				System.out.println("You need a lockpick!");
+				System.out.println("What do you want to open the door with?");
 			}
 			break;	
 		case "go": case "n": case "s": case "e": case "w": case "north": case "south": case "west": case "east": case "up": case "down": case "d": case "u":
@@ -207,7 +207,36 @@ class Game {
 				System.out.println("If you insist... \n Poof! You're gone. You're out of the castle now, but now a new, grand new adventure begins...");
 				return true; 
 			case "eat":
-				System.out.println("Do you really think you should be eating at a time like this?");
+				//System.out.println("Do you really think you should be eating at a time like this?");
+				if(command.hasItem()) {
+					Class<?> clazz;
+					Item object;
+					try {
+						clazz = Class.forName("com.bayviewglen.zork.Items." + command.getItem().substring(0, 1).toUpperCase().trim() + command.getItem().substring(1).trim());
+						Constructor<?> ctor = clazz.getConstructor();
+						object = (Item) ctor.newInstance();
+						boolean hasItem = false;
+						for(int i=0; i<player.getInventory().size(); i++) {
+							if(object.equals(player.getInventory().get(i))) {
+								hasItem = true;
+							}
+						}
+						if(object.isConsumable() && hasItem) {
+							System.out.println("Yum!");
+							System.out.println("Your health is now " + player.getHealth() + "%");
+							player.eat();
+							player.removeFromInventory(object);
+						}else if(object.isConsumable()) {
+							System.out.println("You do not have a " + command.getItem());
+						}else {
+							System.out.println("You cannot eat a " + command.getItem());
+						}
+					} catch(Exception e) {
+						System.out.println("You cannot eat a " + command.getItem());
+					}
+				}else {
+					System.out.println("Eat what?");
+				}
 				break;
 			case "take":
 				if(command.hasItem()) {
@@ -266,6 +295,34 @@ class Game {
 					System.out.println();
 				}else {
 					System.out.println("You have nothing on you. Try and find some items.");
+				}
+				break;
+			case "drop":
+				if(command.hasItem()) {
+					Class<?> clazz;
+					Item object;
+					try {
+						clazz = Class.forName("com.bayviewglen.zork.Items." + command.getItem().substring(0, 1).toUpperCase().trim() + command.getItem().substring(1).trim());
+						Constructor<?> ctor = clazz.getConstructor();
+						object = (Item) ctor.newInstance();
+						boolean has = false;
+						for(int i =0; i<player.getInventory().size(); i++) {
+							if(player.getInventory().get(i).equals(object)) {
+								has = true;
+							}
+						}
+						if(has) {
+							player.removeFromInventory(object);
+							currentRoom.addItem(object);
+							System.out.println("You dropped your " + object.getName());
+						}else {
+							System.out.println("You do not have a " + object.getName());
+						}
+					} catch(Exception e) {
+						
+					}
+				}else {
+					System.out.println("Drop what?");
 				}
 				break;
 			default:

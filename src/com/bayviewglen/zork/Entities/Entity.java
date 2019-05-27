@@ -1,6 +1,15 @@
 package com.bayviewglen.zork.Entities;
 
 public class Entity {
-	private int hunger; 
-	private int health; 
+	protected double hunger; 
+	protected double health; 
+	
+	public Entity(double health, double hunger) {
+		this.health = health;
+		this.hunger = hunger;
+	}
+	
+	public double getHealth() {
+		return this.health;
+	}
 }

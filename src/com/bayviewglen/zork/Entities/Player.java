@@ -11,7 +11,7 @@ public class Player extends Entity{
 	private int currentInventoryWeight;
 	
 	public Player() {
-		super();
+		super(100.0, 100.0);
 	}
 
 	public boolean addToInventory(Item item){
@@ -35,6 +35,18 @@ public class Player extends Entity{
 	
 	public ArrayList<Item> getInventory() {
 		return inventory;
+	}
+	
+	public void eat() {
+		// TODO Do we want health or hunger?
+		health+=5;
+		hunger+=5;
+		if(health > 100.0) {
+			health = 100.0;
+		}
+		if(hunger > 100.0) {
+			hunger = 100.0;
+		}
 	}
 
 }
