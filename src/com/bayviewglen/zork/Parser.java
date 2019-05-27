@@ -35,6 +35,7 @@ class Parser {
 		String verb = "";
 		String direction = "";
 		String item = "";
+		String enemy = "";
 		boolean open = false;
 		//String word2;
 		ArrayList<String> words = new ArrayList<String>();
@@ -61,6 +62,8 @@ class Parser {
 				}
 			}else if(CommandWords.isItem(words.get(i))){
 				item = words.get(i);
+			}else if(CommandWords.isEnemy(words.get(i))){
+				enemy = words.get(i);
 			}else{
 				otherWords.add(words.get(i));
 			}
@@ -68,11 +71,11 @@ class Parser {
 		//System.out.println(verb);
 		if (CommandWords.isCommand(verb))
 			if(!open)
-				return new Command(verb, otherWords, direction, item);
+				return new Command(verb, otherWords, direction, item, enemy);
 			else
-				return new Command("open", otherWords, direction, item);
+				return new Command("open", otherWords, direction, item, enemy);
 		else
-			return new Command(null, otherWords, direction, item);
+			return new Command(null, otherWords, direction, item, enemy);
 	}
 
 	/**

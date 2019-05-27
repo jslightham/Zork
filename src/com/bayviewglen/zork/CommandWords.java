@@ -64,6 +64,13 @@ class CommandWords {
 		}
 	}
 
+	public static boolean isEnemy(String aString) {
+		try {
+			return m_words.get(aString).equals("enemy");
+			} catch(Exception e) {
+				return false;
+			}
+	}
 	/*
 	 * Print all valid commands to System.out.
 	 */

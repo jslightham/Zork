@@ -158,14 +158,14 @@ class Room {
 	 */
 	public String longDescription() {
 
-		return "Room: " + roomName + "\n\n" + description + "\n" + exitString();
+		return "Room: " + roomName + "\n\n" + description + "\n";
 	}
 
 	/**
 	 * Return a string describing the room's exits, for example "Exits: north
 	 * west ".
 	 */
-	private String exitString() {
+	public String exitString() {
 		String returnString = "Exits:";
 		Set keys = exits.keySet();
 		for (Iterator iter = keys.iterator(); iter.hasNext();)

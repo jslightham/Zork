@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 import com.bayviewglen.zork.Entities.Player;
+import com.bayviewglen.zork.Entities.Enemies.Enemy;
 import com.bayviewglen.zork.Items.*;
 
 /**
@@ -37,6 +38,8 @@ class Game {
 	// masterRoomMap.get("GREAT_ROOM") will return the Room Object that is the
 	// Great Room (assuming you have one).
 	private HashMap<String, Room> masterRoomMap;
+	private HashMap<Enemy, String> masterEnemyMap;
+	private Combat currentCombat = null;
 	//private HashMap<Item, String> itemsInRooms = new HashMap<Item, String>();
 
 	private void initRooms(String fileName) throws Exception {
@@ -108,6 +111,34 @@ class Game {
 			e.printStackTrace();
 		}
 	}
+	
+	private void initEnemies(String fileName) throws Exception {
+		masterEnemyMap = new HashMap<Enemy, String>();
+		Scanner enemyScanner = null;
+		Enemy e = null;
+		try {
+			enemyScanner = new Scanner(new File(fileName));
+			
+			while (enemyScanner.hasNext()) {
+				 e = new Enemy();
+				// Read the Name
+				String enemyName = enemyScanner.nextLine();
+				e.setName(enemyName.split(":")[1].trim());
+				// Read the Description
+				String enemyDescription = enemyScanner.nextLine();
+				e.setDescription(enemyDescription.split(":")[1].replaceAll("<br>", "\n").trim());
+				// Read the Room
+				String startingRoom = enemyScanner.nextLine();
+				e.setRoom(startingRoom.split(":")[1].trim());
+				// Read the Damage Given
+				int damageGiven = Integer.parseInt(enemyScanner.nextLine().split(":")[1].trim());
+				e.setDamageGiven(damageGiven);
+				}
+			}catch(Exception ex) {
+			}
+			masterEnemyMap.put(e, e.getRoom());
+			enemyScanner.close();
+		} 
 
 	/**
 	 * Create the game and initialise its internal map.
@@ -115,6 +146,7 @@ class Game {
 	public Game() {
 		try {
 			initRooms("data/rooms.dat");
+			initEnemies("data/enemies.dat");
 			currentRoom = masterRoomMap.get("CIRCLE_ROOM");
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -135,7 +167,8 @@ class Game {
 			System.out.println("\nType 'help' if you need help, consult the wiki \non GitHub if you are confused and enjoy the game!\n");
 			System.out.println("\n\nEscape Casa Loma: A text-based escape game");
 			System.out.println("---------------------\n");
-			System.out.println(currentRoom.longDescription()); 
+			System.out.print(currentRoom.longDescription()); 
+			System.out.println(currentRoom.exitString());
 			boolean finished = false;
 			while (!finished) {
 				Command command = parser.getCommand();
@@ -325,6 +358,23 @@ class Game {
 					System.out.println("Drop what?");
 				}
 				break;
+			case "attack":
+				if(currentCombat == null) {
+					if(command.hasEnemy()) {
+						Class<?> clazz;
+						Enemy object;
+						try {
+							clazz = Class.forName("com.bayviewglen.zork.Enemies." + command.getEnemy().substring(0, 1).toUpperCase().trim() + command.getEnemy().substring(1).trim());
+							Constructor<?> ctor = clazz.getConstructor();
+							object = (Enemy) ctor.newInstance();
+						currentCombat = new Combat(player, object);
+					}catch(Exception e) {
+						
+					}
+				}
+					
+				}
+				break;
 			default:
 				return false;
 		}
@@ -361,8 +411,28 @@ class Game {
 		}
 		else {
 			currentRoom = nextRoom;
-			System.out.println(currentRoom.longDescription());
+			System.out.print(currentRoom.longDescription());
+			boolean hasEnemy = false;
+			Enemy enemy = null;
+			String room = "";
+			for (String i : masterEnemyMap.values()) {
+				if(currentRoom.getRoomName().equals(i)) {
+					hasEnemy = true;
+					room = i;
+				}
+			}
+			for (Enemy i : masterEnemyMap.keySet()) {
+				  if(masterEnemyMap.get(i).equals(room)) {
+					  enemy = i;
+				  }
+			}
+			if(hasEnemy) {
+				System.out.println(enemy.getName() + ", " + enemy.getDescription() + " has appeared!");
+				System.out.println(currentRoom.exitString());
+			}else {
+				System.out.println(currentRoom.exitString());
+			}
 		}
 	}
-
+	
 }
