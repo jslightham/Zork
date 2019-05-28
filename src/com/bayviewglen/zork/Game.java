@@ -87,8 +87,10 @@ class Game {
 				// This puts the room we created (Without the exits in the
 				// masterMap)
 				masterRoomMap.put(roomName.toUpperCase().substring(10).trim().replaceAll(" ", "_"), room);
-
-				// Now we better set the exits.
+				
+				if(roomScanner.hasNextLine()) {
+					roomScanner.nextLine(); 
+				}
 			}
 
 			for (String key : masterRoomMap.keySet()) {

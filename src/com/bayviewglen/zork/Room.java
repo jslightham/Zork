@@ -166,9 +166,11 @@ class Room {
 	 */
 	public String exitString() {
 		String returnString = "Exits:";
+		String curr = ""; 
 		Set keys = exits.keySet();
 		for (Iterator iter = keys.iterator(); iter.hasNext();)
-			returnString += " " + iter.next();
+			curr = (String) iter.next(); 
+			returnString += " " + curr.substring(0,1).toUpperCase() + curr.substring(1); 
 		return returnString;
 	}
 	

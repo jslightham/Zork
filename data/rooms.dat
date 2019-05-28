@@ -3,176 +3,211 @@ Room Description: You are in a circular room (No corners). The windows to the we
 Locked: false
 Items:Lockpick,Milk,Scroll
 Exit Rooms: W-Apple Hallway
+
 Room name: Apple Hallway
 Room Description: You are in an empty hallway. Many closed doors surround you. To the west is the Circle Room and north is the Porcupine Stairs. The door to the stairs is locked. There is no key to the door. 
 Locked: false
 Items: 
 Exit Rooms: E-Circle Room, N-Porcupine Stairs (3rd Floor)
+
 Room name: Porcupine Stairs (3rd Floor)
 Room Description: You are in the Porcupine Stairs. The stone, cold walls are trapped in darkness. Below you is the second floor and above you is the third floor. 
 Locked: true
 Items:
 Exit Rooms: S-Apple Hallway, Down-Porcupine Stairs (2nd Floor)
+
 Room name: Porcupine Stairs (2nd Floor)
 Room Description: You are now on the second floor. The hallway is completely deserted. A few doors are left slightly ajar. 
 Locked: false
 Items:
 Exit Rooms: S-Sir Henry Mill Pellatt's Bedroom, W-Bulb Room, E-Pipe Room, Up-Porcupine Stairs (3rd Floor)
+
 Room name: Bulb Room
 Room Description: You are in the Bulb Room. There is a ragged red rug with a noticeable lump in the middle. One window facing north is bolted shut. 
 Locked: false
 Items:Garlic
-Exit Rooms: E-Porcupine Stairs (2nd Floor), W-Lady Pellat's Bedroom
+Exit Rooms: E-Porcupine Stairs (2nd Floor), W-Lady Pellatt's Bedroom
+
 Room name: Lady Pellatt's Bedroom
 Room Description: You are now in Lady Pellatt's Bedroom. A four-post bed with elegant pink bedsheets lies in the middle of the room. A golden wardrobe sits along the east wall with a few robes hanging out.
 Locked: false
 Items:Robes
 Exit Rooms: N-Sitting Area, S-Guest Bedroom, E-Bulb Room
+
 Room name: Sitting Area
 Room Description: You are in a room with multiple chairs and fake plants. There are several windows, all of which are shut. A few scratches can be noted on the chairs.
 Locked: false
 Items:
 Exit Rooms: S-Lady Pellatt's Bedroom
+
 Room name: Pipe Room
 Room Description: Welcome to the Pipe Room. A misty smell fills the room. Strange items lay in a pile near the north wall. I suggest you take a look...
 Locked: false
 Items:
 Exit Rooms: W-Porcupine Stairs (2nd Floor), S-Landing, N-East Sitting Room, E-Round Room
+
 Room name: Round Room
 Room Description: You are now into the Round Room. Nothing is out of the ordinary in here...
 Locked: false
 Items: 
 Exit Rooms: W-Pipe Room, N-Elm Bedroom, S-Oak Bedroom
+
 Room name: Elm Bedroom
 Room Description: You are in the Elm Bedroom. The walls are all wooden and a few windows face north. A bed sits in the middle of the room. A few pillows are on the ground. It looks like someone was in here...
 Locked: false
 Items: Water bottle,Pen,Book
 Exit Rooms: S-Round Room, W-East Sitting Room
+
 Room name: East Sitting Room
 Room Description: Welcome to the East Sitting Room. Boring name but not so boring room. Take a look at the paintings, admire the art. 
 Locked: false
 Items:Painting
 Exit Rooms: S-Pipe Room, E-Elm Bedroom
+
 Room name: Oak Bedroom
 Room Description: You are now in the Oak Bedroom. The walls are covered with pink floral wallpaper and a few socks are strewn about the room. A small four-post bedroom lies in the south-east corner of the room. 
 Locked: false
 Items:Socks
 Exit Rooms: N-Round Room, W-Landing
+
 Room name: Landing
 Room Description: You are now outside on the Landing. A cold gust of wind sweeps by. There doesn't seem to be anywhere to go. It is too high to jump, and you don't have a ladder. 
 Locked: false
 Items:
 Exit Rooms: W-Sir Henry Mill Pellatt's Bedroom, E-Oak Bedroom
+
 Room name: Sir Henry Mill Pellatt's Bedroom
 Room Description: Welcome to Sir Henry Mill Pellatt's Bedroom. As the master of this castle, Sir Pellatt isn't in this room very often. Only some clothes, a bed, and a desk reside here. Oh, and don't touch his notebook.
 Locked: false
 Items:Notebook
 Exit Rooms: N-Porcupine Stairs (2nd Floor), E-Landing, S-Sir Henry Mill Pellatt's Bathroom, W-Linen Closet
+
 Room name: Sir Henry Mill Pellatt's Bathroom
 Room Description: You are now in Sir Henry Mill Pellatt's Bathroom. The floor mat is still quite wet. Perhaps someone just took a shower. A half-empty shaving cream bottle lies on the counter, along with a toothbrush and some toothpaste.
 Locked: false
 Items:Shaving Cream,Toothbrush,Toothpaste
 Exit Rooms: N-Sir Henry Mill Pellatt's Bathroom
+
 Room name: Linen Closet
 Room Description: A whiff of lavender-scented laundry detergent enters your nostrils as you step into a dark room. Ah, you must be in the Linen Closet. No one really comes in here other than the servants. I'm pretty sure Sir Pellatt and Lady Pellat don't even know this room exists.
 Locked: false
 Items:Clothes
 Exit Rooms: E-Sir Henry Mill Pellatt's Bedroom, W-Guest Bedroom, S-Willow Bedroom
+
 Room name: Willow Bedroom
 Room Description: This is the Willow Bedroom. Pretty ordinary, if you ask me. Say, doesn't this look like the Oak Bedroom?
 Locked: false
 Items: 
 Exit Rooms: N-Linen Closet, S-Silver Stairs (2nd Floor), W-Another Sitting Area
+
 Room name: Silver Stairs (2nd Floor)
 Room Description: You are now in the Silver Stairs on the second floor. The bottom of the stairs is blocked by a door. Looks like you need to have something in order to open it. Better find it quick!
 Locked: true
 Items:
 Exit Rooms: Down-Silver Stairs (1st Floor), N-Willow Bedroom, S-Evergreen Bedroom
+
 Room name: Evergreen Bedroom
 Room Description: Oh look! Another bedroom! How exciting! This one's walls are even green this time. Cool!
 Locked: false
 Items:
 Exit Rooms: N-Silver Stairs (2nd Floor), W-Aspen Bedroom
+
 Room name: Aspen Bedroom
 Room Description: Jeez, how many bedrooms are there? It doesn't even look like anybody's slept here before. The curtains are blowing though. Could be a draft...
 Locked: false
 Items:
 Exit Rooms: E-Evergreen Bedroom, N-Another Sitting Area
+
 Room name: Another Sitting Area
 Room Description: You are now in Another Sitting Area. Yes, that is really its name. Sir Pellatt lacks creativity. This is quite a spectactular room, however. Sitting down for a bit, get comfortable. But not too comfortable, you need to escape.
 Locked: false
 Items:
 Exit Rooms: S-Apsen Bedroom, E-Willow Bedroom
+
 Room name: Guest Bedroom
 Room Description: Welcome to the guest bedroom, where guests like yourself stay for the night. Except Sir Pellatt has other plans for you... It looks like there's something on the bed. Might be for you.
 Locked: false
 Items: Scroll 2 
 Exit Rooms: E-Linen Closet, S-Another Sitting Area
+
 Room name: Silver Stairs (1st Floor)
 Room Description: Welcome to the First Floor. You made it this far, don't give up now. Quite a few doors are open down here. Someone even left a few lights on. Could be the servants.
 Locked: false
 Items:
 Exit Rooms: N-Study, S-Food Supply Closet, W-Supply Closet, Up-Silver Stairs (2nd Floor)
+
 Room name: Food Supply Closet
 Room Description: You are now in the food supply closet. Its pretty full in here. A fridge filled with dairy such as milk, cheese, and yogurt lies in front of the far wall. Cabinets lining the side walls contain snacks such as chips, granola bars, and chocolate. Go eat something, you must be famished.
 Locked: false
 Items:Milk,Cheese,Yogurt,Chips,Granola Bars,Chocolate
 Exit Rooms: N-Silver Stairs (1st Floor), W-Kitchen
+
 Room name: Kitchen
 Room Description: You are in the Kitchen. The stove, toaster, and microwave along the walls are all turned off. A few pots are soaking in the sink. Warm bread rests in the oven. The sweet smell of yeast fills the room.
 Locked: false
 Items:Warm Bread
 Exit Rooms: E-Food Supply Closet, N-Supply Closet
+
 Room name: Supply Closet
 Room Description: You are in the Supply Closet. A mop, bucket and a few towels lay on the ground. The space is quite small and can only hold around 3 people. Nothing interesting seems to be happening in here.
 Locked: false
 Items:Mop,Bucket,Towels
 Exit Rooms: E-Silver Stairs (1st Floor), S-Kitchen, N-Serving and Breakfast Room
+
 Room name: Serving and Breakfast Room
 Room Description: You are now in the Serving and Breakfast Room. A small wood table covered in crumbs lies in the corner, surrounded by 4 chairs. On its left lies a counter with a sink and some butter. Around the counter are 5 high chairs. Looks like someone ate breakfast here earlier.
 Locked: false
 Items:Butter
 Exit Rooms: N-Dining Room, E-Study, S- Supply Closet
+
 Room name: Dining Room
 Room Description: Welcome to the Dining Room. The old wood boards squeak below you. An elegant chandelier hangs in the center of the room, although it is turned off. A gigantic long wood table sits in the center of the room with 12 cushioned chairs sitting around it. A cello rests in the corner of the room, along with a small stool and a music stand. 
 Locked: false
 Items: 
 Exit Rooms: S-Serving and Breakfast Room, E-Library, W-Conservatory
+
 Room name: Conservatory
 Room Description: You are now in the Conservatory. The walls and ceilings are all glass, which gives you a gorgeous view of the outdoors. A few potted plants lay directly in the sunlight. It looks like there's a scroll on the ground. Check it out, you're running out of time.
 Locked: false
 Items:Scroll 3
 Exit Rooms: E-Dining Room
+
 Room name: Library
 Room Description: You are in the Library. Intricate designs are carved into the tall arced ceiling. Thousands and thousands of books stretch from the floor to the ceiling. A few blue couches with a lantern on a small side table sit in the far northwest corner of the room. An open novel with a dusty leather cover rests on the table.
 Locked: false
 Items:Novel
 Exit Rooms: W-Dining Room, S-Study, E-Great Hall
+
 Room name: Great Hall
 Room Description: You are in the Great Hall. This empty room gives off an eerie feeling. On the north wall, there is a fire place that looks like it is about to burn out. I don't think someone is going to light it again. 
 Locked: false
 Items:
 Exit Rooms: S-Entry, W-Library, E-Oak Drawing Room
+
 Room name: Oak Drawing Room
 Room Description: Welcome to the Oak Drawing Room. A large red carpet covers the floor. Giant floor-to-ceiling windows face north, letting in lots of sunlight. A sword is perched on a small table in the center of the room. Interesting choice of decor...
 Locked: false
 Items:Sword
 Exit Rooms: W-Great hall, S-Smoking Room
+
 Room name: Smoking Room
 Room Description: You are now in the Smoking Room. This room is too fancy for its purpose if you ask me. I don't see why the fireplace or deer heads are necessary. A leather couch faces the fireplace, and a fur blanket hangs over it.
 Locked: false
 Items:Blanket
 Exit Rooms: N-Oak Drawing Room, S-Billiard Room, W-Entry
+
 Room name: Billards Room
 Room Description: You are in the Billiard Room. The only thing in this room would be the pool table in the center. There aren't any balls or poles around though, so I guess no game today!
 Locked: false
 Items: 
 Exit Rooms: N-Smoking Room
+
 Room name: Entry
 Room Description: Welcome to the entrance of Casa Loma. This is where you escape! Oh wait, that door is bolted shut. Plus, it doesn't even have a lock! Shucks, how will you get out now???
 Locked: true
 Items:
 Exit Rooms: E-Smoking Room, N-Great Hall, W-Study
+
 Room name: Study
 Room Description: You are now in the Study. The south wall has a floor-to-ceiling book shelf, towering over you. A big wooden desk, along with a cushioned chair, face the entrance. 2 lit candles illuminate the desk, and a key is visible.
 Locked: false
