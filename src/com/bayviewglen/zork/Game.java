@@ -169,9 +169,9 @@ class Game {
 		while(isNotValid) {
 			System.out.print("> ");
 			String i = in.nextLine();
-			if(i.toLowerCase().equals("play")) {
+			if(i.toLowerCase().equals("play") || i.toLowerCase().equals("p")) {
 				return true;
-			}else if(i.toLowerCase().equals("quit")) { 
+			}else if(i.toLowerCase().equals("quit") || i.toLowerCase().equals("q")) { 
 				in.close(); 
 				return false; 
 			}
@@ -191,7 +191,7 @@ class Game {
 		// Enter the main command loop. Here we repeatedly read commands and
 		// execute them until the game is over.
 		System.out.println("\nType 'help' if you need help, consult the wiki \non GitHub if you are confused and enjoy the game!\n");
-			System.out.println("\n\nEscape Casa Loma: A text-based adventure game");
+			System.out.println("\n\nEscape Casa Loma");
 			System.out.println("---------------------\n");
 			System.out.print(currentRoom.longDescription()); 
 			System.out.println(currentRoom.exitString());
