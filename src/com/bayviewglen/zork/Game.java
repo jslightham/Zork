@@ -168,12 +168,14 @@ class Game {
 			System.out.print("> ");
 			String i = in.nextLine();
 			if(i.toLowerCase().equals("play")) {
-				return true; 
+				return true;
 			}else if(i.toLowerCase().equals("quit")) { 
+				in.close(); 
 				return false; 
 			}
 			System.out.println("That is not a valid response. Type \"play\" to play the game. If you wish to close the game, type \"quit\".");
 		}
+		in.close(); 
 		return false; 
 		
 
@@ -191,6 +193,7 @@ class Game {
 			System.out.println("---------------------\n");
 			System.out.print(currentRoom.longDescription()); 
 			System.out.println(currentRoom.exitString());
+			System.out.println(currentRoom.itemString());
 			boolean finished = false;
 			while (!finished) {
 				if(currentCombat != null) {

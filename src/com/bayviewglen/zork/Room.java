@@ -1,4 +1,3 @@
-
 package com.bayviewglen.zork;
 
 /*
@@ -171,6 +170,14 @@ class Room {
 		for (Iterator iter = keys.iterator(); iter.hasNext();)
 			returnString += " " + iter.next();
 		return returnString;
+	}
+	
+	public String itemString(){
+		String items = "Items in Room: " + this.items.get(0).getName();
+		for(int i = 1; i < this.items.size(); i++) {
+			items += ", " + this.items.get(i).getName(); 
+		}
+		return items; 
 	}
 
 	/**

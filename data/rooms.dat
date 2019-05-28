@@ -1,5 +1,5 @@
 Room name: Circle Room
-Room Description: You are in the circular room. The windows to the west are bolted shut and curtains cover them.<br>To the east, a hallway. A scroll hangs on the north wall. Writing is visible.   
+Room Description: You are in a circular room (No corners). The windows to the west are bolted shut and curtains cover them.<br>To the east, a dimly lit hallway beckons you. However, a scroll hangs on the wall a few paces away. Writing is visible on it.   
 Locked: false
 Items:Lockpick,Milk,Scroll
 Exit Rooms: W-Apple Hallway
@@ -49,7 +49,7 @@ Locked: false
 Items: Water bottle,Pen,Book
 Exit Rooms: S-Round Room, W-East Sitting Room
 Room name: East Sitting Room
-Room Description: Welcome to the East Sitting Room. Boring name but not so boring room. Take a look at the paintings, admire the art. It might be helpful later on. 
+Room Description: Welcome to the East Sitting Room. Boring name but not so boring room. Take a look at the paintings, admire the art. 
 Locked: false
 Items:Painting
 Exit Rooms: S-Pipe Room, E-Elm Bedroom
