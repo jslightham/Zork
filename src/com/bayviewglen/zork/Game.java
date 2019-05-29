@@ -60,6 +60,9 @@ class Game {
 				// Read the locked state
 				boolean locked = Boolean.parseBoolean(roomScanner.nextLine().split(":")[1].replaceAll("<br>", "\n").trim());
 				room.setLocked(locked);
+				// Read the boarded state
+				boolean boarded = Boolean.parseBoolean(roomScanner.nextLine().split(":")[1].replaceAll("<br>", "\n").trim());
+				room.setBoarded(boarded);
 				// Read the Items
 				String items = roomScanner.nextLine();
 				try {
@@ -276,6 +279,31 @@ class Game {
 				System.out.println("In what direction do you want to go in?");
 			}else {
 				System.out.println("What do you want to open the door with?");
+			}
+			boolean hasCrowbar = false;
+			for(int i =0; i<player.getInventory().size(); i++) {
+				if(player.getInventory().get(i).equals(new Crowbar())) {
+					hasCrowbar = true;
+					break;
+				}
+			}
+			if(command.hasDirection() && hasCrowbar) {
+				Room nextRoom = currentRoom.nextRoom(command.getDirection());
+				try {
+				if(nextRoom.getBoarded()) {
+					nextRoom.setBoarded(false);
+					player.removeFromInventory(new Crowbar());
+					System.out.println("With great effort, you pry the boards off the door with the crowbar! However, it breaks and is no longer useable.");
+				}else{
+					System.out.println("That door is already unlocked!");
+				}
+				}catch(Exception e) {
+					System.out.println("There is no door there!");
+				}
+			}else if(!command.hasDirection()){
+				
+			}else {
+				
 			}
 			break;	
 		case "go": case "n": case "s": case "e": case "w": case "north": case "south": case "west": case "east": case "up": case "down": case "d": case "u":
@@ -515,8 +543,11 @@ class Game {
 		Room nextRoom = currentRoom.nextRoom(direction);
 		if (nextRoom == null)
 			System.out.println("There is no door!");
+		else if(nextRoom.getLocked() && nextRoom.getBoarded()) {
+			System.out.println("The door is locked and boarded shut. You need to find a key and crowbar to open it.");
+		}
 		else if(nextRoom.getLocked()) {
-			System.out.println("The door is locked. You need to find a key to open it.");
+			System.out.println("The door is locked. You need a key to open it.");
 		}
 		else {
 			currentRoom = nextRoom;
