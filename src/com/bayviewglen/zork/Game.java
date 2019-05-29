@@ -361,7 +361,8 @@ class Game {
 				}
 				break;
 			case "talk":
-				
+				System.out.println("Salad");
+				break; 
 			case "take":
 				boolean hasAll = false;
 				for(String a : command.getOtherWords()) {

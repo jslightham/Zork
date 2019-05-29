@@ -4,6 +4,15 @@ help, verb
 jump, verb
 read, verb
 talk, verb
+eat, verb
+look, verb
+take, verb
+open, verb
+unlock, verb
+inventory, verb
+die, verb
+drop, verb
+attack, verb
 north, direction
 south, direction
 west, direction
@@ -16,10 +25,7 @@ up, direction
 down, direction
 d, direction
 u, direction
-eat, verb
 candlestick, item
-look, verb
-take, verb
 lockpick, item
 key, item
 crowbar, item
@@ -33,7 +39,6 @@ pen, item
 book, item
 socks, item
 painting, item
-inventory, verb
 notebook, item
 shaving cream, item
 toothbrush, item
@@ -48,18 +53,12 @@ warm bread, item
 clothes, item
 sword, item
 blanket, item
-die, verb
 butter, item
 novel, item
 mop, item
 bucket, item
 towels, item
-open, verb
-i, verb
-unlock, verb
-drop, verb
 henrypellatt, enemy
-attack, verb
 clock, item
 keyboard, item
 lightbulb, item

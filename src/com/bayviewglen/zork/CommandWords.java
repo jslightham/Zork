@@ -107,9 +107,9 @@ class CommandWords {
 	public static String replaceSynonym(String word) {
 		try {
 			String words = m_synonyms.get(word);
-			if(words == null)
+			if(words == null) {
 				throw new Exception();
-			else
+			}else
 				return words;
 			} catch(Exception e) {
 				return word;
