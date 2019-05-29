@@ -169,14 +169,9 @@ Exit Rooms: S-Apsen Bedroom, E-Willow Bedroom
 Room name: Guest Bedroom
 Room Description: Welcome to the guest bedroom, where guests like yourself stay for the night. Except Sir Pellatt has other plans for you... There is faint writing on the west wall. Might want to take a look...
 Locked: false
-<<<<<<< HEAD
 Boarded: false
 Items: Scroll 2 
-Riddle:
-=======
-Items:  
 Riddle: "What letter comes next in this sequence: o,t,t,f,f?", "s"
->>>>>>> 8e73e9e0244c32a530f67daa085e1b453b1eca7d
 Exit Rooms: E-Linen Closet, S-Another Sitting Area
 
 Room name: Silver Stairs (1st Floor)
