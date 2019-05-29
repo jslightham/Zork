@@ -108,4 +108,6 @@ class Command {
 	public boolean hasEnemy() {
 		return !enemy.equals("");
 	}
+	
+	
 }
