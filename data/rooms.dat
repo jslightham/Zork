@@ -1,8 +1,8 @@
 Room name: Circle Room
-Room Description: You are in a circular room (No corners). The windows to the west are bolted shut and curtains cover them.<br>To the west, a dimly lit hallway beckons you. However, a scroll hangs on the wall a few paces away. Writing is visible on it.   
+Room Description: You are in a circular room. The windows to the east are covered with boards that let in just enough light to see.<br>There seems to be some writing on the wall. 
 Locked: false
-Items:Lockpick,Milk,Scroll
-Riddle: "Who is never hungry during Christmas?", "The turkey<comma> because he is always stuffed."
+Items:Lockpick,Milk,
+Riddle: "Who is never hungry during Christmas?", "The turkey because he is always stuffed."
 Exit Rooms: W-Apple Hallway
 
 Room name: Apple Hallway
