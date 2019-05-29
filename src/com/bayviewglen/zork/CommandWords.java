@@ -16,8 +16,7 @@ import java.util.Scanner;
  */
 class CommandWords {
 	// a constant array that holds all valid command words
-	private static HashMap<String, String> m_words = new HashMap<String, String>();
-	private static HashMap<String, String> m_synonyms = new HashMap<String, String>();
+	private static HashMap<String, String> m_words = new HashMap<String, String>();;
 	/**
 	 * Constructor - initialise the command words.
 	 */
@@ -29,18 +28,6 @@ class CommandWords {
 				String text = in.nextLine();
 				String[] textarr = text.split(",");
 				m_words.put(textarr[0], textarr[1].substring(1));
-			}
-            in.close();
-		}catch (Exception e) {
-                  e.printStackTrace();
-		}	
-		
-		try {
-			Scanner in = new Scanner(new File("data/synonyms.dat"));
-			while(in.hasNext()){
-				String text = in.nextLine();
-				String[] textarr = text.split(",");
-				m_synonyms.put(textarr[0], textarr[1].substring(1));
 			}
             in.close();
 		}catch (Exception e) {
@@ -94,17 +81,5 @@ class CommandWords {
 			}
 		}
 		System.out.println();
-	}
-	
-	public static String replaceSynonym(String word) {
-		try {
-			String words = m_synonyms.get(word);
-			if(words == null)
-				throw new Exception();
-			else
-				return words;
-			} catch(Exception e) {
-				return word;
-			}
 	}
 }

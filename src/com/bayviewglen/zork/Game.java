@@ -7,6 +7,8 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 import com.bayviewglen.zork.Entities.Player;
+import com.bayviewglen.zork.Entities.Riddle;
+import com.bayviewglen.zork.Entities.Riddler;
 import com.bayviewglen.zork.Entities.Enemies.Enemy;
 import com.bayviewglen.zork.Items.*;
 
@@ -80,8 +82,9 @@ class Game {
 				try {
 					String question = riddle.split(",")[0].trim().substring(1, riddle.split(",")[0].length()-1).replaceAll("<comma>", ",");
 					String answer = riddle.split(",")[1].trim().substring(1, riddle.split(",")[1].length()-2).replaceAll("<comma>", ",");
-					Riddle r = new Riddle(question, answer);
-					room.addRiddle(r);
+					Riddle riddleObj = new Riddle(question, answer);
+					Riddler butler = new Riddler(100, 100, riddleObj); 
+					room.addRiddler(butler);
 				}catch(Exception e) {
 				}
 				
@@ -357,6 +360,8 @@ class Game {
 					System.out.println("Eat what?");
 				}
 				break;
+			case "talk":
+				
 			case "take":
 				boolean hasAll = false;
 				for(String a : command.getOtherWords()) {
@@ -508,9 +513,6 @@ class Game {
 						}
 					}
 				}
-				break;
-			case "read": 
-				
 				break;
 			default:
 				return false;
