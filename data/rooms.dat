@@ -57,12 +57,8 @@ Exit Rooms: S-Lady Pellatt's Bedroom
 Room name: Pipe Room
 Room Description: Welcome to the Pipe Room. A misty smell fills the room. Strange items lay in a pile near the north wall. I suggest you take a look...
 Locked: false
-<<<<<<< HEAD
-Items:Clock,Lightbulb,Keyboard
-=======
 Boarded: false
-Items:
->>>>>>> branch 'master' of https://github.com/jslightham/Zork/
+Items:Clock,Lightbulb,Keyboard
 Riddle:
 Exit Rooms: W-Porcupine Stairs (2nd Floor), S-Landing, N-East Sitting Room, E-Round Room
 
@@ -77,12 +73,8 @@ Exit Rooms: W-Pipe Room, N-Elm Bedroom, S-Oak Bedroom
 Room name: Elm Bedroom
 Room Description: You are in the Elm Bedroom. The walls are all wooden and a few windows face north. A bed sits in the middle of the room. A few pillows are on the ground. It looks like someone was in here...
 Locked: false
-<<<<<<< HEAD
-Items:Water bottle,Pen,Book
-=======
 Boarded: false
-Items: Water bottle,Pen,Book
->>>>>>> branch 'master' of https://github.com/jslightham/Zork/
+Items:Water bottle,Pen,Book
 Riddle:
 Exit Rooms: S-Round Room, W-East Sitting Room
 
@@ -177,16 +169,10 @@ Exit Rooms: S-Apsen Bedroom, E-Willow Bedroom
 Room name: Guest Bedroom
 Room Description: Welcome to the guest bedroom, where guests like yourself stay for the night. There is faint writing on the west wall. You might want to take a look...
 Locked: false
-<<<<<<< HEAD
+Boarded: false
 Items:  
 Riddle: "What are the next 3 letters in this sequence: o,t,t,f,f,s,s?", "e,n,t"
 Exit Rooms: E-Linen Closet, S-Another Sitting Area, N-Lady Pellatt's Bedroom
-=======
-Boarded: false
-Items: Scroll 2 
-Riddle: "What letter comes next in this sequence: o,t,t,f,f?", "s"
-Exit Rooms: E-Linen Closet, S-Another Sitting Area
->>>>>>> branch 'master' of https://github.com/jslightham/Zork/
 
 Room name: Silver Stairs (1st Floor)
 Room Description: Welcome to the First Floor. You made it this far, don't give up now. Quite a few doors are open down here. Someone even left a few lights on although it could just be the servants.
@@ -239,14 +225,9 @@ Exit Rooms: S-Serving and Breakfast Room, E-Library, W-Conservatory
 Room name: Conservatory
 Room Description: You are now in the Conservatory. The walls and ceilings are all glass, which gives you a gorgeous view of the outdoors. A few potted plants lay directly in the sunlight. There is faint writing on the south wall.
 Locked: false
-<<<<<<< HEAD
+Boarded: false
 Items:
 Riddle: "Marking mortal privation, when firmly in place. An enduring summation, inscribed in my face. What am I?", "tombstone"
-=======
-Boarded: false
-Items:Scroll 3
-Riddle:
->>>>>>> branch 'master' of https://github.com/jslightham/Zork/
 Exit Rooms: E-Dining Room
 
 Room name: Library
