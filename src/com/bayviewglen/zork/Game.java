@@ -330,7 +330,24 @@ class Game {
 				}
 				break;
 			case "take":
-				if(command.hasItem()) {
+				boolean hasAll = false;
+				for(String a : command.getOtherWords()) {
+					if(a.equals("all"))
+						hasAll = true;
+				}
+				if(hasAll){
+					for(int i =0; i<currentRoom.getItems().size(); i++) {
+						if(player.addToInventory(currentRoom.getItem(i))) {
+							currentRoom.removeItem(i);
+							i--;
+						}else {
+							System.out.println("You can't carry any more!");
+							break;
+						}
+						System.out.println("Taken");
+					}
+				}
+				else if(command.hasItem()) {
 					Class<?> clazz;
 					Item object;
 					try {
@@ -445,11 +462,9 @@ class Game {
 							}else {
 								System.out.println("That enemy is not in this room!");
 							}
-					
 				}else {
 					System.out.println("Attack what?");
 				}
-					
 				} else {
 					if(command.hasItem()) {
 						boolean has = false;
@@ -468,6 +483,7 @@ class Game {
 				break;
 			case "read": 
 				
+				break;
 			default:
 				return false;
 		}

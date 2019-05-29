@@ -1,7 +1,7 @@
 Room name: Circle Room
 Room Description: You are in a circular room. The windows to the east are covered with boards that let in just enough light to see.<br>There seems to be some writing on the wall. 
 Locked: false
-Items:Lockpick,Milk,
+Items:Lockpick,Milk
 Riddle: "Who is never hungry during Christmas?", "The turkey because he is always stuffed."
 Exit Rooms: W-Apple Hallway
 

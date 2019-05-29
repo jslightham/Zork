@@ -16,6 +16,7 @@ public class Player extends Entity{
 
 	public boolean addToInventory(Item item){
 		if(currentInventoryWeight + item.getWeight() < INVENTORY_CAPACITY){
+			currentInventoryWeight+= item.getWeight();
 			inventory.add(item);
 			return true;
 		}
@@ -26,6 +27,7 @@ public class Player extends Entity{
 		for(int i =0; i<inventory.size(); i++) {
 			if(item.equals(inventory.get(i))) {
 				inventory.remove(i);
+				currentInventoryWeight-= item.getWeight();
 				return;
 			}
 		}
