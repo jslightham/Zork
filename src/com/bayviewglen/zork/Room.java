@@ -27,6 +27,7 @@ class Room {
 	private ArrayList<Item> items;
 	private Riddle riddle; 
 	private boolean locked;
+	private boolean boarded;
 
 	/**
 	 * Create a room described "description". Initially, it has no exits.
@@ -49,9 +50,15 @@ class Room {
 	public void setLocked(boolean b) {
 		locked = b;
 	}
+	public void setBoarded(boolean b) {
+		boarded = b;
+	}
 	
 	public boolean getLocked() {
 		return locked;
+	}
+	public boolean getBoarded() {
+		return boarded;
 	}
 	
 	public void setExit(char direction, Room r) throws Exception {
