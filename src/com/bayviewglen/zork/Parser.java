@@ -52,6 +52,7 @@ class Parser {
 			words.add(tokenizer.nextToken());
 		}
 		for(int i=0; i<words.size(); i++) {
+			words.set(i, CommandWords.replaceSynonym(words.get(i)));
 			if(words.get(i).equals("open") || words.get(i).equals("unlock")) {
 				open = true;
 			}
