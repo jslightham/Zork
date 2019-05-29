@@ -25,6 +25,7 @@ class Room {
 	private String description;
 	private HashMap<String, Room> exits; // stores exits of this room.
 	private ArrayList<Item> items;
+	private Riddle riddle; 
 	private boolean locked;
 
 	/**
@@ -80,6 +81,13 @@ class Room {
 		}
 
 		exits.put(dir, r);
+	}
+	
+	/*
+	 * Assigns a Riddle object to the Room
+	 */
+	public void addRiddle(Riddle riddle) {
+		this.riddle = riddle; 
 	}
 	
 	/*
@@ -213,4 +221,5 @@ class Room {
 		}
 		return hasItem;
 	}
+	
 }

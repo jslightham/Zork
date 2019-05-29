@@ -72,6 +72,16 @@ class Game {
 				}
 				}catch(Exception e) {
 				}
+				//Initialize the riddle in the room, if it exists
+				String riddle = roomScanner.nextLine().split(":", 2)[1].trim();
+				try {
+					String question = riddle.split(",")[0].trim().substring(1, riddle.split(",")[0].length()-1).replaceAll("<comma>", ",");
+					String answer = riddle.split(",")[1].trim().substring(1, riddle.split(",")[1].length()-2).replaceAll("<comma>", ",");
+					Riddle r = new Riddle(question, answer);
+					room.addRiddle(r);
+				}catch(Exception e) {
+				}
+				
 				
 				// Read the Exits
 				String roomExits = roomScanner.nextLine();
@@ -84,8 +94,7 @@ class Game {
 
 				exits.put(roomName.substring(10).trim().toUpperCase().replaceAll(" ", "_"), temp);
 
-				// This puts the room we created (Without the exits in the
-				// masterMap)
+				// This puts the room we created (Without the exits in the masterMap)
 				masterRoomMap.put(roomName.toUpperCase().substring(10).trim().replaceAll(" ", "_"), room);
 				
 				if(roomScanner.hasNextLine()) {
@@ -213,7 +222,7 @@ class Game {
 								player.removeFromInventory(player.getInventory().get(i));
 							}
 							currentRoom = masterRoomMap.get("CIRCLE_ROOM");
-							System.out.println("You are now back in the circle room. Your items remain where you died.");
+							System.out.println("Poof! You looked pretty banged up there, so I brought you back to the circle room. Your items are where you died.");
 							player.setHealth(100.0);
 							currentCombat.getEnemy().setHealth(100.0);
 							currentCombat = null;
