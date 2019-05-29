@@ -36,6 +36,7 @@ class Parser {
 		String direction = "";
 		String item = "";
 		String enemy = "";
+		String
 		boolean open = false;
 		//String word2;
 		ArrayList<String> words = new ArrayList<String>();

@@ -29,13 +29,14 @@ class Command {
 	private ArrayList<String> otherWords;
 	private String item;
 	private String enemy;
+	private String riddler; 
 
 	/**
 	 * Create a command object. First and second word must be supplied, but
 	 * either one (or both) can be null. The command word should be null to
 	 * indicate that this was a command that is not recognised by this game.
 	 */
-	public Command(String firstWord, ArrayList<String> otherWords, String direction, String item, String enemy) {
+	public Command(String firstWord, ArrayList<String> otherWords, String direction, String item, String enemy, String riddler) {
 		commandWord = firstWord;
 		this.otherWords = otherWords;
 		this.direction = direction;
@@ -53,6 +54,7 @@ class Command {
 			this.direction = "down";
 		this.item = item;
 		this.enemy = enemy;
+		this.riddler = riddler; 
 	}
 
 	/**
@@ -104,6 +106,9 @@ class Command {
 	}
 	public String getEnemy() {
 		return enemy;
+	}
+	public boolean hasRiddler() {
+		
 	}
 	public boolean hasEnemy() {
 		return !enemy.equals("");

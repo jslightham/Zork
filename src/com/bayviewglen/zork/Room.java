@@ -18,6 +18,8 @@ import java.util.Set;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+
+import com.bayviewglen.zork.Entities.*;
 import com.bayviewglen.zork.Items.*;
 
 class Room {
@@ -25,7 +27,7 @@ class Room {
 	private String description;
 	private HashMap<String, Room> exits; // stores exits of this room.
 	private ArrayList<Item> items;
-	private Riddle riddle; 
+	private Riddler riddler; 
 	private boolean locked;
 
 	/**
@@ -86,8 +88,8 @@ class Room {
 	/*
 	 * Assigns a Riddle object to the Room
 	 */
-	public void addRiddle(Riddle riddle) {
-		this.riddle = riddle; 
+	public void addRiddler(Riddler riddler) {
+		this.riddler = riddler; 
 	}
 	
 	/*
