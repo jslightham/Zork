@@ -47,7 +47,7 @@ class CommandWords {
 			return false;
 		}
 	}
-	// Check if given string is direction
+	// Check if given string is a direction
 	public static boolean isDirection(String aString) {
 		try {
 		return m_words.get(aString).equals("direction");

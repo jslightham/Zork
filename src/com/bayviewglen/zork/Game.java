@@ -265,7 +265,7 @@ class Game {
 				if(nextRoom.getLocked()) {
 					nextRoom.setLocked(false);
 					player.removeFromInventory(new Lockpick());
-					System.out.println("With great effort, you unlocked the door!");
+					System.out.println("After a little bit of picking, a click is heard and the door opens slightly!");
 				}else{
 					System.out.println("That door is already unlocked!");
 				}
@@ -273,7 +273,7 @@ class Game {
 					System.out.println("There is no door there!");
 				}
 			}else if(!command.hasDirection()){
-				System.out.println("You must specify a direction!");
+				System.out.println("In what direction do you want to go in?");
 			}else {
 				System.out.println("What do you want to open the door with?");
 			}
@@ -293,7 +293,7 @@ class Game {
 			case "quit":
 				return true;
 			case "die":
-				System.out.println("If you insist... \n Poof! You're gone. You're out of the castle now, but now a new, grand new adventure begins...");
+				System.out.println("If you insist... \nPoof! You're gone. You're out of the castle now, but now a new, grand new adventure begins...");
 				return true; 
 			case "eat":
 				
@@ -311,19 +311,19 @@ class Game {
 							}
 						}
 						if(object.isConsumable() && hasItem) {
-							System.out.println("Yum!");
+							System.out.println("Nom Nom Nom...");
 							player.eat();
-							System.out.println("Your health is now " + player.getHealth() + "%");
+							System.out.println("Your health is now at " + player.getHealth() + "%");
 							player.removeFromInventory(object);
 							if(currentCombat != null)
 								currentCombat.setEnemyTurn();
 						}else if(object.isConsumable()) {
-							System.out.println("You do not have a " + command.getItem());
+							System.out.println("You don't have a " + command.getItem());
 						}else {
-							System.out.println("You cannot eat a " + command.getItem());
+							System.out.println("Sorry, you can't eat a " + command.getItem());
 						}
 					} catch(Exception e) {
-						System.out.println("You cannot eat a " + command.getItem());
+						System.out.println("Sorry, you can't eat a " + command.getItem());
 					}
 				}else {
 					System.out.println("Eat what?");
@@ -344,7 +344,7 @@ class Game {
 							currentRoom.removeItem(object);
 							System.out.println("Taken");
 						}else {
-							System.out.println("You cannot carry any more!");
+							System.out.println("You can't carry any more stuff!");
 						}
 					} catch(Exception e) {
 						
@@ -466,6 +466,8 @@ class Game {
 					}
 				}
 				break;
+			case "read": 
+				
 			default:
 				return false;
 		}
