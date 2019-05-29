@@ -108,7 +108,7 @@ class Command {
 		return enemy;
 	}
 	public boolean hasRiddler() {
-		
+		return CommandWords.isRiddler(riddler); 
 	}
 	public boolean hasEnemy() {
 		return !enemy.equals("");

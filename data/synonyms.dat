@@ -3,6 +3,9 @@ grab, take
 destroy, attack
 kill, attack
 ?, help
+man, riddler
+butler, riddler
+helper, riddler
 leave, quit
 drive, go
 move, go

@@ -2,7 +2,8 @@ go, verb
 quit, verb
 help, verb
 jump, verb
-read,verb
+read, verb
+talk, verb
 north, direction
 south, direction
 west, direction
