@@ -232,5 +232,12 @@ class Room {
 		}
 		return hasItem;
 	}
+	public boolean hasRiddler() {
+		return !(this.riddler == null);
+	}
+
+	public Riddler getRiddler() {
+		return riddler; 
+	}
 	
 }

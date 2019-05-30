@@ -80,10 +80,13 @@ class Game {
 				//Initialize the riddle in the room, if it exists
 				String riddle = roomScanner.nextLine().split(":", 2)[1].trim();
 				try {
-					String question = riddle.split(",")[0].trim().substring(1, riddle.split(",")[0].length()-1).replaceAll("<comma>", ",");
-					String answer = riddle.split(",")[1].trim().substring(1, riddle.split(",")[1].length()-2).replaceAll("<comma>", ",");
+					int comma1 = riddle.indexOf(","); 
+					int comma2 = riddle.indexOf(",", riddle.indexOf(",") + 1); 
+					String message = riddle.substring(1, comma1 - 1).replaceAll("<comma>", ",");
+					String question = riddle.substring(comma1 + 3, comma2 - 1).replaceAll("<comma>", ",");
+					String answer = riddle.substring(comma2 + 3, riddle.length() - 1).replaceAll("<comma>", ",");
 					Riddle riddleObj = new Riddle(question, answer);
-					Riddler butler = new Riddler(100, 100, riddleObj); 
+					Riddler butler = new Riddler(100, 100, riddleObj, message); 
 					room.addRiddler(butler);
 				}catch(Exception e) {
 				}
@@ -361,7 +364,21 @@ class Game {
 				}
 				break;
 			case "talk":
-				System.out.println("Salad");
+				if(currentRoom.hasRiddler()) {
+					Scanner rScanner = new Scanner(System.in); 
+					String message = currentRoom.getRiddler().getMessage(); 
+					String riddle = currentRoom.getRiddler().getRiddle().getQuestion(); 
+					String answer = currentRoom.getRiddler().getRiddle().getAnswer(); 
+					System.out.println(message + "\n" + riddle + "\nWhat is your answer?:");
+					String guess = rScanner.nextLine(); 
+					if(guess.toLowerCase().equals(answer.toLowerCase())) {
+						System.out.println("Good Job!");
+					}else {
+						System.out.println("Sorry, that isn't the answer. Think about it, then try again.");
+					}
+				}else {
+					System.out.println("Talk to who?");
+				}
 				break; 
 			case "take":
 				boolean hasAll = false;
@@ -375,7 +392,7 @@ class Game {
 							currentRoom.removeItem(i);
 							i--;
 						}else {
-							System.out.println("You can't carry any more!");
+							System.out.println("You can't carry any more stuff!");
 							break;
 						}
 						System.out.println("Taken");
@@ -407,21 +424,9 @@ class Game {
 				break;
 					
 			case "look":
-				boolean hasItems = false;
-				String items = "";
-				for(Item i : currentRoom.getItems()) {
-					hasItems = true;
-					items += i.getName() + "   ";
-				}
-				if(hasItems) {
-					System.out.println(currentRoom.longDescription());
-					System.out.print("Items: ");
-					System.out.print(items);
-					System.out.println();
-				}else {
-					System.out.println(currentRoom.longDescription());
-					System.out.println("There are no items.");
-				}
+				System.out.print(currentRoom.longDescription()); 
+				System.out.println(currentRoom.exitString());
+				System.out.println(currentRoom.itemString());
 				break;
 				
 			case "inventory": case "i":

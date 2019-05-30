@@ -5,8 +5,8 @@ public class Riddle {
 	private String answer; 
 	
 	public Riddle() { 
-		this.question = "The quick brown fox jumped over the lazy dog"; 
-		this.answer = "Okay"; 
+		this.question = "Why did the chicken cross the road?"; 
+		this.answer = "I'm not going through this again."; 
 	}
 	
 	public Riddle(String question, String answer) { 
