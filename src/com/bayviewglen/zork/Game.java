@@ -83,9 +83,9 @@ class Game {
 					int comma1 = riddlerInfo.indexOf(","); 
 					int comma2 = riddlerInfo.indexOf(",", riddlerInfo.indexOf(",") + 1); 
 					int comma3 = riddlerInfo.indexOf(",", comma2 +1); 
-					String message = riddlerInfo.substring(1, comma1 - 1).replaceAll("<comma>", ",");
-					String question = riddlerInfo.substring(comma1 + 3, comma2 - 1).replaceAll("<comma>", ",");
-					String answer = riddlerInfo.substring(comma2 + 3, riddlerInfo.length() - 1).replaceAll("<comma>", ",");
+					String message = riddlerInfo.substring(1, comma1 - 1).replaceAll("<comma>", ",").replaceAll("<br>", "\n");
+					String question = riddlerInfo.substring(comma1 + 3, comma2 - 1).replaceAll("<comma>", ",").replaceAll("<br>", "\n");
+					String answer = riddlerInfo.substring(comma2 + 3, comma3 - 1).replaceAll("<comma>", ",").replaceAll("<br>", "\n");
 					Riddle riddleObj = new Riddle(question, answer);
 					String item = riddlerInfo.substring(comma3 + 2, riddlerInfo.length()); 
 					// Initializes prize object
@@ -375,10 +375,19 @@ class Game {
 					String message = currentRoom.getRiddler().getMessage(); 
 					String riddle = currentRoom.getRiddler().getRiddle().getQuestion(); 
 					String answer = currentRoom.getRiddler().getRiddle().getAnswer(); 
-					System.out.println(message + "\n" + riddle + "\nWhat is your answer?:");
+					System.out.println(message + "\n\nHere's my riddle: " + riddle);
+					System.out.print("Enter your guess here: ");
 					String guess = rScanner.nextLine(); 
 					if(guess.toLowerCase().equals(answer.toLowerCase())) {
-						System.out.println("Good Job!");
+						Item prize = currentRoom.getRiddler().getPrize(); 
+						String prizeName = prize.getName(); 
+						System.out.println("Congratulations! You solved my riddle! As your reward, you get a " + prizeName + "!");
+						if(player.addToInventory(prize)) { 
+							player.addToInventory(prize);
+							System.out.println("A " + prizeName + " has been added to your inventory.");
+						}else {
+							System.out.println("Sorry, you can't carry any more ");
+						}
 					}else {
 						System.out.println("Sorry, that isn't the answer. Think about it, then try again.");
 					}

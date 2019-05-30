@@ -21,5 +21,9 @@ public class Riddler extends Entity {
 		return message;
 	}
 	
+	public Item getPrize() {
+		return prize;
+	}
+	
 
 }

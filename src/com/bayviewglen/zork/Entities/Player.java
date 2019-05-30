@@ -40,14 +40,9 @@ public class Player extends Entity{
 	}
 	
 	public void eat() {
-		// TODO Do we want health or hunger?
 		health+=5;
-		hunger+=5;
 		if(health > 100.0) {
 			health = 100.0;
-		}
-		if(hunger > 100.0) {
-			hunger = 100.0;
 		}
 	}
 
