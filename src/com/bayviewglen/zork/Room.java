@@ -27,8 +27,8 @@ class Room {
 	private String description;
 	private HashMap<String, Room> exits; // stores exits of this room.
 	private ArrayList<Item> items;
-	private Riddler riddler; 
-	private boolean locked;
+	Riddler riddler; //needs to altered outside of the class so that riddler can be set to null.
+	private boolean locked; // Otherwise you can repeatedly solve the riddle and get unlimited items 
 	private boolean boarded;
 
 	/**
