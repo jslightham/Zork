@@ -23,7 +23,7 @@ Riddler:
 Exit Rooms: S-Apple Hallway, Down-Porcupine Stairs (2nd Floor)
 
 Room name: Porcupine Stairs (2nd Floor)
-Room Description: You are now on the second floor. The hallway is completely deserted. A few doors are<br>left slightly ajar. 
+Room Description: You are now on the second floor. The hallway is completely deserted. A few doors are left slightly ajar. 
 Locked: false
 Boarded: false
 Items:
@@ -31,7 +31,7 @@ Riddler:
 Exit Rooms: S-Sir Henry Mill Pellatt's Bedroom, W-Bulb Room, E-Pipe Room, Up-Porcupine Stairs (3rd Floor)
 
 Room name: Bulb Room
-Room Description: You are in the Bulb Room. There is a ragged red rug with a noticeable lump<br>in the middle. One window facing north is bolted shut. 
+Room Description: You are in the Bulb Room. There is a ragged red rug with a noticeable lump in the middle.<br>One window facing north is bolted shut. 
 Locked: false
 Boarded: false
 Items:Garlic
@@ -39,7 +39,7 @@ Riddler:
 Exit Rooms: E-Porcupine Stairs (2nd Floor), W-Lady Pellatt's Bedroom, S-Linen Closet 
 
 Room name: Lady Pellatt's Bedroom
-Room Description: You are now in Lady Pellatt's Bedroom. A four-post bed with elegant pink<br>bedsheets lies in the middle of the room. A golden wardrobe sits along the east wall with a few robes hanging out.
+Room Description: You are now in Lady Pellatt's Bedroom. A four-post bed with elegant pink bedsheets lies in the<br>middle of the room. A golden wardrobe sits along the east wall with a few robes hanging out.
 Locked: false
 Boarded: false
 Items:Robes
@@ -47,7 +47,7 @@ Riddler:
 Exit Rooms: N-Sitting Area, S-Guest Bedroom, E-Bulb Room
 
 Room name: Sitting Area
-Room Description: You are in a room with multiple chairs and fake plants. There are several<br>windows, all of which are shut. A few scratches can be noted on the chairs.
+Room Description: You are in a room with multiple chairs and fake plants. There are several windows, all of which<br>are shut. A few scratches can be noted on the chairs.
 Locked: false
 Boarded: false
 Items:
@@ -71,7 +71,7 @@ Riddler:
 Exit Rooms: W-Pipe Room, N-Elm Bedroom, S-Oak Bedroom
 
 Room name: Elm Bedroom
-Room Description: You are in the Elm Bedroom. The walls are all wooden and a few windows<br>face north. A bed sits in the middle of the room. A few pillows are on the ground. It looks like someone was in here...
+Room Description: You are in the Elm Bedroom. The walls are all wooden and a few windows face north.<br>A bed sits in the middle of the room. A few pillows are on the ground. It looks like someone was in here...
 Locked: false
 Boarded: false
 Items:Water bottle,Pen,Book
@@ -167,7 +167,7 @@ Riddler:
 Exit Rooms: S-Apsen Bedroom, E-Willow Bedroom
 
 Room name: Guest Bedroom
-Room Description: Welcome to the guest bedroom, where guests like yourself stay for the night. There is another tailored man in the corner. He seems to have something he would like to tell you. 
+Room Description: Welcome to the guest bedroom, where guests like yourself stay for the night. There is another tailored<br>man in the corner. He seems to have something he would like to tell you. 
 Locked: false
 Boarded: false
 Items:  
