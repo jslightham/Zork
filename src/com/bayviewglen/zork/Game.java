@@ -78,15 +78,21 @@ class Game {
 				}catch(Exception e) {
 				}
 				//Initialize the riddle in the room, if it exists
-				String riddle = roomScanner.nextLine().split(":", 2)[1].trim();
+				String riddlerInfo = roomScanner.nextLine().split(":", 2)[1].trim();
 				try {
-					int comma1 = riddle.indexOf(","); 
-					int comma2 = riddle.indexOf(",", riddle.indexOf(",") + 1); 
-					String message = riddle.substring(1, comma1 - 1).replaceAll("<comma>", ",");
-					String question = riddle.substring(comma1 + 3, comma2 - 1).replaceAll("<comma>", ",");
-					String answer = riddle.substring(comma2 + 3, riddle.length() - 1).replaceAll("<comma>", ",");
+					int comma1 = riddlerInfo.indexOf(","); 
+					int comma2 = riddlerInfo.indexOf(",", riddlerInfo.indexOf(",") + 1); 
+					int comma3 = riddlerInfo.indexOf(",", comma2 +1); 
+					String message = riddlerInfo.substring(1, comma1 - 1).replaceAll("<comma>", ",");
+					String question = riddlerInfo.substring(comma1 + 3, comma2 - 1).replaceAll("<comma>", ",");
+					String answer = riddlerInfo.substring(comma2 + 3, riddlerInfo.length() - 1).replaceAll("<comma>", ",");
 					Riddle riddleObj = new Riddle(question, answer);
-					Riddler butler = new Riddler(100, 100, riddleObj, message); 
+					String item = riddlerInfo.substring(comma3 + 2, riddlerInfo.length()); 
+					// Initializes prize object
+					Class<?> clazz = Class.forName("com.bayviewglen.zork.Items." + item.trim());
+					Constructor<?> ctor = clazz.getConstructor();
+					Item prize = (Item) ctor.newInstance();
+					Riddler butler = new Riddler(100, 100, riddleObj, message, prize); 
 					room.addRiddler(butler);
 				}catch(Exception e) {
 				}

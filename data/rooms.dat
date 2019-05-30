@@ -3,7 +3,7 @@ Room Description: You are in a circular room. The windows to the east are covere
 Locked: false
 Boarded: false
 Items:Lockpick,Milk
-Riddler: "I can help you in your quest<comma> but only if you answer my riddle.", "Who is never hungry during Christmas?", "The turkey because he is always stuffed"
+Riddler: "I can help you in your quest<comma> but only if you answer my riddle.", "Who is never hungry during Christmas?", "The turkey because he is always stuffed", ShavingCream
 Exit Rooms: W-Apple Hallway
 
 Room name: Apple Hallway

@@ -6,10 +6,11 @@ public class Riddler extends Entity {
 	String message;
 	Item prize; 
 
-	public Riddler(double health, double hunger, Riddle riddle, String message) {
+	public Riddler(double health, double hunger, Riddle riddle, String message, Item prize) {
 		super(health, hunger);
 		this.riddle = riddle; 
 		this.message = message; 
+		this.prize = prize; 
 	}
 
 	public Riddle getRiddle() {
