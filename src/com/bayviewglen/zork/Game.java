@@ -383,12 +383,12 @@ class Game {
 						String prizeName = prize.getName(); 
 						System.out.println("Congratulations! You solved my riddle! As your reward, you get a " + prizeName + "!");
 						if(player.addToInventory(prize)) { 
-							player.addToInventory(prize);
 							System.out.println("A " + prizeName + " has been added to your inventory.");
-							currentRoom.removeRiddler(); 
 							System.out.println("I've got to go find Mr. Pellatt now. Good luck with your escape!");
+							currentRoom.removeRiddler(); 
 						}else {
-							System.out.println("Sorry, you can't carry any more ");
+							System.out.println("Sorry, you can't carry any more, but a " + prize + " has been added to your room.");
+							currentRoom.addItem(prize);
 						}
 					}else {
 						System.out.println("Sorry, that isn't the answer. Think about it, then try again.");
@@ -396,7 +396,10 @@ class Game {
 				}else {
 					System.out.println("Talk to who?");
 				}
-				break; 
+				break;
+			case "scream":
+				System.out.println("Aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahhhhhhhhhhhhhhhhhhhhh!");
+				break;
 			case "take":
 				boolean hasAll = false;
 				for(String a : command.getOtherWords()) {
