@@ -304,7 +304,7 @@ class Game {
 			}else if(!command.hasDirection()){
 				System.out.println("In what direction do you want to go in?");
 			}else {
-				System.out.println("What do you want to open the door with?");
+				System.out.println("What do you want to unlock the door with?");
 			}
 			boolean hasCrowbar = false;
 			for(int i =0; i<player.getInventory().size(); i++) {
@@ -329,7 +329,7 @@ class Game {
 			}else if(!command.hasDirection()){
 				
 			}else {
-				
+				System.out.println("What do you want to unboard the door with?");
 			}
 			break;	
 		case "go": case "n": case "s": case "e": case "w": case "north": case "south": case "west": case "east": case "up": case "down": case "d": case "u":
