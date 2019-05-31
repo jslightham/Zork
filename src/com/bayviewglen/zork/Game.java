@@ -162,10 +162,12 @@ class Game {
 				// Read the Loot
 				String loot = enemyScanner.nextLine().split(":")[1].trim();
 				e.setLoot(loot);
+				masterEnemyMap.put(e, e.getRoom());
 				}
 			}catch(Exception ex) {
 			}
-			masterEnemyMap.put(e, e.getRoom());
+			
+			
 			enemyScanner.close();
 		} 
 
@@ -295,11 +297,17 @@ class Game {
 					nextRoom.setLocked(false);
 					player.removeFromInventory(new Lockpick());
 					System.out.println("After a little bit of picking, a click is heard and the door opens slightly!");
+					if(!nextRoom.getBoarded())
+						break;
 				}else{
 					System.out.println("That door is already unlocked!");
+					if(!nextRoom.getBoarded())
+						break;
 				}
 				}catch(Exception e) {
 					System.out.println("There is no door there!");
+					if(!nextRoom.getBoarded())
+						break;
 				}
 			}else if(!command.hasDirection()){
 				System.out.println("In what direction do you want to go in?");
