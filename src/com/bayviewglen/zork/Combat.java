@@ -3,15 +3,17 @@ package com.bayviewglen.zork;
 import java.lang.reflect.Constructor;
 
 import com.bayviewglen.zork.Entities.Entity;
+import com.bayviewglen.zork.Entities.Player;
 import com.bayviewglen.zork.Entities.Enemies.Enemy;
 import com.bayviewglen.zork.Items.Item;
+import com.bayviewglen.zork.Items.Shavingcream;
 
 public class Combat {
-	private Entity player;
+	private Player player;
 	private Enemy enemy;
 	// if turn is 0 it is player's turn, if 1 it is enemy's turn
 	private int turn; 
-	public Combat(Entity player, Enemy enemy) {
+	public Combat(Player player, Enemy enemy) {
 		this.player = player;
 		this.enemy = enemy;
 	}
@@ -25,7 +27,12 @@ public class Combat {
 			object = (Item) ctor.newInstance();
 			
 			double rand = Math.random();
-			if(rand<0.1) {
+			if(object.equals(new Shavingcream())) {
+				System.out.println("You blinded " + enemy.getName());
+				player.removeFromInventory(new Shavingcream());
+				enemy.setBlinded(true);
+			}
+			else if(rand<0.1) {
 				System.out.println("You missed!");
 				
 				
@@ -51,7 +58,15 @@ public class Combat {
 	
 	public double enemyAttack() {
 		double rand = Math.random();
-		if(rand<0.1) {
+		if(enemy.getBlinded()) {
+			if(rand <0.4) {
+				System.out.println(enemy.getName() + " is no longer blinded!");
+				enemy.setBlinded(false);
+			}
+			else
+				System.out.println(enemy.getName() + " is blinded!");
+		}
+		else if(rand<0.1) {
 			System.out.println(enemy.getName() + " missed!");
 		}else if(rand < 0.15) {
 			player.setHealth(player.getHealth()-enemy.getDamage()*1.5);

@@ -502,7 +502,7 @@ class Game {
 							if(command.hasItem()) {
 								boolean has = false;
 								for(Item i : player.getInventory()) {
-									if(i.getName().toLowerCase().equals(command.getItem())) {
+									if(i.getName().toLowerCase().replaceAll("\\s+","").equals(command.getItem())) {
 										has = true;
 									}
 								}
@@ -525,7 +525,7 @@ class Game {
 					if(command.hasItem()) {
 						boolean has = false;
 						for(Item i : player.getInventory()) {
-							if(i.getName().toLowerCase().equals(command.getItem())) {
+							if(i.getName().toLowerCase().replaceAll("\\s+","").equals(command.getItem())) {
 								has = true;
 							}
 						}

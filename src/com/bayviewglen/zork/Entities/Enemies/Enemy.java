@@ -7,15 +7,18 @@ public class Enemy extends Entity{
 	private String name;
 	private String description;
 	private String room;
+	private boolean blinded;
 	
 	public Enemy(){
 		super(100.0, 100.0); 
 		damageGiven = 10; 
+		blinded = false;
 	}
 	
 	public Enemy(int damageGiven){
 		super(100.0, 100.0); 
 		this.damageGiven = damageGiven; 
+		blinded = false;
 	}
 	
 	public void setName(String name) {
@@ -44,5 +47,11 @@ public class Enemy extends Entity{
 	}
 	public int getDamage() {
 		return this.damageGiven;
+	}
+	public boolean getBlinded() {
+		return blinded;
+	}
+	public void setBlinded(boolean blinded) {
+		this.blinded = blinded;
 	}
 }
