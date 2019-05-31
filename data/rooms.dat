@@ -7,7 +7,7 @@ Riddler: "Hello there. My name is Kevin and I am Sir Pellatt's butler. I underst
 Exit Rooms: W-Apple Hallway
 
 Room name: Apple Hallway
-Room Description: You are in an empty hallway. Many closed doors surround you. To the east is the<br>Circle Room and north is the Porcupine Stairs. The door to the stairs is locked and there is not key. 
+Room Description: You are in an empty hallway. Many closed doors surround you. To the east is the<br>Circle Room and north is the Porcupine Stairs. The door to the stairs is locked and there is no key. 
 Locked: false
 Boarded: false
 Items: 
@@ -215,7 +215,7 @@ Riddler:
 Exit Rooms: N-Dining Room, E-Study, S-Supply Closet
 
 Room name: Dining Room
-Room Description: Welcome to the Dining Room. The old wood boards squeak below you. An elegant chandelier hangs in the center of the<br>room, although it is turned off. A gigantic long wood table sits in the center of the room with 12<br>cushioned chairs sitting around it. A cello rests in the corner of the room, along with a small stool and a music stand. 
+Room Description: Welcome to the Dining Room. The old wood boards squeak below you. An elegant chandelier hangs<br>in the center of the room, although it is turned off. A gigantic long wood table sits in the center of<br<the room with 12 cushioned chairs sitting around it. A cello rests in the corner of the room,<br>along with a small stool and a music stand. 
 Locked: false
 Boarded: false
 Items: 
@@ -247,7 +247,7 @@ Riddler:
 Exit Rooms: S-Entry, W-Library, E-Oak Drawing Room
 
 Room name: Oak Drawing Room
-Room Description: Welcome to the Oak Drawing Room. A large red carpet covers the floor. Giant floor-to-ceiling windows face north,<br>letting in lots of sunlight. A sword is perched on a small table in the center of the room.<br>What an interesting choice of decor...
+Room Description: Welcome to the Oak Drawing Room. A large red carpet covers the floor. Giant floor-to-ceiling windows face<br>north, letting in lots of sunlight. A sword is perched on a small table in the center of the room.<br>What an interesting choice of decor...
 Locked: false
 Boarded: false
 Items:Sword
@@ -255,7 +255,7 @@ Riddler:
 Exit Rooms: W-Great hall, S-Smoking Room
 
 Room name: Smoking Room
-Room Description: You are now in the Smoking Room. This room is too fancy for its purpose if you ask me. I don't see<br>why the fireplace or deer heads are necessary. A leather couch faces the fireplace, and a fur blanket hangs over it.
+Room Description: You are now in the Smoking Room. This room is too fancy for its purpose if you ask me. I don't see why<br>the fireplace or deer heads are necessary. A leather couch faces the fireplace, and a fur blanket hangs over it.
 Locked: false
 Boarded: false
 Items:Blanket
