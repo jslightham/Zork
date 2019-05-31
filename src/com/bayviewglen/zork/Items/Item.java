@@ -67,5 +67,7 @@ public class Item {
 	public int getDamage() {
 		return this.damage;
 	}
-	
+	public boolean isCraftable() {
+		return false;
+	}
 }

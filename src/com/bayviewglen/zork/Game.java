@@ -540,6 +540,51 @@ class Game {
 					}
 				}
 				break;
+			case "craft":
+				if(command.hasItem()) {
+					Class<?> clazz;
+					CraftableItem object;
+					try {
+						clazz = Class.forName("com.bayviewglen.zork.Items." + command.getItem().substring(0, 1).toUpperCase().trim() + command.getItem().substring(1).trim());
+						Constructor<?> ctor = clazz.getConstructor();
+						object = (CraftableItem) ctor.newInstance();
+						if(object.isCraftable()) {
+							boolean playerHasItems = true;
+							boolean hasItem = false;
+							for(Item i : object.getMaterials()) {
+								hasItem = false;
+								for(Item pi : player.getInventory()) {
+									if(i.equals(pi)) {
+										hasItem = true;
+									}
+								}
+								if(playerHasItems) {
+									playerHasItems = hasItem;
+								}
+							}
+							if(playerHasItems) {
+								if(player.addToInventory(object)) {
+									for(Item i : object.getMaterials()) {
+										player.removeFromInventory(i);
+									}
+									System.out.println("You have crafted a " + object.getName());
+								}else {
+									System.out.println("You cannot carry any more!");
+								}
+							}else {
+								System.out.println("You do not have the nessecary parts to make a " + object.getName() + "!");
+							}
+							
+						}else {
+							System.out.println("You cannot make that item!");
+						}
+					}catch(Exception e) {
+						System.out.println("You cannot make that item!");
+					}
+				}else {
+					System.out.println("Craft what?");
+				}
+				break;
 			default:
 				return false;
 		}
