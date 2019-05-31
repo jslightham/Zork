@@ -385,7 +385,7 @@ class Game {
 						if(player.addToInventory(prize)) { 
 							player.addToInventory(prize);
 							System.out.println("A " + prizeName + " has been added to your inventory.");
-							currentRoom.riddler = null;
+							currentRoom.removeRiddler(); 
 							System.out.println("I've got to go find Mr. Pellatt now. Good luck with your escape!");
 						}else {
 							System.out.println("Sorry, you can't carry any more ");
@@ -542,6 +542,7 @@ class Game {
 		}
 		return false;
 	}
+
 
 	// implementations of user commands:
 	/**
