@@ -212,13 +212,16 @@ class Game {
 		if (printWelcome()) {
 			// Enter the main command loop. Here we repeatedly read commands and
 			// execute them until the game is over.
-			System.out.println(
-					"\nType 'help' if you need help, consult the wiki \non GitHub if you are confused and enjoy the game!\n");
+			System.out.println("\nType 'help' if you need help, consult the wiki \non GitHub if you are confused and enjoy the game!\n");
 			System.out.println("\n\nEscape Casa Loma");
 			System.out.println("---------------------\n");
 			System.out.print(currentRoom.longDescription());
 			System.out.println(currentRoom.itemString());
 			System.out.println(currentRoom.exitString());
+			player.addToInventory(new Lockpick());
+			player.addToInventory(new Key());
+			player.addToInventory(new Crowbar());
+			player.addToInventory(new Batteringram());
 			boolean finished = false;
 			while (!finished) {
 				if (currentCombat != null) {
