@@ -304,15 +304,6 @@ Items:
 Riddler:
 Exit Rooms: N-Smoking Room
 
-Room name: Entry
-Room Description: CONGRATULATIONS!!! You have escaped alive! I guess Sir Pellatt will have to find another victim tomorrow. 
-New Room Description: 
-Locked: true
-Boarded: true
-Items:
-Riddler:
-Exit Rooms: E-Smoking Room, N-Great Hall, W-Study
-
 Room name: Study
 Room Description: You are now in the Study. The south wall has a floor-to-ceiling book shelf, towering over you. A big wooden desk,<br>along with a cushioned chair, face the entrance. 2 lit candles illuminate the desk, and a key is visible.
 New Room Description: 
@@ -321,3 +312,21 @@ Boarded: false
 Items: Key
 Riddler:
 Exit Rooms: N-Library, E-Entry, W-Breakfast Room 
+
+Room name: Entry
+Room Description: CONGRATULATIONS!!! You have escaped alive! I guess Sir Pellatt will have to find another victim tomorrow.<br>Go south to make your escape!!!
+New Room Description: 
+Locked: true
+Boarded: true
+Items:
+Riddler:
+Exit Rooms: E-Smoking Room, N-Great Hall, W-Study, S-Courtyard
+
+Room name: Courtyard
+Room Description: <br>CREDITS:<br><br>Johnathon - Lead Programmer<br>Luca - Assistant Programmer<br>Victoria - Rooms and Descriptions<br>Evan - Wiki<br><br>Thank you for playing our game!<br><br>Enter "quit" or "q" to leave the game,<br>or continue exploring the castle<br>by entering "N", if you would like!<br>
+New Room Description: 
+Locked: false
+Boarded: false
+Items:
+Riddler:
+Exit Rooms: N-Entry
