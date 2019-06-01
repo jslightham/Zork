@@ -25,6 +25,7 @@ import com.bayviewglen.zork.Items.*;
 class Room {
 	private String roomName;
 	private String description;
+	private String newDescription; 
 	private HashMap<String, Room> exits; // stores exits of this room.
 	private ArrayList<Item> items;
 	private Riddler riddler; //needs to altered outside of the class so that riddler can be set to null.
@@ -253,6 +254,7 @@ class Room {
 
 	public void removeRiddler() {
 		riddler = null; 
+		this.description = newDescription; 
 		
 	}
 
@@ -262,6 +264,11 @@ class Room {
 				return true; 
 		}
 		return false; 
+	}
+
+	public void setNewRoomDescription(String newRoomDesc) {
+		this.newDescription = newRoomDesc; 
+		
 	}
 	
 }
