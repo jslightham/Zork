@@ -4,7 +4,7 @@ New Room Description:  You are in a circular room. The windows to the east are c
 Locked: false
 Boarded: false
 Items: Lightbulb, Candlestick
-Riddler: "Hello there. My name is Kevin and I am Sir Pellatt's butler. I understand that my master<comma><br>Sir Pellatt has wrongfully imprisoned you. If you answer my riddle<comma> I can give you something to<br>help you with your escape - nothing comes for free you know!", "What goes moo?", "Cows", Lockpick
+Riddler: "Hello there. My name is Kevin and I am Sir Pellatt's butler. I understand that my master<comma><br>Sir Pellatt has wrongfully imprisoned you. If you answer my riddle<comma> I can give you something to<br>help you with your escape - nothing comes for free you know!", "What has a head<comma> a tail<comma> is brown<comma> and has no legs?", "A penny", Lockpick
 Exit Rooms: W-Apple Hallway
 
 Room name: Apple Hallway
@@ -189,7 +189,7 @@ Exit Rooms: S-Aspen Bedroom, E-Willow Bedroom
 
 Room name: Guest Bedroom
 Room Description: Welcome to the guest bedroom, where guests like yourself stay for the night. There is another tailored<br>man in the corner. He seems to have something he would like to tell you. 
-New Room Description: 
+New Room Description: Welcome to the guest bedroom, where guests like yourself stay for the night.
 Locked: false
 Boarded: false
 Items:  
@@ -251,8 +251,8 @@ Riddler:
 Exit Rooms: S-Breakfast Room, E-Library, W-Conservatory
 
 Room name: Conservatory
-Room Description: You are now in the Conservatory. The walls and ceilings are all glass, which gives you a gorgeous view of the outdoors.<br>A few potted plants lay directly in the sunlight. There is a tailored woman standing in the corner of the room. 
-New Room Description: 
+Room Description: You are now in the Conservatory. The walls and ceilings are all glass, which gives you a gorgeous view of the outdoors.<br>A few potted plants lay directly in the sunlight. There is a woman in a tailored pantsuit standing in the corner of the room. 
+New Room Description: You are now in the Conservatory. The walls and ceilings are all glass, which gives you a gorgeous view of the outdoors.<br>A few potted plants lay directly in the sunlight. 
 Locked: false
 Boarded: false
 Items:

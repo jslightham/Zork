@@ -61,7 +61,7 @@ class Game {
 				room.setDescription(roomDescription.split(": ")[1].replaceAll("<br>", "\n").trim());
 				//Read room description after riddler is removed.
 				String newRoomDescription = roomScanner.nextLine(); 
-				room.setNewRoomDescription(newRoomDescription.split(": ")[1].replaceAll("<br>", "\n").trim());
+				room.setNewRoomDescription(newRoomDescription.substring(newRoomDescription.indexOf(":") + 1,newRoomDescription.length()).replaceAll("<br>", "\n").trim());
 				// Read the locked state
 				boolean locked = Boolean.parseBoolean(roomScanner.nextLine().split(": ")[1].replaceAll("<br>", "\n").trim());
 				room.setLocked(locked);
