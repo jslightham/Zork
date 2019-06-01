@@ -475,6 +475,12 @@ class Game {
 				System.out.println("You can't talk to someone while in battle!");
 			}
 			break;
+		case "exercise":
+			System.out.println("You break out your High-Knees and Burpees from that one free-trial HIIT class you tried at your\ncommunity centre and feel quite refreshed afterward.");
+			break; 
+		case "give":
+			System.out.println("There aren't any cookies in Casa Loma. I guess Rattenbury's mentor group\nwon't be getting their Mentor Kindness gift...");
+			break; 
 		case "scream":
 			System.out.println("Aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahhhhhhhhhhhhhhhhhhhhh!");
 			break;
