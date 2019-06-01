@@ -158,6 +158,10 @@ class Game {
 				// Read the Damage Given
 				int damageGiven = Integer.parseInt(enemyScanner.nextLine().split(":")[1].trim());
 				e.setDamageGiven(damageGiven);
+				// Read the Loot
+				String loot = enemyScanner.nextLine().split(":")[1].trim();
+				e.setLoot(loot);
+				masterEnemyMap.put(e, e.getRoom());
 			}
 		} catch (Exception ex) {
 		}
