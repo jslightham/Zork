@@ -682,6 +682,7 @@ class Game {
 						if(hasBandage) {
 							System.out.println("You are no longer bleeding.");
 							player.setBleeding(false);
+							player.removeFromInventory(new Bandage());
 						}else {
 							System.out.println("You do not have a bandage!");
 						}
