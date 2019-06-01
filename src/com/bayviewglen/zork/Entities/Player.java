@@ -9,6 +9,7 @@ public class Player extends Entity{
 	private ArrayList<Item> inventory = new ArrayList<Item>(); 
 	private final int INVENTORY_CAPACITY = 120;
 	private int currentInventoryWeight;
+	private boolean isBleeding;
 	
 	public Player() {
 		super(100.0, 100.0);
@@ -40,10 +41,18 @@ public class Player extends Entity{
 	}
 	
 	public void eat() {
-		health+=5;
+		health+=25;
 		if(health > 100.0) {
 			health = 100.0;
 		}
+	}
+	
+	public void setBleeding(boolean bleeding) {
+		this.isBleeding = bleeding;
+	}
+	
+	public boolean getBleeding() {
+		return isBleeding;
 	}
 
 }

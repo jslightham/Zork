@@ -236,17 +236,39 @@ class Game {
 							for (int i = 0; i < player.getInventory().size(); i++) {
 								currentRoom.addItem(player.getInventory().get(i));
 								player.removeFromInventory(player.getInventory().get(i));
+								i--;
 							}
 							currentRoom = masterRoomMap.get("CIRCLE_ROOM");
 							System.out.println(
 									"Poof! You looked pretty banged up there, so I brought you back to the circle room. Your items are where you died.");
 							player.setHealth(100.0);
+							player.setBleeding(false);
+							try {
 							currentCombat.getEnemy().setHealth(100.0);
 							currentCombat = null;
+							}catch (Exception e) {
+								
+							}
 						}
 					}
 				}
-
+				if(player.getBleeding()) {
+					player.setHealth(player.getHealth()-2);
+					System.out.println("You are bleeding. Find, and use bandages to stop bleeding.");
+					System.out.println("Your health is now " + player.getHealth() + "%");
+				}
+				if(player.getHealth() <= 0) {
+					for (int i = 0; i < player.getInventory().size(); i++) {
+						currentRoom.addItem(player.getInventory().get(i));
+						player.removeFromInventory(player.getInventory().get(i));
+						i--;
+					}
+					currentRoom = masterRoomMap.get("CIRCLE_ROOM");
+					System.out.println(
+							"Poof! You looked pretty banged up there, so I brought you back to the circle room. Your items are where you died.");
+					player.setHealth(100.0);
+					player.setBleeding(false);
+				}
 				Command command = parser.getCommand();
 				finished = processCommand(command);
 			}
@@ -603,6 +625,8 @@ class Game {
 					} else {
 						System.out.println("You do not have that weapon!");
 					}
+				}else {
+					System.out.println("Attack with what?");
 				}
 			}
 			break;
@@ -651,6 +675,37 @@ class Game {
 					System.out.println("Craft what?");
 				}
 				break;
+			case "use":
+				if(command.hasItem()) {
+					Class<?> clazz;
+					Item object;
+					try {
+						clazz = Class.forName(
+								"com.bayviewglen.zork.Items." + command.getItem().substring(0, 1).toUpperCase().trim()
+										+ command.getItem().substring(1).trim());
+						Constructor<?> ctor = clazz.getConstructor();
+						object = (Item) ctor.newInstance();
+						if(!object.equals(new Bandage()))
+							throw new Exception();
+						boolean hasBandage = false;
+						for(Item i : player.getInventory()) {
+							if(i.equals(new Bandage())) {
+								hasBandage = true;
+							}
+						}
+						if(hasBandage) {
+							System.out.println("You are no longer bleeding.");
+							player.setBleeding(false);
+							player.removeFromInventory(new Bandage());
+						}else {
+							System.out.println("You do not have a bandage!");
+						}
+					}catch (Exception e) {
+						System.out.println("You cannot use that item!");
+					}
+				}else {
+					System.out.println("Use what?");
+				}
 		default:
 			return false;
 		}
