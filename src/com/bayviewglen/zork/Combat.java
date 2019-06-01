@@ -68,7 +68,7 @@ public class Combat {
 		}
 		else if(rand<0.1) {
 			System.out.println(enemy.getName() + " missed!");
-		}else if(rand < 0.50) {
+		}else if(rand < 0.20) {
 			player.setHealth(player.getHealth()-enemy.getDamage()*1.5);
 			if(player.getHealth() < 0)
 				player.setHealth(0);
