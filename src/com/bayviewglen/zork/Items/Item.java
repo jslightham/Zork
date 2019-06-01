@@ -1,6 +1,10 @@
 package com.bayviewglen.zork.Items;
 
 public class Item {
+	/*
+	 * The main class that all items, and types of items extend. 
+	 * Items are their own classes due to the way that they are used in this game, created and destroyed multiple times. 
+	 */
 	private int id;
 	private String name;
 	private String description;
