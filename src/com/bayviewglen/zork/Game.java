@@ -462,7 +462,7 @@ class Game {
 							System.out.println("I've got to go find Mr. Pellatt now. Good luck with your escape!");
 							currentRoom.removeRiddler();
 						} else {
-							System.out.println("Sorry, you can't carry any more, but a " + prize + " has been added to your room.");
+							System.out.println("Sorry, you can't carry any more, but a " + prize.getName() + " has been added to your room.");
 							currentRoom.addItem(prize);
 						}
 					} else {

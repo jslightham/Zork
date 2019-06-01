@@ -164,7 +164,7 @@ Locked: false
 Boarded: false
 Items:
 Riddler:
-Exit Rooms: S-Aspen Bedroom, E-Willow Bedroom
+Exit Rooms: S-Aspen Bedroom, E-Willow Bedroom, N-Guest Bedroom
 
 Room name: Guest Bedroom
 Room Description: Welcome to the guest bedroom, where guests like yourself stay for the night. There is another tailored<br>man in the corner. He seems to have something he would like to tell you. 
@@ -202,7 +202,7 @@ Room name: Supply Closet
 Room Description: You are in the Supply Closet. A mop, bucket and a few towels lay on the ground. The space is quite small<br>and can only hold around 3 people. Nothing interesting seems to be happening in here.
 Locked: false
 Boarded: false
-Items:Mop,Bucket,Towels, Robes
+Items: Mop, Bucket, Towels, Robes
 Riddler:
 Exit Rooms: E-Silver Stairs (1st Floor), S-Kitchen, N-Serving and Breakfast Room
 
@@ -210,7 +210,7 @@ Room name: Serving and Breakfast Room
 Room Description: You are now in the Serving and Breakfast Room. A small wood table covered in crumbs lies in the corner,<br>surrounded by 4 chairs. On its left lies a counter with a sink and some butter. Around the counter are 5 high chairs.<br>Looks like someone ate breakfast here earlier.
 Locked: false
 Boarded: false
-Items:Butter
+Items: Butter
 Riddler:
 Exit Rooms: N-Dining Room, E-Study, S-Supply Closet
 
@@ -227,14 +227,14 @@ Room Description: You are now in the Conservatory. The walls and ceilings are al
 Locked: false
 Boarded: false
 Items:
-Riddler: "Hey<comma> I'm Karen. Kevin is on his break but he told me to give you this riddle", "Marking mortal privation<comma> when firmly in place. An enduring summation<comma> inscribed in my face. What am I?", "A tombstone", Point
+Riddler: "Hey<comma> I'm Karen. Kevin is on his break but he told me to give you this riddle", "Marking mortal privation<comma> when firmly in place. An enduring summation<comma> inscribed in my face. What am I?", "tombstone", Cylinder
 Exit Rooms: E-Dining Room
 
 Room name: Library
 Room Description: You are in the Library. Intricate designs are carved into the tall arced ceiling. Thousands and thousands of books stretch from the floor to<br>the ceiling. A few blue couches with a lantern on a small side table sit in the far<br>northwest corner of the room. An open novel with a dusty leather cover rests on the table.
 Locked: false
 Boarded: false
-Items:Novel
+Items: Novel
 Riddler:
 Exit Rooms: W-Dining Room, S-Study, E-Great Hall
 
@@ -250,7 +250,7 @@ Room name: Oak Drawing Room
 Room Description: Welcome to the Oak Drawing Room. A large red carpet covers the floor. Giant floor-to-ceiling windows face<br>north, letting in lots of sunlight. A sword is perched on a small table in the center of the room.<br>What an interesting choice of decor...
 Locked: false
 Boarded: false
-Items:Sword
+Items: Sword
 Riddler:
 Exit Rooms: W-Great hall, S-Smoking Room
 
@@ -258,7 +258,7 @@ Room name: Smoking Room
 Room Description: You are now in the Smoking Room. This room is too fancy for its purpose if you ask me. I don't see why<br>the fireplace or deer heads are necessary. A leather couch faces the fireplace, and a fur blanket hangs over it.
 Locked: false
 Boarded: false
-Items:Blanket
+Items: Blanket
 Riddler:
 Exit Rooms: N-Oak Drawing Room, S-Billiard Room, W-Entry
 
@@ -282,6 +282,6 @@ Room name: Study
 Room Description: You are now in the Study. The south wall has a floor-to-ceiling book shelf, towering over you. A big wooden desk,<br>along with a cushioned chair, face the entrance. 2 lit candles illuminate the desk, and a key is visible.
 Locked: false
 Boarded: false
-Items:Key
+Items: Key
 Riddler:
 Exit Rooms: N-Library, E-Entry, W-Serving and Breakfast Room 
