@@ -226,7 +226,18 @@ class Game {
 			while (!finished) {
 				if (currentCombat != null) {
 					if (currentCombat.getEnemy().getHealth() <= 0.0) {
-						System.out.println("You destroyed " + currentCombat.getEnemy().getName());
+						System.out.print("You destroyed " + currentCombat.getEnemy().getName() + "! ");
+						System.out.println(currentCombat.getEnemy().getName() + " seems to have dropped a " + currentCombat.getEnemy().getLoot());
+						Class<?> clazz;
+						Item object = null;
+						try {
+							clazz = Class.forName("com.bayviewglen.zork.Items." + currentCombat.getEnemy().getLoot().substring(0, 1).toUpperCase().trim() + currentCombat.getEnemy().getLoot().substring(1).trim());
+							Constructor<?> ctor = clazz.getConstructor();
+							object = (Item) ctor.newInstance();
+						}catch (Exception e) {
+
+						}
+						currentRoom.addItem(object);
 						masterEnemyMap.values().remove(currentRoom.getRoomName());
 						currentCombat = null;
 					} else if (currentCombat.getTurn() == 1) {
