@@ -314,20 +314,29 @@ class Game {
 				System.out.println("What do you want to open the door with?");
 			}
 			boolean hasCrowbar = false;
+			boolean hasBatteringRam = false;
 			for (int i = 0; i < player.getInventory().size(); i++) {
 				if (player.getInventory().get(i).equals(new Crowbar())) {
 					hasCrowbar = true;
 					break;
 				}
+				if (player.getInventory().get(i).equals(new Batteringram())) {
+					hasBatteringRam = true;
+					break;
+				}
 			}
-			if (command.hasDirection() && hasCrowbar) {
+			if (command.hasDirection() && (hasCrowbar || hasBatteringRam)) {
 				Room nextRoom = currentRoom.nextRoom(command.getDirection());
 				try {
 					if (nextRoom.getBoarded()) {
 						nextRoom.setBoarded(false);
+						if(hasCrowbar) {
 						player.removeFromInventory(new Crowbar());
-						System.out.println(
-								"With great effort, you pry the boards off the door with the crowbar! However, it breaks and is no longer useable.");
+						System.out.println("With great effort, you pry the boards off the door with the crowbar! However, it breaks and is no longer useable.");
+						}
+						if(hasBatteringRam) {
+							System.out.println("With the battering ram, you smash through the boards on the door!");
+						}
 					} else {
 						System.out.println("That door is already unboarded!");
 					}
