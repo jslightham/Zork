@@ -6,6 +6,10 @@ import java.lang.reflect.Constructor;
 import java.util.ArrayList; 
 
 public class Player extends Entity{
+	/*
+	 * Player class that extends the main entity class.
+	 * Takes care of inventory and health of the player as well as bleeding status.
+	 */
 	private ArrayList<Item> inventory = new ArrayList<Item>(); 
 	private final int INVENTORY_CAPACITY = 120;
 	private int currentInventoryWeight;

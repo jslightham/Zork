@@ -27,10 +27,10 @@ class Room {
 	private String description;
 	private String newDescription; 
 	private HashMap<String, Room> exits; // stores exits of this room.
-	private ArrayList<Item> items;
+	private ArrayList<Item> items; // The inventory of the room
 	private Riddler riddler; //needs to altered outside of the class so that riddler can be set to null.
 	private boolean locked; // Otherwise you can repeatedly solve the riddle and get unlimited items 
-	private boolean boarded;
+	private boolean boarded; 
 
 	/**
 	 * Create a room described "description". Initially, it has no exits.
@@ -193,7 +193,9 @@ class Room {
 		}
 		return returnString;
 	}
-	
+	/*
+	 * Return a string of items to be printed
+	 */
 	public String itemString(){
 		boolean hasItems = false; 
 		String items = "";

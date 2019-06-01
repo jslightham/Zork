@@ -1,6 +1,9 @@
 package com.bayviewglen.zork.Entities;
 
 public class Riddle {
+	/*
+	 * A simple riddle object that stores a question, and the answer to that question that is used in the riddler class. 
+	 */
 	private String question; 
 	private String answer; 
 	

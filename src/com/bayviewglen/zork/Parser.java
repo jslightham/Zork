@@ -31,15 +31,17 @@ class Parser {
 	}
 
 	public Command getCommand() {
+		// If the following are blank, this means that the input line did not contain that specific type of word. 
 		String inputLine = ""; // will hold the full input line
-		String verb = "";
-		String direction = "";
-		String item = "";
-		String enemy = "";
-		String riddler = ""; 
+		String verb = ""; // holds verb of command
+		String direction = ""; // holds direction of command
+		String item = ""; // holds item of command
+		String enemy = ""; // holds enemies in command
+		String riddler = ""; // holds riddler in command
 		boolean open = false;
-		//String word2;
+		//Store all the words in the input line in an arraylist
 		ArrayList<String> words = new ArrayList<String>();
+		// Where unknown words are stored
 		ArrayList<String> otherWords = new ArrayList<String>();
  		System.out.print("> "); // print prompt
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -48,12 +50,16 @@ class Parser {
 		} catch (java.io.IOException exc) {
 			System.out.println("There was an error during reading: " + exc.getMessage());
 		}
+		// convert inputLine into tokens, and put this into the ArrayList of words
 		StringTokenizer tokenizer = new StringTokenizer(inputLine.toLowerCase());
 		while(tokenizer.hasMoreTokens()) {
 			words.add(tokenizer.nextToken());
 		}
+		// For each word, check what type it is, and store it in its respective String variable if it matches. 
 		for(int i=0; i<words.size(); i++) {
+			// replace all known synonyms
 			words.set(i, CommandWords.replaceSynonym(words.get(i)));
+			// Special case - check if contains open or unlock as a verb, otherwise these will be overwritten by the directions. 
 			if(words.get(i).equals("open") || words.get(i).equals("unlock")) {
 				open = true;
 			}
@@ -72,7 +78,7 @@ class Parser {
 				otherWords.add(words.get(i));
 			}
 		}
-		//System.out.println(verb);
+		// Create the command
 		if (CommandWords.isCommand(verb))
 			if(!open)
 				return new Command(verb, otherWords, direction, item, enemy, riddler);

@@ -1,7 +1,10 @@
 package com.bayviewglen.zork.Entities.Enemies;
 
 import com.bayviewglen.zork.Entities.Entity;
-
+/*
+ * This is the enemy class, which extends the entity class. 
+ * The enemy class is instantiated in the initiate enemies method of the game class, and stores information such as damage given, name, description, room, loot, and whether or not it is blinded. 
+ */
 public class Enemy extends Entity{
 	private int damageGiven; 
 	private String name;
@@ -11,6 +14,7 @@ public class Enemy extends Entity{
 	private boolean blinded;
 	
 	public Enemy(){
+		// Call super constructor to store health and hunger. 
 		super(100.0, 100.0); 
 		damageGiven = 10; 
 		blinded = false;
