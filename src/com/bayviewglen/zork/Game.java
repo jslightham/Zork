@@ -229,12 +229,7 @@ class Game {
 			System.out.println("---------------------\n");
 			System.out.print(currentRoom.longDescription());
 			System.out.println(currentRoom.itemString());
-			System.out.println(currentRoom.exitString());
-			player.addToInventory(new Lockpick()); 
-			player.addToInventory(new Key()); 
-			player.addToInventory(new Key()); 
-			player.addToInventory(new Crowbar()); 
-			player.addToInventory(new Batteringram());  
+			System.out.println(currentRoom.exitString()); 
 			
 			boolean finished = false;
 			while (!finished) {
