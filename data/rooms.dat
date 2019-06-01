@@ -4,7 +4,7 @@ New Room Description:  You are in a circular room. The windows to the east are c
 Locked: false
 Boarded: false
 Items: Lightbulb, Candlestick
-Riddler: "Hello there. My name is Kevin and I am Sir Pellatt's butler. I understand that my master<comma><br>Sir Pellatt has wrongfully imprisoned you. If you answer my riddle<comma> I can give you something to<br>help you with your escape - nothing comes for free you know!", "What has a head<comma> a tail<comma> is brown<comma> and has no legs?", "A penny", Lockpick
+Riddler: "Hello there. My name is Kevin and I am Sir Pellatt's butler. I understand that my master<comma><br>Sir Pellatt has wrongfully imprisoned you. If you answer my riddle<comma> I can give you something to<br>help you with your escape - nothing comes for free you know!", "What has a head<comma> a tail<comma> is brown<comma> and has no legs?", "penny", Lockpick
 Exit Rooms: W-Apple Hallway
 
 Room name: Apple Hallway
@@ -48,7 +48,7 @@ Room Description: You are now in Lady Pellatt's Bedroom. A four-poster bed with 
 New Room Description: 
 Locked: false
 Boarded: false
-Items:Robes
+Items: Robes
 Riddler:
 Exit Rooms: N-Sitting Area, S-Guest Bedroom, E-Bulb Room
 
@@ -185,7 +185,7 @@ Locked: false
 Boarded: false
 Items:
 Riddler:
-Exit Rooms: S-Aspen Bedroom, E-Willow Bedroom
+Exit Rooms: S-Aspen Bedroom, E-Willow Bedroom, N-Guest Bedroom
 
 Room name: Guest Bedroom
 Room Description: Welcome to the guest bedroom, where guests like yourself stay for the night. There is another tailored<br>man in the corner. He seems to have something he would like to tell you. 
@@ -228,7 +228,7 @@ Room Description: You are in the Supply Closet. A mop, bucket and a few towels l
 New Room Description: 
 Locked: false
 Boarded: false
-Items:Mop,Bucket,Towels,Robes
+Items: Mop, Bucket, Towels, Robes
 Riddler:
 Exit Rooms: E-Silver Stairs (1st Floor), S-Kitchen, N-Breakfast Room
 
@@ -237,7 +237,7 @@ Room Description: You are now in the Breakfast Room. A small wood table covered 
 New Room Description: 
 Locked: false
 Boarded: false
-Items:Butter
+Items: Butter
 Riddler:
 Exit Rooms: N-Dining Room, E-Study, S-Supply Closet
 
@@ -256,7 +256,7 @@ New Room Description: You are now in the Conservatory. The walls and ceilings ar
 Locked: false
 Boarded: false
 Items:
-Riddler: "Hey<comma> I'm Karen. Kevin is on his break but he told me to give you this riddle", "Marking mortal privation<comma> when firmly in place. An enduring summation<comma> inscribed in my face. What am I?", "A tombstone", Point
+Riddler: "Hey<comma> I'm Karen. Kevin is on his break but he told me to give you this riddle", "Marking mortal privation<comma> when firmly in place. An enduring summation<comma> inscribed in my face. What am I?", "tombstone", Cylinder
 Exit Rooms: E-Dining Room
 
 Room name: Library
@@ -264,7 +264,7 @@ Room Description: You are in the Library. Intricate designs are carved into the 
 New Room Description: 
 Locked: false
 Boarded: false
-Items:Novel
+Items: Novel
 Riddler:
 Exit Rooms: W-Dining Room, S-Study, E-Great Hall
 
@@ -282,7 +282,7 @@ Room Description: Welcome to the Oak Drawing Room. A large red carpet covers the
 New Room Description: 
 Locked: false
 Boarded: false
-Items:Sword
+Items: Sword
 Riddler:
 Exit Rooms: W-Great hall, S-Smoking Room
 
@@ -291,7 +291,7 @@ Room Description: You are now in the Smoking Room. This room is too fancy for it
 New Room Description: 
 Locked: false
 Boarded: false
-Items:Blanket
+Items: Blanket
 Riddler:
 Exit Rooms: N-Oak Drawing Room, S-Billiard Room, W-Entry
 
@@ -318,6 +318,6 @@ Room Description: You are now in the Study. The south wall has a floor-to-ceilin
 New Room Description: 
 Locked: false
 Boarded: false
-Items:Key
+Items: Key
 Riddler:
 Exit Rooms: N-Library, E-Entry, W-Breakfast Room 

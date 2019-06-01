@@ -40,7 +40,7 @@ public class Combat {
 				enemy.setHealth(enemy.getHealth()-object.getDamage()*1.5);
 				if(enemy.getHealth() < 0)
 					enemy.setHealth(0);
-				System.out.println("You hit " + enemy.getName() + " with a critical hit, doing " + object.getDamage()*1.5 + " damage! His health is now " + enemy.getHealth() + "%");
+				System.out.println("You hit " + enemy.getName() + " with a critical hit, doing " + object.getDamage()*1.5 + " damage! " + enemy.getName() + "'s health is now " + enemy.getHealth() + "%");
 			}
 			else {
 				enemy.setHealth(enemy.getHealth()-object.getDamage());
