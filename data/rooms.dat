@@ -36,7 +36,7 @@ Locked: false
 Boarded: false
 Items: Garlic
 Riddler:
-Exit Rooms: E-Porcupine Stairs (2nd Floor), W-Lady Pellatt's Bedroom, S-Linen Closet 
+Exit Rooms: E-Porcupine Stairs (2nd Floor), W-Lady Pellatt's Bedroom
 
 Room name: Lady Pellatt's Bedroom
 Room Description: You are now in Lady Pellatt's Bedroom. A four-post bed with elegant pink bedsheets lies in the<br>middle of the room. A golden wardrobe sits along the east wall with a few robes hanging out.
@@ -124,7 +124,7 @@ Locked: false
 Boarded: false
 Items: Clothes
 Riddler:
-Exit Rooms: E-Sir Henry Mill Pellatt's Bedroom, W-Guest Bedroom, S-Willow Bedroom, N-Bulb Room
+Exit Rooms: E-Sir Henry Mill Pellatt's Bedroom, W-Guest Bedroom, S-Willow Bedroom
 
 Room name: Willow Bedroom
 Room Description: This is the Willow Bedroom. Pretty ordinary, if you ask me. Say, doesn't this<br>look like the Oak Bedroom?
