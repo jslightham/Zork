@@ -483,6 +483,9 @@ class Game {
 		case "exercise":
 			System.out.println("You break out your High-Knees and Burpees from that one free-trial HIIT class you tried at your\ncommunity centre and feel quite refreshed afterward.");
 			break; 
+		case "play": 
+			System.out.println("Probably not the best time to play right now...");
+			break;
 		case "give":
 			System.out.println("There aren't any cookies in Casa Loma. I guess Rattenbury's mentor group\nwon't be getting their Mentor Kindness gift...");
 			break; 
