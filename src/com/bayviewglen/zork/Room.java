@@ -194,11 +194,19 @@ class Room {
 	}
 	
 	public String itemString(){
-		String items = "Items in Room: " + this.items.get(0).getName();
-		for(int i = 1; i < this.items.size(); i++) {
-			items += ", " + this.items.get(i).getName(); 
+		boolean hasItems = false; 
+		String items = "";
+		String itemString = "Items in room: "; 
+		for(int i = 0; i < this.getItems().size() - 1; i++) {
+			hasItems = true;
+			items += this.getItems().get(i).getName() + ", ";
 		}
-		return items; 
+		if(hasItems) {
+			items += this.getItems().get(this.getItems().size() - 1).getName(); 
+			return itemString + items; 
+		}else {
+			return itemString + "none"; 
+		} 
 	}
 
 	/**

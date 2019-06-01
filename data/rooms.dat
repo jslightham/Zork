@@ -2,7 +2,7 @@ Room name: Circle Room
 Room Description: You are in a circular room. The windows to the east are covered with boards that<br>let in just enough light to see. You spot a man in a tailored suit moving some crates around. 
 Locked: false
 Boarded: false
-Items: Lightbulb,Candlestick
+Items: Shavingcream
 Riddler: "Hello there. My name is Kevin and I am Sir Pellatt's butler. I understand that my master<comma><br>Sir Pellatt has wrongfully imprisoned you. If you answer my riddle<comma> I can give you something to<br>help you with your escape - nothing comes for free you know!", "What goes moo?", "Cows", Lockpick
 Exit Rooms: W-Apple Hallway
 
@@ -116,10 +116,10 @@ Locked: false
 Boarded: false
 Items:Shaving Cream,Toothbrush,Toothpaste
 Riddler:
-Exit Rooms: N-Sir Henry Mill Pellatt's Bathroom
+Exit Rooms: N-Sir Henry Mill Pellatt's Bedroom
 
 Room name: Linen Closet
-Room Description: A whiff of lavender-scented laundry detergent enters your nostrils as you step into<br>a dark room. Ah, you must be in the Linen Closet. No one really comes in here other than the servants. I'm pretty sure Sir Pellatt and<br>Lady Pellat don't even know this room exists.
+Room Description: A whiff of lavender-scented laundry detergent enters your nostrils as you step into<br>a dark room. Ah, you must be in the Linen Closet. No one really comes in here other than the servants. I'm pretty sure Sir Pellatt and<br>Lady Pellatt don't even know this room exists.
 Locked: false
 Boarded: false
 Items:Clothes
