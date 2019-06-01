@@ -32,9 +32,9 @@ class Command {
 	private String riddler; 
 
 	/**
-	 * Create a command object. First and second word must be supplied, but
-	 * either one (or both) can be null. The command word should be null to
-	 * indicate that this was a command that is not recognised by this game.
+	 * Create a command object. 
+	 * The command object is created by the parser, and contains all the known words that were in the input line. 
+	 *  The command word should be null to indicate that this was a command that is not recognised by this game.
 	 */
 	public Command(String firstWord, ArrayList<String> otherWords, String direction, String item, String enemy, String riddler) {
 		commandWord = firstWord;
@@ -72,11 +72,6 @@ class Command {
 	public ArrayList<String> getOtherWords() {
 		return otherWords;
 	}
-	/*
-	public String getSecondWord() {
-		return otherWords.get(0);
-	}
-	*/
 
 	/**
 	 * Return true if this command was not understood.

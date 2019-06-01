@@ -40,12 +40,15 @@ class Game {
 	// masterRoomMap.get("GREAT_ROOM") will return the Room Object that is the
 	// Great Room (assuming you have one).
 	private HashMap<String, Room> masterRoomMap;
+	// Stores where all enemies are currently 
 	private HashMap<Enemy, String> masterEnemyMap;
+	/*
+	 * Stores the current combat that is taking place. 
+	 * If there is a combat, this contains an instance of the combat class, if not it is null.
+	 */
 	private Combat currentCombat = null;
-	// private HashMap<Item, String> itemsInRooms = new HashMap<Item, String>();
 
 	private void initRooms(String fileName) throws Exception {
-		// itemsInRooms.put(new Candlestick(), "Candlestick");
 		masterRoomMap = new HashMap<String, Room>();
 		Scanner roomScanner;
 		try {
@@ -139,7 +142,9 @@ class Game {
 			e.printStackTrace();
 		}
 	}
-
+/*
+ * Initiate enemies from the data file into the hashmap.
+ */
 	private void initEnemies(String fileName) throws Exception {
 		masterEnemyMap = new HashMap<Enemy, String>();
 		Scanner enemyScanner = null;
@@ -227,7 +232,9 @@ class Game {
 			System.out.println(currentRoom.exitString());
 			boolean finished = false;
 			while (!finished) {
+				// Checks if there is a current combat, if so perform the enemy's action, and check for deaths.
 				if (currentCombat != null) {
+					// If enemy dies
 					if (currentCombat.getEnemy().getHealth() <= 0.0) {
 						System.out.print("You destroyed " + currentCombat.getEnemy().getName() + "! ");
 						System.out.println(currentCombat.getEnemy().getName() + " seems to have dropped a " + currentCombat.getEnemy().getLoot());
@@ -243,6 +250,7 @@ class Game {
 						currentRoom.addItem(object);
 						masterEnemyMap.values().remove(currentRoom.getRoomName());
 						currentCombat = null;
+					// If enemy's turn - signified by turn = 1
 					} else if (currentCombat.getTurn() == 1) {
 						currentCombat.enemyAttack();
 						if (currentCombat.getPlayer().getHealth() <= 0.0) {
@@ -252,6 +260,7 @@ class Game {
 								player.removeFromInventory(player.getInventory().get(i));
 								i--;
 							}
+							// On player death, reset everything
 							currentRoom = masterRoomMap.get("CIRCLE_ROOM");
 							System.out.println(
 									"Poof! You looked pretty banged up there, so I brought you back to the circle room. Your items are where you died.");
@@ -266,11 +275,13 @@ class Game {
 						}
 					}
 				}
+				// Checks if the player is bleeding, if they are subtract 2 from health each turn
 				if(player.getBleeding()) {
 					player.setHealth(player.getHealth()-2);
 					System.out.println("You are bleeding. Find, and use bandages to stop bleeding.");
 					System.out.println("Your health is now " + player.getHealth() + "%");
 				}
+				// Checks if the player dies, if so reset all values, and drop items
 				if(player.getHealth() <= 0) {
 					for (int i = 0; i < player.getInventory().size(); i++) {
 						currentRoom.addItem(player.getInventory().get(i));
@@ -287,6 +298,7 @@ class Game {
 				finished = processCommand(command);
 			}
 		}
+		// Printed when game ends
 		System.out.println("Thank you for playing. Goodbye!");
 	}
 
@@ -301,11 +313,14 @@ class Game {
 			return false;
 		}
 		String commandWord = command.getCommandWord();
+		// Switch that handles all commands 
 		switch (commandWord) {
 		case "open":
 		case "unlock":
+			// Command to open or unlock a door
 			boolean hasLockPick = false;
 			boolean hasKey = false;
+			// Loop to check if player's inventory contains key or lockpick
 			for (int i = 0; i < player.getInventory().size(); i++) {
 				if (player.getInventory().get(i).equals(new Lockpick())) {
 					hasLockPick = true;
@@ -316,7 +331,7 @@ class Game {
 					break;
 				}
 			}
-
+			// Check if the room can be unlocked, if so unlock it 
 			if (command.hasDirection() && (hasLockPick || hasKey)) {
 				Room nextRoom = currentRoom.nextRoom(command.getDirection());
 				try {
@@ -345,6 +360,8 @@ class Game {
 			} else {
 				System.out.println("What do you want to open the door with?");
 			}
+			
+			// Similar with the above key and lockpick process, but with crowbars and battering rams for boarded doors.
 			boolean hasCrowbar = false;
 			boolean hasBatteringRam = false;
 			for (int i = 0; i < player.getInventory().size(); i++) {
@@ -394,6 +411,7 @@ class Game {
 		case "down":
 		case "d":
 		case "u":
+			// if player is not in combat, go in direction given
 			if (currentCombat == null)
 				goRoom(command);
 			else
@@ -411,7 +429,7 @@ class Game {
 			System.out.println("If you insist... \nPoof! You're gone. You're out of the castle now, but now a new, grand new adventure begins...");
 			return true;
 		case "eat":
-
+			// convert the item string in the command (if existent) into an item to get info about the item, and to remove from inventory
 			if (command.hasItem()) {
 				Class<?> clazz;
 				Item object;
@@ -422,11 +440,13 @@ class Game {
 					Constructor<?> ctor = clazz.getConstructor();
 					object = (Item) ctor.newInstance();
 					boolean hasItem = false;
+					// check if player has item
 					for (int i = 0; i < player.getInventory().size(); i++) {
 						if (object.equals(player.getInventory().get(i))) {
 							hasItem = true;
 						}
 					}
+					// If item can be eaten, and player has, eat item.
 					if (object.isConsumable() && hasItem) {
 						System.out.println("Nom Nom Nom...");
 						player.eat();
@@ -447,6 +467,7 @@ class Game {
 			}
 			break;
 		case "talk":
+			// Talking with riddler command
 			if (currentCombat == null) {
 				if (currentRoom.hasRiddler()) {
 					Scanner rScanner = new Scanner(System.in);
@@ -455,7 +476,9 @@ class Game {
 					String answer = currentRoom.getRiddler().getRiddle().getAnswer();
 					System.out.println(message + "\n\nHere's my riddle: " + riddle);
 					System.out.print("Enter your guess here: ");
+					// wait for riddle response
 					String guess = rScanner.nextLine();
+					// check if guess has any part of answer in it. And if so administer prize. 
 					if (guess.toLowerCase().indexOf(answer.toLowerCase()) >= 0) {
 						Item prize = currentRoom.getRiddler().getPrize();
 						String prizeName = prize.getName();
@@ -511,12 +534,15 @@ class Game {
 			}
 			break; 
 		case "take":
+			// Take the given item, or take all items
 			boolean hasAll = false;
+			// check if player used word all, if so take all. 
 			for (String a : command.getOtherWords()) {
 				if (a.equals("all"))
 					hasAll = true;
 			}
 			if (hasAll) {
+				// Iterate through all items in room, remove from room inventory and add to player inventory.
 				for (int i = 0; i < currentRoom.getItems().size(); i++) {
 					if (player.addToInventory(currentRoom.getItem(i))) {
 						currentRoom.removeItem(i);
@@ -554,6 +580,7 @@ class Game {
 			break;
 
 		case "look":
+			// Print out descriptions of rooms
 			System.out.print(currentRoom.longDescription());
 			System.out.println(currentRoom.itemString());
 			System.out.println(currentRoom.exitString());
@@ -561,8 +588,10 @@ class Game {
 
 		case "inventory":
 		case "i":
+			// Check if player has items, if so display items, if not display message
 			boolean hasPlayerItems = false;
 			String itemsP = "";
+			// Iterate through to see if player has items, and add items to string to be printed
 			for (Item i : player.getInventory()) {
 				hasPlayerItems = true;
 				itemsP += i.getName() + "   ";
@@ -576,6 +605,7 @@ class Game {
 			}
 			break;
 		case "drop":
+			// if an item is given, convert string into item so that it can be removed from inventory
 			if (command.hasItem()) {
 				Class<?> clazz;
 				Item object;
@@ -606,9 +636,11 @@ class Game {
 			}
 			break;
 		case "attack":
+			// If there is currently no combat
 			if (currentCombat == null) {
 				if (command.hasEnemy()) {
 					Enemy enemy = null;
+					// Using hashmap backwards
 					for (Enemy i : masterEnemyMap.keySet()) {
 						if (masterEnemyMap.get(i).equals(currentRoom.getRoomName())) {
 							enemy = i;
@@ -618,11 +650,13 @@ class Game {
 						if (command.hasItem()) {
 							boolean has = false;
 							for (Item i : player.getInventory()) {
+								// Removes all spaces, capital letters from name
 								if (i.getName().toLowerCase().replaceAll("\\s+", "").equals(command.getItem())) {
 									has = true;
 								}
 							}
 							if (has) {
+								// if the player has the specified item, and the enemy exists in the room set currentCombat to be the combat between the given enemy and player, and perform the first player attack
 								currentCombat = new Combat(player, enemy);
 								currentCombat.playerAttack(command.getItem());
 							} else {
@@ -638,6 +672,7 @@ class Game {
 					System.out.println("Attack what?");
 				}
 			} else {
+				// Ran when combat is already taking place so that a new combat is not created each time an attack is made
 				if (command.hasItem()) {
 					boolean has = false;
 					for (Item i : player.getInventory()) {
@@ -646,6 +681,7 @@ class Game {
 						}
 					}
 					if (has) {
+						// player attack on enemy.
 						currentCombat.playerAttack(command.getItem());
 					} else {
 						System.out.println("You do not have that weapon!");
@@ -656,6 +692,7 @@ class Game {
 			}
 			break;
 			case "craft":
+				// if the item is craftable, and the player has the required components give the crafted item to the player, and remove the materials
 				if(command.hasItem()) {
 					Class<?> clazz;
 					CraftableItem object;
@@ -666,6 +703,7 @@ class Game {
 						if(object.isCraftable()) {
 							boolean playerHasItems = true;
 							boolean hasItem = false;
+							// Nested for loops to check if player has all required items
 							for(Item i : object.getMaterials()) {
 								hasItem = false;
 								for(Item pi : player.getInventory()) {
@@ -710,9 +748,11 @@ class Game {
 										+ command.getItem().substring(1).trim());
 						Constructor<?> ctor = clazz.getConstructor();
 						object = (Item) ctor.newInstance();
+						// If the item is not a bandage, run what is in the catch part of the try catch 
 						if(!object.equals(new Bandage()))
 							throw new Exception();
 						boolean hasBandage = false;
+						// iterate through player inventory to see if bandage exists
 						for(Item i : player.getInventory()) {
 							if(i.equals(new Bandage())) {
 								hasBandage = true;
@@ -762,12 +802,14 @@ class Game {
 		Room nextRoom = currentRoom.nextRoom(direction);
 		if (nextRoom == null)
 			System.out.println("There is no door!");
-		else if (nextRoom.getLocked() && nextRoom.getBoarded()) {
+		else if (nextRoom.getLocked() && nextRoom.getBoarded()) { // check if the room is boarded or locked, if so do not allow the player to enter
 			System.out.println("The door is locked and boarded shut. You need to find a key and crowbar to open it.");
 		} else if (nextRoom.getLocked()) {
 			System.out.println("The door is locked. You need a key to open it.");
 		} else {
+			// This is run when there are no problems leaving the room
 			currentRoom = nextRoom;
+			// print description and enemies in the room from the hashmap
 			System.out.print(currentRoom.longDescription());
 			boolean hasEnemy = false;
 			Enemy enemy = null;
@@ -783,6 +825,7 @@ class Game {
 					enemy = i;
 				}
 			}
+			// if the room has an enemy, display it. 
 			if (hasEnemy) {
 				System.out.println(enemy.getName() + ", " + enemy.getDescription() + " has appeared!");
 				System.out.println(currentRoom.itemString());

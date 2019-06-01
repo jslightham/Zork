@@ -15,7 +15,7 @@ import java.util.Scanner;
  * This class is part of the "Zork" game.
  */
 class CommandWords {
-	// a constant array that holds all valid command words
+	// Hashmaps that store known words and their types, as well as synonyms to the known words
 	private static HashMap<String, String> m_words = new HashMap<String, String>();
 	private static HashMap<String, String> m_synonyms = new HashMap<String, String>();
 	/**
@@ -34,7 +34,7 @@ class CommandWords {
 		}catch (Exception e) {
                   e.printStackTrace();
 		}	
-		
+		// import synonyms into hashmap
 		try {
 			Scanner in = new Scanner(new File("data/synonyms.dat"));
 			while(in.hasNext()){
@@ -68,7 +68,7 @@ class CommandWords {
 			return false;
 		}
 	}
-
+	// check if given string is item
 	public static boolean isItem(String aString){
 		try {
 		return m_words.get(aString).equals("item");
@@ -76,7 +76,7 @@ class CommandWords {
 			return false;
 		}
 	}
-
+	// check if given string is enemy
 	public static boolean isEnemy(String aString) {
 		try {
 			return m_words.get(aString).equals("enemy");
@@ -84,7 +84,7 @@ class CommandWords {
 				return false;
 			}
 	}
-	
+	// check if given string is riddler
 	public static boolean isRiddler(String aString) {
 		try {
 			return m_words.get(aString).equals("riddler"); 
@@ -103,7 +103,9 @@ class CommandWords {
 		}
 		System.out.println();
 	}
-	
+	/*
+	 * If a known word exists for the synonym of the word given, return it. Otherwise return the given word. 
+	 */
 	public static String replaceSynonym(String word) {
 		try {
 			String words = m_synonyms.get(word);
