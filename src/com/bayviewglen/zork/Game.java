@@ -266,20 +266,31 @@ class Game {
 		case "open":
 		case "unlock":
 			boolean hasLockPick = false;
+			boolean hasKey = false;
 			for (int i = 0; i < player.getInventory().size(); i++) {
 				if (player.getInventory().get(i).equals(new Lockpick())) {
 					hasLockPick = true;
 					break;
 				}
+				if (player.getInventory().get(i).equals(new Key())) {
+					hasKey = true;
+					break;
+				}
 			}
 
-			if (command.hasDirection() && hasLockPick) {
+			if (command.hasDirection() && (hasLockPick || hasKey)) {
 				Room nextRoom = currentRoom.nextRoom(command.getDirection());
 				try {
 if(nextRoom.getLocked()) {
 					nextRoom.setLocked(false);
-					player.removeFromInventory(new Lockpick());
-					System.out.println("After a little bit of picking, a click is heard and the door opens slightly!");
+					if(hasLockPick) {
+						player.removeFromInventory(new Lockpick());
+						System.out.println("After a little bit of picking, a click is heard and the door opens slightly!");
+					}
+					if(hasKey) {
+						player.removeFromInventory(new Key());
+						System.out.println("With great force, you turn the key in the keyhole and the door unclocks! However, the key broke in the keyhole.");
+					}
 					if(!nextRoom.getBoarded())
 						break;
 				}else{
@@ -311,7 +322,7 @@ if(nextRoom.getLocked()) {
 						System.out.println(
 								"With great effort, you pry the boards off the door with the crowbar! However, it breaks and is no longer useable.");
 					} else {
-						System.out.println("That door is already unlocked!");
+						System.out.println("That door is already unboarded!");
 					}
 				} catch (Exception e) {
 					System.out.println("There is no door there!");
@@ -319,7 +330,7 @@ if(nextRoom.getLocked()) {
 			} else if (!command.hasDirection()) {
 
 			} else {
-					System.out.println("What do you want to unboard the door with?");
+					
 			}
 			break;
 		case "go":
