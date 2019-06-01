@@ -197,12 +197,15 @@ class Room {
 		boolean hasItems = false; 
 		String items = "";
 		String itemString = "Items in room: "; 
-		for(int i = 0; i < this.getItems().size() - 1; i++) {
-			hasItems = true;
-			items += this.getItems().get(i).getName() + ", ";
+		if(this.getItems().size() > 0) {
+			hasItems = true; 
+			for(int i = 0; i < this.getItems().size() - 1; i++) {
+				hasItems = true;
+				items += this.getItems().get(i).getName() + ", ";
+			}
+			items += this.getItems().get(this.getItems().size() - 1).getName();
 		}
 		if(hasItems) {
-			items += this.getItems().get(this.getItems().size() - 1).getName(); 
 			return itemString + items; 
 		}else {
 			return itemString + "none"; 
