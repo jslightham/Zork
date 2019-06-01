@@ -281,7 +281,7 @@ class Game {
 			if (command.hasDirection() && (hasLockPick || hasKey)) {
 				Room nextRoom = currentRoom.nextRoom(command.getDirection());
 				try {
-if(nextRoom.getLocked()) {
+					if(nextRoom.getLocked()) {
 					nextRoom.setLocked(false);
 					if(hasLockPick) {
 						player.removeFromInventory(new Lockpick());
