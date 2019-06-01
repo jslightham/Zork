@@ -13,6 +13,9 @@ inventory, verb
 die, verb
 drop, verb
 attack, verb
+scream, verb
+read, verb
+play, verb
 north, direction
 south, direction
 west, direction
@@ -27,6 +30,7 @@ d, direction
 u, direction
 candlestick, item
 lockpick, item
+notebook, item
 key, item
 crowbar, item
 base, item

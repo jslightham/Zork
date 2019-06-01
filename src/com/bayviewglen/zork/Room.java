@@ -255,5 +255,13 @@ class Room {
 		riddler = null; 
 		
 	}
+
+	public boolean containsNotebook() {
+		for(Item i : this.getItems()) {
+			if(i.equals(new Notebook()))
+				return true; 
+		}
+		return false; 
+	}
 	
 }

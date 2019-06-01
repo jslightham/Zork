@@ -2,7 +2,7 @@ Room name: Circle Room
 Room Description: You are in a circular room. The windows to the east are covered with boards that<br>let in just enough light to see. You spot a man in a tailored suit moving some crates around. 
 Locked: false
 Boarded: false
-Items: Lightbulb, Candlestick
+Items: Lightbulb, Candlestick, Notebook
 Riddler: "Hello there. My name is Kevin and I am Sir Pellatt's butler. I understand that my master<comma><br>Sir Pellatt has wrongfully imprisoned you. If you answer my riddle<comma> I can give you something to<br>help you with your escape - nothing comes for free you know!", "What goes moo?", "Cows", Lockpick
 Exit Rooms: W-Apple Hallway
 
@@ -15,7 +15,7 @@ Riddler:
 Exit Rooms: E-Circle Room, N-Porcupine Stairs (3rd Floor)
 
 Room name: Porcupine Stairs (3rd Floor)
-Room Description: You are in the Porcupine Stairs. The stone, cold walls are trapped in darkness.<br>The stairs in front of you lead to the second floor. 
+Room Description: You are in the Porcupine Stairs. The stone and wood walls are trapped in darkness.<br>The stairs in front of you lead to the second floor. 
 Locked: true
 Boarded: false
 Items:
@@ -31,7 +31,7 @@ Riddler:
 Exit Rooms: S-Sir Henry Mill Pellatt's Bedroom, W-Bulb Room, E-Pipe Room, Up-Porcupine Stairs (3rd Floor)
 
 Room name: Bulb Room
-Room Description: You are in the Bulb Room. There is a ragged red rug with a noticeable lump in the middle.<br>One window facing north is bolted shut. 
+Room Description: You are in the Bulb Room. There is a ragged red rug with a noticeable lump in the middle.<br> After pulling up the rug, a bulb of garlic is found! There is one window facing north, but it is bolted shut. 
 Locked: false
 Boarded: false
 Items: Garlic
@@ -39,7 +39,7 @@ Riddler:
 Exit Rooms: E-Porcupine Stairs (2nd Floor), W-Lady Pellatt's Bedroom
 
 Room name: Lady Pellatt's Bedroom
-Room Description: You are now in Lady Pellatt's Bedroom. A four-post bed with elegant pink bedsheets lies in the<br>middle of the room. A golden wardrobe sits along the east wall with a few robes hanging out.
+Room Description: You are now in Lady Pellatt's Bedroom. A four-poster bed with elegant pink bedsheets lies in the<br>middle of the room. A wardrobe with intricate gold imbibings sits along the east wall with a few robes hanging out.
 Locked: false
 Boarded: false
 Items:Robes
@@ -47,7 +47,7 @@ Riddler:
 Exit Rooms: N-Sitting Area, S-Guest Bedroom, E-Bulb Room
 
 Room name: Sitting Area
-Room Description: You are in a room with multiple chairs and fake plants. There are several windows, all of which<br>are shut. A few scratches can be noted on the chairs.
+Room Description: You are in a room with multiple Victorian-style chairs and a few fake ferns. There are several windows, all of which<br>are shut. The chairs seem to be quite scratched. 
 Locked: false
 Boarded: false
 Items:
@@ -55,7 +55,7 @@ Riddler:
 Exit Rooms: S-Lady Pellatt's Bedroom
 
 Room name: Pipe Room
-Room Description: Welcome to the Pipe Room. A misty smell fills the room. Strange items<br>lay in a pile near the north wall. I suggest you take a look...
+Room Description: Welcome to the Pipe Room. Pipes lines the walls, and a misty smell of hydraulics fills your nostrils. Strange items<br>lay in a pile near the north wall. 
 Locked: false
 Boarded: false
 Items: Clock, Lightbulb, Keyboard
@@ -63,15 +63,15 @@ Riddler:
 Exit Rooms: W-Porcupine Stairs (2nd Floor), S-Landing, N-East Sitting Room, E-Round Room
 
 Room name: Round Room
-Room Description: You are now in the Round Room. Nothing is out of the ordinary in here...
+Room Description: You are now in the Round Room. Daffodil-yellow victorian chairs sit around a simple, round, wooden table. An elegant<br>mirror hangs over the fireplace. 
 Locked: false
 Boarded: false
-Items: 
+Items: Chocolate
 Riddler:
 Exit Rooms: W-Pipe Room, N-Elm Bedroom, S-Oak Bedroom
 
 Room name: Elm Bedroom
-Room Description: You are in the Elm Bedroom. The walls are all wooden and a few windows face north.<br>A bed sits in the middle of the room. A few pillows are on the ground. It looks like someone was in here...
+Room Description: You are in the Elm Bedroom. The walls are all wooden and a few windows face north.<br>A bed with evergreen sheets sits in the middle of the room. A few pillows are on the ground. It looks like someone was in here...
 Locked: false
 Boarded: false
 Items: Pen, Book
@@ -79,7 +79,7 @@ Riddler:
 Exit Rooms: S-Round Room, W-East Sitting Room
 
 Room name: East Sitting Room
-Room Description: Welcome to the East Sitting Room. Boring name for a not-so-boring room.<br>Take a look at the paintings, admire the art. 
+Room Description: Welcome to the East Sitting Room. Boring name for a not-so-boring room.<br>Take a look at the paintings, admire the art. Some of these works must be worth thousands!
 Locked: false
 Boarded: false
 Items: Painting
@@ -87,7 +87,7 @@ Riddler:
 Exit Rooms: S-Pipe Room, E-Elm Bedroom
 
 Room name: Oak Bedroom
-Room Description: You are now in the Oak Bedroom. The walls are covered with pink floral wallpaper<br>and a few socks are strewn about the room. A small four-post bedroom lies in the south-east corner.
+Room Description: You are now in the Oak Bedroom. The walls are covered with pink floral wallpaper<br>and a few socks are strewn about the room. A small four-poster bed with snow-white sheets lies in the south-east corner.
 Locked: false
 Boarded: false
 Items: Socks
@@ -95,7 +95,7 @@ Riddler:
 Exit Rooms: N-Round Room, W-Landing
 
 Room name: Landing
-Room Description: You are now outside on the Landing. A cold gust of wind sweeps by. There doesn't<br>seem to be anywhere to go. It is too high to jump, and you don't have a ladder. 
+Room Description: You are now outside on the Landing. A cold gust of wind sweeps by. There doesn't<br>seem to be anywhere to go. You spy the courtyard entrance beneath you, with an elegant<br>fountain spraying water high into the air. It is too high to jump, and you don't have a ladder. 
 Locked: false
 Boarded: false
 Items:
@@ -227,7 +227,7 @@ Room Description: You are now in the Conservatory. The walls and ceilings are al
 Locked: false
 Boarded: false
 Items:
-Riddler: "Hey<comma> I'm Karen. Kevin is on his break but he told me to give you this riddle: <br>Marking mortal privation<comma> when firmly in place. An enduring summation<comma> inscribed in my face. What am I?", "tombstone"
+Riddler: "Hey<comma> I'm Karen. Kevin is on his break but he told me to give you this riddle", "Marking mortal privation<comma> when firmly in place. An enduring summation<comma> inscribed in my face. What am I?", "A tombstone", Point
 Exit Rooms: E-Dining Room
 
 Room name: Library

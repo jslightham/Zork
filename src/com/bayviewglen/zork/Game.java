@@ -222,10 +222,6 @@ class Game {
 			System.out.print(currentRoom.longDescription());
 			System.out.println(currentRoom.itemString());
 			System.out.println(currentRoom.exitString());
-			player.addToInventory(new Lockpick());
-			player.addToInventory(new Key());
-			player.addToInventory(new Crowbar());
-			player.addToInventory(new Batteringram());
 			boolean finished = false;
 			while (!finished) {
 				if (currentCombat != null) {
@@ -296,7 +292,7 @@ class Game {
 					}
 					if(hasKey) {
 						player.removeFromInventory(new Key());
-						System.out.println("With great force, you turn the key in the keyhole and the door unclocks! However, the key broke in the keyhole.");
+						System.out.println("With great force, you turn the key in the keyhole and the door unlocks! However, the key breaks in the keyhole and is now unusable.");
 					}
 					if(!nextRoom.getBoarded())
 						break;
@@ -449,6 +445,24 @@ class Game {
 		case "scream":
 			System.out.println("Aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahhhhhhhhhhhhhhhhhhhhh!");
 			break;
+		case "read": 
+			if(currentRoom.containsNotebook()) {
+				for(Item i : currentRoom.getItems()) {
+					if(i.equals(new Notebook())) {
+						System.out.println("In elegant cursive, the page reads:\n" + ((Notebook)i).getHint());  
+					}
+				}
+					
+			}else if(player.getInventory().contains(new Notebook())) {
+				for(Item i : player.getInventory()) {
+					if(i.equals(new Notebook())) {
+						System.out.println("In elegant cursive, the page reads:\n" + ((Notebook)i).getHint());  
+					}
+				}
+			}else {
+				System.out.println("Read what?");
+			}
+			break; 
 		case "take":
 			boolean hasAll = false;
 			for (String a : command.getOtherWords()) {

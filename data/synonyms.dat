@@ -12,6 +12,9 @@ benefit, help
 man, riddler
 butler, riddler
 kevin, riddler
+karen, riddler
+lady, riddler
+woman, riddler
 helper, riddler
 leave, quit
 move, go
@@ -24,6 +27,9 @@ peek, look
 gander, look
 grab, take
 suicide, die
+put down, drop
+place, drop
+throw, drop
 dive, jump
 fall, jump
 rise, jump
