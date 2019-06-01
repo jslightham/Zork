@@ -219,10 +219,6 @@ class Game {
 			System.out.print(currentRoom.longDescription());
 			System.out.println(currentRoom.itemString());
 			System.out.println(currentRoom.exitString());
-			player.addToInventory(new Lockpick());  
-			player.addToInventory(new Crowbar()); 
-			player.addToInventory(new Key()); 
-			player.addToInventory(new Batteringram()); 
 			boolean finished = false;
 			while (!finished) {
 				if (currentCombat != null) {
