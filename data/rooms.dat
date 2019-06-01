@@ -114,7 +114,7 @@ Room name: Sir Henry Mill Pellatt's Bathroom
 Room Description: You are now in Sir Henry Mill Pellatt's Bathroom. The floor mat is still quite wet.<br>Perhaps someone just took a shower. A half-empty shaving cream bottle lies on the counter, along with a toothbrush and some toothpaste.
 Locked: false
 Boarded: false
-Items: Shavingcream, Toothbrush, Toothpaste
+Items: Shavingcream, Toothbrush, Toothpaste, Bandage
 Riddler:
 Exit Rooms: N-Sir Henry Mill Pellatt's Bedroom
 
@@ -122,7 +122,7 @@ Room name: Linen Closet
 Room Description: A whiff of lavender-scented laundry detergent enters your nostrils as you step into<br>a dark room. Ah, you must be in the Linen Closet. No one really comes in here other than the servants. I'm pretty sure Sir Pellatt and<br>Lady Pellatt don't even know this room exists.
 Locked: false
 Boarded: false
-Items: Clothes
+Items: Clothes, Bandage
 Riddler:
 Exit Rooms: E-Sir Henry Mill Pellatt's Bedroom, W-Guest Bedroom, S-Willow Bedroom
 
@@ -202,7 +202,7 @@ Room name: Supply Closet
 Room Description: You are in the Supply Closet. A mop, bucket and a few towels lay on the ground. The space is quite small<br>and can only hold around 3 people. Nothing interesting seems to be happening in here.
 Locked: false
 Boarded: false
-Items:Mop,Bucket,Towels
+Items:Mop,Bucket,Towels, Robes
 Riddler:
 Exit Rooms: E-Silver Stairs (1st Floor), S-Kitchen, N-Serving and Breakfast Room
 

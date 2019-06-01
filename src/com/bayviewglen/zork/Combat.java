@@ -36,7 +36,7 @@ public class Combat {
 				System.out.println("You missed!");
 				
 				
-			}else if(rand<0.15) {
+			}else if(rand<0.20) {
 				enemy.setHealth(enemy.getHealth()-object.getDamage()*1.5);
 				if(enemy.getHealth() < 0)
 					enemy.setHealth(0);
@@ -68,11 +68,13 @@ public class Combat {
 		}
 		else if(rand<0.1) {
 			System.out.println(enemy.getName() + " missed!");
-		}else if(rand < 0.15) {
+		}else if(rand < 0.50) {
 			player.setHealth(player.getHealth()-enemy.getDamage()*1.5);
 			if(player.getHealth() < 0)
 				player.setHealth(0);
 			System.out.println(enemy.getName() + " hit you with a critical hit, doing " + enemy.getDamage()*1.5 + " damage! Your health is now " + player.getHealth() + "%");
+			System.out.println("You are now bleeding.");
+			player.setBleeding(true);
 		}
 		else {
 			player.setHealth(player.getHealth()-enemy.getDamage());

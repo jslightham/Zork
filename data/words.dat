@@ -66,3 +66,5 @@ lightbulb, item
 craft, verb
 batteringram, item
 ladypellatt, enemy
+use, verb
+bandage, item
