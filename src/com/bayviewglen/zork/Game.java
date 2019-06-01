@@ -161,7 +161,6 @@ class Game {
 			}
 		} catch (Exception ex) {
 		}
-		masterEnemyMap.put(e, e.getRoom());
 		enemyScanner.close();
 	}
 
@@ -277,15 +276,18 @@ class Game {
 			if (command.hasDirection() && hasLockPick) {
 				Room nextRoom = currentRoom.nextRoom(command.getDirection());
 				try {
-					if (nextRoom.getLocked()) {
-						nextRoom.setLocked(false);
-						player.removeFromInventory(new Lockpick());
-						System.out.println(
-								"After a little bit of picking, a click is heard and the door opens slightly!");
-					} else {
-						System.out.println("That door is already unlocked!");
-					}
-				} catch (Exception e) {
+if(nextRoom.getLocked()) {
+					nextRoom.setLocked(false);
+					player.removeFromInventory(new Lockpick());
+					System.out.println("After a little bit of picking, a click is heard and the door opens slightly!");
+					if(!nextRoom.getBoarded())
+						break;
+				}else{
+					System.out.println("That door is already unlocked!");
+					if(!nextRoom.getBoarded())
+						break;
+				}
+				}catch(Exception e) {
 					System.out.println("There is no door there!");
 				}
 			} else if (!command.hasDirection()) {
@@ -317,7 +319,7 @@ class Game {
 			} else if (!command.hasDirection()) {
 
 			} else {
-
+					System.out.println("What do you want to unboard the door with?");
 			}
 			break;
 		case "go":
@@ -563,6 +565,51 @@ class Game {
 				}
 			}
 			break;
+			case "craft":
+				if(command.hasItem()) {
+					Class<?> clazz;
+					CraftableItem object;
+					try {
+						clazz = Class.forName("com.bayviewglen.zork.Items." + command.getItem().substring(0, 1).toUpperCase().trim() + command.getItem().substring(1).trim());
+						Constructor<?> ctor = clazz.getConstructor();
+						object = (CraftableItem) ctor.newInstance();
+						if(object.isCraftable()) {
+							boolean playerHasItems = true;
+							boolean hasItem = false;
+							for(Item i : object.getMaterials()) {
+								hasItem = false;
+								for(Item pi : player.getInventory()) {
+									if(i.equals(pi)) {
+										hasItem = true;
+									}
+								}
+								if(playerHasItems) {
+									playerHasItems = hasItem;
+								}
+							}
+							if(playerHasItems) {
+								if(player.addToInventory(object)) {
+									for(Item i : object.getMaterials()) {
+										player.removeFromInventory(i);
+									}
+									System.out.println("You have crafted a " + object.getName());
+								}else {
+									System.out.println("You cannot carry any more!");
+								}
+							}else {
+								System.out.println("You do not have the nessecary parts to make a " + object.getName() + "!");
+							}
+							
+						}else {
+							System.out.println("You cannot make that item!");
+						}
+					}catch(Exception e) {
+						System.out.println("You cannot make that item!");
+					}
+				}else {
+					System.out.println("Craft what?");
+				}
+				break;
 		default:
 			return false;
 		}

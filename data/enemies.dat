@@ -1,4 +1,10 @@
 Enemy Name: Henry Pellatt
 Description: The owner of the Castle 
-Starting Room: Circle Room
+Starting Room: Apple Hallway
 Damage Given: 25
+Loot: Crowbar
+Enemy Name: Lady Pellatt
+Description: The wife to the owner of the Castle 
+Starting Room: Lady Pellatt's Bedroom
+Damage Given: 25
+Loot: Crowbar

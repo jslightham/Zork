@@ -146,7 +146,7 @@ Room name: Evergreen Bedroom
 Room Description: Oh look! Another bedroom! How exciting! This one's walls are even green this time.<br>Cool!
 Locked: false
 Boarded: false
-Items:
+Items:Sword
 Riddler:
 Exit Rooms: N-Silver Stairs (2nd Floor), W-Aspen Bedroom
 

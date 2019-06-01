@@ -7,6 +7,7 @@ public class Enemy extends Entity{
 	private String name;
 	private String description;
 	private String room;
+	private String loot;
 	private boolean blinded;
 	
 	public Enemy(){
@@ -53,5 +54,11 @@ public class Enemy extends Entity{
 	}
 	public void setBlinded(boolean blinded) {
 		this.blinded = blinded;
+	}
+	public void setLoot(String loot) {
+		this.loot = loot;
+	}
+	public String getLoot() {
+		return loot;
 	}
 }
