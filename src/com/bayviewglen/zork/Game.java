@@ -240,6 +240,7 @@ class Game {
 							for (int i = 0; i < player.getInventory().size(); i++) {
 								currentRoom.addItem(player.getInventory().get(i));
 								player.removeFromInventory(player.getInventory().get(i));
+								i--;
 							}
 							currentRoom = masterRoomMap.get("CIRCLE_ROOM");
 							System.out.println(
@@ -261,6 +262,11 @@ class Game {
 					System.out.println("Your health is now " + player.getHealth() + "%");
 				}
 				if(player.getHealth() <= 0) {
+					for (int i = 0; i < player.getInventory().size(); i++) {
+						currentRoom.addItem(player.getInventory().get(i));
+						player.removeFromInventory(player.getInventory().get(i));
+						i--;
+					}
 					currentRoom = masterRoomMap.get("CIRCLE_ROOM");
 					System.out.println(
 							"Poof! You looked pretty banged up there, so I brought you back to the circle room. Your items are where you died.");
