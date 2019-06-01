@@ -110,96 +110,101 @@
     </display>  
   </class>  
   <dependency id="13">    
-    <bendpoint x="346" y="140"/>    
-    <bendpoint x="346" y="247"/>    
     <end type="SOURCE" refId="9"/>    
-    <end type="TARGET" refId="2"/>  
+    <end type="TARGET" refId="10"/>  
   </dependency>  
   <dependency id="14">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <generalization id="15">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
+  <dependency id="16">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="12"/>  
+  </dependency>  
+  <dependency id="17">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="11"/>  
+  </dependency>  
+  <dependency id="18">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <dependency id="19">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="12"/>  
+  </dependency>  
+  <dependency id="20">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="2"/>  
+  </dependency>  
+  <dependency id="21">    
     <bendpoint x="881" y="102"/>    
     <bendpoint x="880" y="270"/>    
     <end type="SOURCE" refId="9"/>    
     <end type="TARGET" refId="1"/>  
   </dependency>  
-  <dependency id="15">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="9"/>  
-  </dependency>  
-  <dependency id="16">    
-    <end type="SOURCE" refId="9"/>    
-    <end type="TARGET" refId="10"/>  
-  </dependency>  
-  <dependency id="17">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="4"/>  
-  </dependency>  
-  <generalization id="18">    
-    <end type="SOURCE" refId="5"/>    
-    <end type="TARGET" refId="3"/>  
-  </generalization>  
-  <generalization id="19">    
+  <generalization id="22">    
     <end type="SOURCE" refId="1"/>    
     <end type="TARGET" refId="3"/>  
   </generalization>  
-  <dependency id="20">    
-    <end type="SOURCE" refId="9"/>    
-    <end type="TARGET" refId="6"/>  
-  </dependency>  
-  <dependency id="21">    
-    <end type="SOURCE" refId="7"/>    
-    <end type="TARGET" refId="2"/>  
-  </dependency>  
-  <dependency id="22">    
-    <end type="SOURCE" refId="10"/>    
-    <end type="TARGET" refId="12"/>  
-  </dependency>  
   <dependency id="23">    
-    <end type="SOURCE" refId="9"/>    
-    <end type="TARGET" refId="11"/>  
-  </dependency>  
-  <dependency id="24">    
     <bendpoint x="902" y="98"/>    
     <bendpoint x="906" y="420"/>    
     <bendpoint x="610" y="422"/>    
     <end type="SOURCE" refId="9"/>    
     <end type="TARGET" refId="5"/>  
   </dependency>  
-  <generalization id="25">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="3"/>  
-  </generalization>  
-  <dependency id="26">    
-    <end type="SOURCE" refId="11"/>    
-    <end type="TARGET" refId="3"/>  
-  </dependency>  
-  <dependency id="27">    
-    <end type="SOURCE" refId="6"/>    
-    <end type="TARGET" refId="12"/>  
-  </dependency>  
-  <dependency id="28">    
-    <bendpoint x="620" y="148"/>    
-    <bendpoint x="620" y="202"/>    
+  <dependency id="24">    
+    <bendpoint x="346" y="140"/>    
+    <bendpoint x="346" y="247"/>    
     <end type="SOURCE" refId="9"/>    
-    <end type="TARGET" refId="3"/>  
+    <end type="TARGET" refId="2"/>  
   </dependency>  
-  <dependency id="29">    
+  <dependency id="25">    
     <bendpoint x="338" y="105"/>    
     <bendpoint x="338" y="260"/>    
     <bendpoint x="338" y="370"/>    
     <end type="SOURCE" refId="9"/>    
     <end type="TARGET" refId="4"/>  
   </dependency>  
-  <dependency id="30">    
-    <end type="SOURCE" refId="10"/>    
+  <dependency id="26">    
+    <bendpoint x="620" y="148"/>    
+    <bendpoint x="620" y="202"/>    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <dependency id="27">    
+    <bendpoint x="516" y="369"/>    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <dependency id="28">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="7"/>  
+  </dependency>  
+  <dependency id="29">    
+    <end type="SOURCE" refId="9"/>    
     <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <dependency id="30">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="9"/>  
   </dependency>  
   <dependency id="31">    
     <end type="SOURCE" refId="11"/>    
-    <end type="TARGET" refId="1"/>  
+    <end type="TARGET" refId="3"/>  
   </dependency>  
-  <dependency id="32">    
-    <end type="SOURCE" refId="9"/>    
-    <end type="TARGET" refId="7"/>  
+  <generalization id="32">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
+  <dependency id="33">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="6"/>  
   </dependency>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
