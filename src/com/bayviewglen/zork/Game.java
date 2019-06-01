@@ -59,6 +59,9 @@ class Game {
 				// Read the Description
 				String roomDescription = roomScanner.nextLine();
 				room.setDescription(roomDescription.split(": ")[1].replaceAll("<br>", "\n").trim());
+				//Read room description after riddler is removed.
+				String newRoomDescription = roomScanner.nextLine(); 
+				room.setNewRoomDescription(newRoomDescription.split(": ")[1].replaceAll("<br>", "\n").trim());
 				// Read the locked state
 				boolean locked = Boolean.parseBoolean(roomScanner.nextLine().split(": ")[1].replaceAll("<br>", "\n").trim());
 				room.setLocked(locked);
@@ -464,6 +467,8 @@ class Game {
 						} else {
 							System.out.println("Sorry, you can't carry any more, but a " + prize + " has been added to your room.");
 							currentRoom.addItem(prize);
+							System.out.println("I've got to go find Mr. Pellatt now. Good luck with your escape!");
+							currentRoom.removeRiddler();
 						}
 					} else {
 						System.out.println("Sorry, that isn't the answer. Think about it, then try again.");
