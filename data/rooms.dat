@@ -193,7 +193,7 @@ New Room Description:
 Locked: false
 Boarded: false
 Items:  
-Riddler: "Hello there<comma> Kevin again with another riddle for you to solve.", "What are the next 3 letters in this sequence: o<comma>t<comma>t<comma>f<comma>f<comma>s<comma>s?", "e<comma>n<comma>t", Yogurt
+Riddler: "Hello there<comma> Kevin again with another riddle for you to solve.", "What are the next 3 letters in this sequence: o<comma>t<comma>t<comma>f<comma>f<comma>s<comma>s?", "e<comma>n<comma>t", Key
 Exit Rooms: E-Linen Closet, S-Another Sitting Area, N-Lady Pellatt's Bedroom
 
 Room name: Silver Stairs (1st Floor)
